@@ -1,0 +1,10 @@
+tensorflow
+Pillow
+numpy
+Flask
+Werkzeug
+easyocr
+textstat
+pyspellchecker
+gunicorn
+opencv-python-headless
