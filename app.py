@@ -48,3 +48,8 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg);
