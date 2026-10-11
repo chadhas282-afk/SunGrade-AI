@@ -58,3 +58,8 @@ body {
     overflow-x: hidden;
     padding: 2rem 1rem 5rem;
 }
+
+.bg-orbs { position: fixed; inset: 0; pointer-events: none; z-index: 0; }
+.orb {
+    position: absolute;
+    border-radius: 50%;
