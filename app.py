@@ -67,3 +67,9 @@ body {
     opacity: 0.15;
     animation: drift 20s ease-in-out infinite alternate;
 }
+.orb-1 { width: 600px; height: 600px; background: #4f8ef7; top: -200px; left: -200px; }
+.orb-2 { width: 450px; height: 450px; background: #8b5cf6; bottom: -100px; right: -100px; animation-delay: -7s; }
+.orb-3 { width: 350px; height: 350px; background: #22c55e; top: 55%; left: 55%; transform: translate(-50%,-50%); animation-delay: -14s; }
+
+@keyframes drift {
+    from { transform: translate(0, 0) scale(1); }
