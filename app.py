@@ -128,3 +128,7 @@ body {
 .app-subtitle {
     color: var(--text-2);
     font-size: 1rem;
+     max-width: 520px;
+    margin: 0 auto;
+    line-height: 1.55;
+}
