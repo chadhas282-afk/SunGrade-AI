@@ -123,3 +123,8 @@ body {
     background-clip: text;
     line-height: 1.15;
     margin-bottom: 0.85rem;
+    }
+
+.app-subtitle {
+    color: var(--text-2);
+    font-size: 1rem;
