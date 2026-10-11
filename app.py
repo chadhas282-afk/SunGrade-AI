@@ -78,3 +78,8 @@ body {
 
 .app-wrapper {
     position: relative;
+    z-index: 1;
+    max-width: 960px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
