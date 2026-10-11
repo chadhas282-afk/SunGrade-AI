@@ -53,3 +53,8 @@ html { scroll-behavior: smooth; }
 body {
     font-family: 'Inter', sans-serif;
     background: var(--bg);
+    color: var(--text-1);
+    min-height: 100vh;
+    overflow-x: hidden;
+    padding: 2rem 1rem 5rem;
+}
