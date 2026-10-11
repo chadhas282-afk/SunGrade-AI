@@ -63,3 +63,7 @@ body {
 .orb {
     position: absolute;
     border-radius: 50%;
+    filter: blur(110px);
+    opacity: 0.15;
+    animation: drift 20s ease-in-out infinite alternate;
+}
