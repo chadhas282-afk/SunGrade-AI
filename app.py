@@ -108,3 +108,8 @@ body {
     color: var(--accent);
     font-size: 0.65rem;
     padding: 0.1rem 0.45rem;
+    border-radius: 100px;
+    border: 1px solid rgba(79,142,247,0.25);
+    font-weight: 700;
+    letter-spacing: 0.05em;
+}
