@@ -43,3 +43,8 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
     --text-3:    #64748b;
     --radius:    18px;
     --radius-sm: 12px;
+    --shadow:    0 8px 32px rgba(0,0,0,0.55);
+    --shadow-lg: 0 16px 60px rgba(0,0,0,0.65);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
