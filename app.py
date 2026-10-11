@@ -103,3 +103,8 @@ body {
 }
 .logo-icon { font-size: 1rem; }
 .logo-text  { color: var(--accent); }
+.logo-version {
+    background: rgba(79,142,247,0.15);
+    color: var(--accent);
+    font-size: 0.65rem;
+    padding: 0.1rem 0.45rem;
