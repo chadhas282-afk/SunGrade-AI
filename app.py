@@ -148,3 +148,7 @@ body {
 }
 
 .tab-bar {
+display: flex;
+    border-bottom: 1px solid var(--border);
+    background: rgba(0,0,0,0.2);
+}
