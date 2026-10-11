@@ -83,3 +83,7 @@ body {
     margin: 0 auto;
     display: flex;
     flex-direction: column;
+    gap: 1.75rem;
+}
+
+.app-header { text-align: center; padding: 0.5rem 0 0.25rem; }
