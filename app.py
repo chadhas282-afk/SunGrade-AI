@@ -113,3 +113,8 @@ body {
     font-weight: 700;
     letter-spacing: 0.05em;
 }
+
+.app-title {
+    font-size: clamp(2rem, 5.5vw, 3rem);
+    font-weight: 800;
+    background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 50%, #34d399 100%);
