@@ -143,3 +143,8 @@ body {
     display: flex;
     flex-direction: column;
     gap: 0;
+     box-shadow: var(--shadow);
+    overflow: hidden;
+}
+
+.tab-bar {
