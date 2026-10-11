@@ -39,3 +39,7 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
     --yellow:    #eab308;
     --red:       #ef4444;
     --text-1:    #f1f5f9;
+    --text-2:    #94a3b8;
+    --text-3:    #64748b;
+    --radius:    18px;
+    --radius-sm: 12px;
