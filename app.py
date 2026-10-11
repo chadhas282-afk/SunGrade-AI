@@ -87,3 +87,9 @@ body {
 }
 
 .app-header { text-align: center; padding: 0.5rem 0 0.25rem; }
+
+.logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    background: var(--surface);
