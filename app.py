@@ -132,3 +132,9 @@ body {
     margin: 0 auto;
     line-height: 1.55;
 }
+
+.upload-section {
+    background: var(--surface);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid var(--border);
