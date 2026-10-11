@@ -33,3 +33,9 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
     --border:    rgba(255,255,255,0.07);
     --border-2:  rgba(255,255,255,0.12);
     --accent:    #4f8ef7;
+     --accent-2:  #8b5cf6;
+    --accent-3:  #34d399;
+    --green:     #22c55e;
+    --yellow:    #eab308;
+    --red:       #ef4444;
+    --text-1:    #f1f5f9;
