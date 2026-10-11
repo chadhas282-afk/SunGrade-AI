@@ -73,3 +73,8 @@ body {
 
 @keyframes drift {
     from { transform: translate(0, 0) scale(1); }
+     to   { transform: translate(50px, 35px) scale(1.05); }
+}
+
+.app-wrapper {
+    position: relative;
