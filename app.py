@@ -98,3 +98,8 @@ body {
     border-radius: 100px;
     font-size: 0.85rem;
     font-weight: 600;
+    margin-bottom: 1.25rem;
+    letter-spacing: 0.02em;
+}
+.logo-icon { font-size: 1rem; }
+.logo-text  { color: var(--accent); }
