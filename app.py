@@ -28,3 +28,8 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
 
 :root {
     --bg:        #07101e
+    --surface:   rgba(13, 22, 45, 0.80);
+    --surface-2: rgba(18, 30, 60, 0.70);
+    --border:    rgba(255,255,255,0.07);
+    --border-2:  rgba(255,255,255,0.12);
+    --accent:    #4f8ef7;
