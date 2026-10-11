@@ -93,3 +93,8 @@ body {
     align-items: center;
     gap: 0.45rem;
     background: var(--surface);
+    border: 1px solid var(--border-2);
+    padding: 0.4rem 1.1rem;
+    border-radius: 100px;
+    font-size: 0.85rem;
+    font-weight: 600;
