@@ -263,3 +263,8 @@ display: flex;
 
 .btn-primary {
     flex: 1;
+     padding: 1rem 1.5rem;
+    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    border: none;
+    border-radius: var(--radius-sm);
+    color: white;
