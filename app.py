@@ -268,3 +268,8 @@ display: flex;
     border: none;
     border-radius: var(--radius-sm);
     color: white;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
