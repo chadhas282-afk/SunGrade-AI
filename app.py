@@ -158,3 +158,8 @@ display: flex;
     padding: 1rem 1.25rem;
     background: transparent;
     border: none;
+    color: var(--text-3);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
