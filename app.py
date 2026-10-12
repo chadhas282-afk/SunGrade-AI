@@ -228,3 +228,8 @@ color: var(--accent);
 
 .text-input-wrapper { display: flex; flex-direction: column; gap: 0.6rem; }
 .essay-textarea {
+ width: 100%;
+    min-height: 200px;
+    background: rgba(0,0,0,0.25);
+    border: 1.5px solid rgba(255,255,255,0.08);
+    border-radius: var(--radius-sm);
