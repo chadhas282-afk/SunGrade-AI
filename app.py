@@ -298,3 +298,8 @@ display: flex;
     font-size: 0.875rem;
     cursor: pointer;
     transition: all 0.2s ease;
+    white-space: nowrap;
+}
+.btn-icon:hover { background: rgba(100,116,139,0.3); color: var(--text-1); }
+
+.btn-icon-sm {
