@@ -273,3 +273,8 @@ display: flex;
     font-weight: 700;
     cursor: pointer;
     transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    box-shadow: 0 4px 22px rgba(79,142,247,0.35);
