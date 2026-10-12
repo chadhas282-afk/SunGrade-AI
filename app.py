@@ -258,3 +258,8 @@ display: flex;
 .action-bar {
     padding: 0 1.75rem 1.75rem;
     display: flex;
+    gap: 1rem;
+}
+
+.btn-primary {
+    flex: 1;
