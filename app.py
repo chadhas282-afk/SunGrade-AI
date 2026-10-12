@@ -238,3 +238,8 @@ color: var(--accent);
     font-family: 'Inter', sans-serif;
     font-size: 0.95rem;
     line-height: 1.65;
+    resize: vertical;
+    transition: border-color 0.2s ease;
+    outline: none;
+}
+.essay-textarea:focus {
