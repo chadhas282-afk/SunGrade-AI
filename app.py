@@ -293,3 +293,8 @@ display: flex;
     background: rgba(100,116,139,0.18);
     border: 1px solid var(--border);
     border-radius: 10px;
+    color: var(--text-2);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
