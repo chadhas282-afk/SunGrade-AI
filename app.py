@@ -233,3 +233,8 @@ color: var(--accent);
     background: rgba(0,0,0,0.25);
     border: 1.5px solid rgba(255,255,255,0.08);
     border-radius: var(--radius-sm);
+    padding: 1.1rem 1.25rem;
+    color: var(--text-1);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.65;
