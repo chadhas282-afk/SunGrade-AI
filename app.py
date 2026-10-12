@@ -243,3 +243,8 @@ color: var(--accent);
     outline: none;
 }
 .essay-textarea:focus {
+border-color: rgba(79,142,247,0.5);
+    box-shadow: 0 0 0 3px rgba(79,142,247,0.08);
+}
+.essay-textarea::placeholder { color: var(--text-3); }
+.textarea-footer {
