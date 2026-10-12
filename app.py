@@ -278,3 +278,9 @@ display: flex;
     justify-content: center;
     gap: 0.6rem;
     box-shadow: 0 4px 22px rgba(79,142,247,0.35);
+    letter-spacing: 0.02em;
+}
+.btn-primary:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 32px rgba(79,142,247,0.5);
+}
