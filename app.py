@@ -203,3 +203,8 @@ color: var(--accent);
 .dropzone:hover, .dropzone.dragover {
     border-color: var(--accent);
     background: rgba(79,142,247,0.07);
+    transform: scale(1.01);
+}
+.dz-icon { font-size: 2.8rem; margin-bottom: 0.9rem; }
+.dz-title { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.45rem; }
+.dz-subtitle { color: var(--text-2); font-size: 0.9rem; }
