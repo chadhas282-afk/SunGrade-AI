@@ -223,3 +223,8 @@ color: var(--accent);
     box-shadow: 0 4px 16px rgba(0,0,0,0.4);
     flex: 1;
     min-width: 0;
+    object-fit: contain;
+}
+
+.text-input-wrapper { display: flex; flex-direction: column; gap: 0.6rem; }
+.essay-textarea {
