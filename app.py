@@ -213,3 +213,8 @@ color: var(--accent);
     display: flex;
     align-items: center;
     gap: 1rem;
+    flex-wrap: wrap;
+}
+.preview-container.hidden { display: none; }
+#imagePreview {
+    max-height: 180px;
