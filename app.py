@@ -187,3 +187,9 @@ color: var(--accent);
     border-radius: 2px 2px 0 0;
 }
 .tab-icon { font-size: 1rem; }
+
+.tab-panel { padding: 1.75rem; }
+.tab-panel.hidden { display: none; }
+
+.dropzone {
+    border: 2px dashed rgba(79,142,247,0.35);
