@@ -183,3 +183,7 @@ color: var(--accent);
     left: 0;
     right: 0;
     height: 2px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-2));
+    border-radius: 2px 2px 0 0;
+}
+.tab-icon { font-size: 1rem; }
