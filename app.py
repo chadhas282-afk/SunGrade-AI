@@ -168,3 +168,8 @@ display: flex;
     letter-spacing: 0.01em;
     display: flex;
     align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+.tab-btn:hover { color: var(--text-2); }
+.tab-btn.active {
