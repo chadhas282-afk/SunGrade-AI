@@ -198,3 +198,8 @@ color: var(--accent);
     text-align: center;
     cursor: pointer;
     transition: all 0.25s ease;
+    background: rgba(79,142,247,0.03);
+}
+.dropzone:hover, .dropzone.dragover {
+    border-color: var(--accent);
+    background: rgba(79,142,247,0.07);
