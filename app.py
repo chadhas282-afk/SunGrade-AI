@@ -178,3 +178,8 @@ color: var(--accent);
 }
 .tab-btn.active::after {
     content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    height: 2px;
