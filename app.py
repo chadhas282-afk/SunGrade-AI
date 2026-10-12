@@ -253,3 +253,8 @@ display: flex;
     align-items: center;
     padding: 0 0.25rem;
 }
+.char-count { font-size: 0.78rem; color: var(--text-3); font-variant-numeric: tabular-nums; }
+
+.action-bar {
+    padding: 0 1.75rem 1.75rem;
+    display: flex;
