@@ -173,3 +173,8 @@ display: flex;
 }
 .tab-btn:hover { color: var(--text-2); }
 .tab-btn.active {
+color: var(--accent);
+    background: rgba(79,142,247,0.06);
+}
+.tab-btn.active::after {
+    content: '';
