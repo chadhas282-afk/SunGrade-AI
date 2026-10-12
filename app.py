@@ -193,3 +193,8 @@ color: var(--accent);
 
 .dropzone {
     border: 2px dashed rgba(79,142,247,0.35);
+     border-radius: var(--radius-sm);
+    padding: 3rem 2rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.25s ease;
