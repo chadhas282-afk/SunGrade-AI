@@ -287,3 +287,9 @@ display: flex;
 .btn-primary:active:not(:disabled) { transform: translateY(0); }
 .btn-primary:disabled { opacity: 0.4; cursor: not-allowed; }
 .btn-icon-inner { font-size: 1rem; }
+
+.btn-icon {
+    padding: 0.55rem 1rem;
+    background: rgba(100,116,139,0.18);
+    border: 1px solid var(--border);
+    border-radius: 10px;
