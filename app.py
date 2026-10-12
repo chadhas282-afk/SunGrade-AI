@@ -284,3 +284,6 @@ display: flex;
     transform: translateY(-2px);
     box-shadow: 0 6px 32px rgba(79,142,247,0.5);
 }
+.btn-primary:active:not(:disabled) { transform: translateY(0); }
+.btn-primary:disabled { opacity: 0.4; cursor: not-allowed; }
+.btn-icon-inner { font-size: 1rem; }
