@@ -152,3 +152,9 @@ display: flex;
     border-bottom: 1px solid var(--border);
     background: rgba(0,0,0,0.2);
 }
+
+.tab-btn {
+    flex: 1;
+    padding: 1rem 1.25rem;
+    background: transparent;
+    border: none;
