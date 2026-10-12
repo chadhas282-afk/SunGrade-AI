@@ -218,3 +218,8 @@ color: var(--accent);
 .preview-container.hidden { display: none; }
 #imagePreview {
     max-height: 180px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+    flex: 1;
+    min-width: 0;
