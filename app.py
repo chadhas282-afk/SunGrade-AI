@@ -248,3 +248,8 @@ border-color: rgba(79,142,247,0.5);
 }
 .essay-textarea::placeholder { color: var(--text-3); }
 .textarea-footer {
+display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0.25rem;
+}
