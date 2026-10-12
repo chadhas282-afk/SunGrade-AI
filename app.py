@@ -163,3 +163,8 @@ display: flex;
     font-size: 0.9rem;
     font-weight: 600;
     cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+    letter-spacing: 0.01em;
+    display: flex;
+    align-items: center;
