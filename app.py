@@ -303,3 +303,8 @@ display: flex;
 .btn-icon:hover { background: rgba(100,116,139,0.3); color: var(--text-1); }
 
 .btn-icon-sm {
+    padding: 0.3rem 0.75rem;
+    background: rgba(100,116,139,0.12);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text-3);
