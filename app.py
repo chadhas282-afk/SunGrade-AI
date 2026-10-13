@@ -433,3 +433,8 @@ display: grid;
     stroke: url(#ringGradient);
     stroke-width: 10;
     stroke-linecap: round;
+     transition: stroke-dashoffset 1.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.ring-score-label {
+    position: absolute;
+    inset: 0;
