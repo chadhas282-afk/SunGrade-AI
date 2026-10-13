@@ -369,3 +369,7 @@ display: flex;
     margin-bottom: 1.2rem;
     min-width: 20px;
 }
+
+.status-msg {
+    text-align: center;
+    font-size: 0.88rem;
