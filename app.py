@@ -373,3 +373,8 @@ display: flex;
 .status-msg {
     text-align: center;
     font-size: 0.88rem;
+    min-height: 1rem;
+    color: var(--text-2);
+    transition: color 0.3s;
+    padding: 0 1.75rem 1rem;
+}
