@@ -353,3 +353,8 @@ display: flex;
 .step.done .step-dot {
     background: var(--green);
     box-shadow: 0 0 8px rgba(34,197,94,0.5);
+    }
+@keyframes pulse-dot {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.4); }
+}
