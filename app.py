@@ -323,3 +323,8 @@ display: flex;
     animation: spin 0.65s linear infinite;
 }
 @keyframes spin { to { transform: rotate(360deg); } }
+
+.hidden { display: none !important; }
+
+.progress-steps {
+    display: flex;
