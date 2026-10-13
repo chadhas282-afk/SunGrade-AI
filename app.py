@@ -328,3 +328,9 @@ display: flex;
 
 .progress-steps {
     display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1.75rem 1.25rem;
+    gap: 0;
+}
+.step {
