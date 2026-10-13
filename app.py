@@ -398,3 +398,8 @@ display: grid;
     gap: 1.25rem;
     align-items: stretch;
 }
+
+.overall-card {
+    background: var(--surface);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
