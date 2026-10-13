@@ -418,3 +418,8 @@ display: grid;
     font-size: 0.78rem;
     font-weight: 700;
     color: var(--text-2);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+}
+.score-ring-wrapper {
+    position: relative;
