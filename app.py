@@ -423,3 +423,8 @@ display: grid;
 }
 .score-ring-wrapper {
     position: relative;
+    width: 140px;
+    height: 140px;
+}
+.score-ring { width: 100%; height: 100%; transform: rotate(-90deg); }
+.ring-bg   { fill: none; stroke: rgba(255,255,255,0.05); stroke-width: 10; }
