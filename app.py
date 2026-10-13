@@ -313,3 +313,8 @@ display: flex;
     cursor: pointer;
     transition: all 0.2s ease;
 }
+.btn-icon-sm:hover { color: var(--text-1); background: rgba(100,116,139,0.25); }
+
+.btn-spinner {
+    width: 17px; height: 17px;
+    border: 2.5px solid rgba(255,255,255,0.3);
