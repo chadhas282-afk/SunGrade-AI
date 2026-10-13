@@ -343,3 +343,8 @@ display: flex;
     width: 10px; height: 10px;
     border-radius: 50%;
     background: var(--text-3);
+    transition: all 0.4s ease;
+}
+.step.active .step-dot {
+    background: var(--accent);
+    box-shadow: 0 0 10px rgba(79,142,247,0.7);
