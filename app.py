@@ -358,3 +358,8 @@ display: flex;
     0%, 100% { transform: scale(1); }
     50% { transform: scale(1.4); }
 }
+.step-label { font-size: 0.68rem; color: var(--text-3); font-weight: 500; white-space: nowrap; text-align: center; transition: color 0.3s; }
+.step.active .step-label { color: var(--accent); }
+.step.done .step-label  { color: var(--green); }
+.step-divider {
+    flex: 1;
