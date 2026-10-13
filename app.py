@@ -348,3 +348,8 @@ display: flex;
 .step.active .step-dot {
     background: var(--accent);
     box-shadow: 0 0 10px rgba(79,142,247,0.7);
+    animation: pulse-dot 1.2s ease infinite;
+}
+.step.done .step-dot {
+    background: var(--green);
+    box-shadow: 0 0 8px rgba(34,197,94,0.5);
