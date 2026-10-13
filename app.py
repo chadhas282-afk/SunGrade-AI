@@ -443,3 +443,8 @@ display: grid;
     align-items: center;
     justify-content: center;
 }
+.ring-score {
+    font-size: 2.6rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #60a5fa, #a78bfa);
+    -webkit-background-clip: text;
