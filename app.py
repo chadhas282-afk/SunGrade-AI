@@ -408,3 +408,8 @@ display: grid;
     padding: 2.25rem 1.5rem;
     text-align: center;
     box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
