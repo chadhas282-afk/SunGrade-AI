@@ -428,3 +428,8 @@ display: grid;
 }
 .score-ring { width: 100%; height: 100%; transform: rotate(-90deg); }
 .ring-bg   { fill: none; stroke: rgba(255,255,255,0.05); stroke-width: 10; }
+.ring-fill {
+    fill: none;
+    stroke: url(#ringGradient);
+    stroke-width: 10;
+    stroke-linecap: round;
