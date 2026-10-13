@@ -338,3 +338,8 @@ display: flex;
     flex-direction: column;
     align-items: center;
     gap: 0.45rem;
+    }
+.step-dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: var(--text-3);
