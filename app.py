@@ -388,3 +388,8 @@ display: flex;
     animation: fadeUp 0.5s ease;
 }
 @keyframes fadeUp {
+from { opacity: 0; transform: translateY(22px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.overview-row {
