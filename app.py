@@ -334,3 +334,7 @@ display: flex;
     gap: 0;
 }
 .step {
+display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.45rem;
