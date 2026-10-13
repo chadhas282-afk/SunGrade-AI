@@ -448,3 +448,8 @@ display: grid;
     font-weight: 800;
     background: linear-gradient(135deg, #60a5fa, #a78bfa);
     -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1;
+}
+.ring-max { font-size: 0.9rem; color: var(--text-3); font-weight: 500; }
