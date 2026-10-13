@@ -413,3 +413,8 @@ display: grid;
     align-items: center;
     justify-content: center;
     gap: 0.75rem;
+    }
+.overall-label {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--text-2);
