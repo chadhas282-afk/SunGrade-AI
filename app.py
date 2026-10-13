@@ -318,3 +318,8 @@ display: flex;
 .btn-spinner {
     width: 17px; height: 17px;
     border: 2.5px solid rgba(255,255,255,0.3);
+    border-top-color: white;
+    border-radius: 50%;
+    animation: spin 0.65s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
