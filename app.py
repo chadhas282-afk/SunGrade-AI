@@ -393,3 +393,8 @@ from { opacity: 0; transform: translateY(22px); }
 }
 
 .overview-row {
+display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 1.25rem;
+    align-items: stretch;
+}
