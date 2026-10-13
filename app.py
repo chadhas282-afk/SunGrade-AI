@@ -363,3 +363,9 @@ display: flex;
 .step.done .step-label  { color: var(--green); }
 .step-divider {
     flex: 1;
+    height: 1px;
+    background: var(--border);
+    margin: 0 0.6rem;
+    margin-bottom: 1.2rem;
+    min-width: 20px;
+}
