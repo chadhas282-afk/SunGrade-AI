@@ -378,3 +378,8 @@ display: flex;
     transition: color 0.3s;
     padding: 0 1.75rem 1rem;
 }
+.status-msg.error   { color: var(--red); }
+.status-msg.success { color: var(--green); }
+
+.results-section {
+    display: flex;
