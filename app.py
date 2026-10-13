@@ -308,3 +308,8 @@ display: flex;
     border: 1px solid var(--border);
     border-radius: 8px;
     color: var(--text-3);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.78rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
