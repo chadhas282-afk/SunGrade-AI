@@ -573,3 +573,8 @@ font-size: 0.76rem;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 0.85rem;
+    }
+.card-heading {
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
