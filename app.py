@@ -473,3 +473,8 @@ display: grid;
     flex-direction: column;
     align-items: center;
     gap: 0.75rem;
+    }
+.radar-title {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--text-2);
