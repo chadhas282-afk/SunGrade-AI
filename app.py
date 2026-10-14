@@ -483,3 +483,8 @@ display: grid;
     align-self: flex-start;
 }
 .radar-wrapper {
+width: 100%;
+    max-width: 300px;
+    aspect-ratio: 1;
+}
+.radar-svg { width: 100%; height: 100%; overflow: visible; }
