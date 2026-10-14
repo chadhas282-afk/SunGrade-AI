@@ -578,3 +578,8 @@ font-size: 0.76rem;
     font-size: 0.8rem;
     font-weight: 700;
     text-transform: uppercase;
+    letter-spacing: 0.09em;
+    color: var(--text-2);
+}
+.extracted-body {
+    font-family: 'Fira Code', 'JetBrains Mono', monospace;
