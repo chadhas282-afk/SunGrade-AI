@@ -512,3 +512,9 @@ transform: translateY(-3px);
     box-shadow: 0 14px 45px rgba(0,0,0,0.5);
     border-color: var(--border-2);
 }
+
+.dim-icon  { font-size: 1.5rem; margin-bottom: 0.45rem; }
+.dim-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
