@@ -488,3 +488,8 @@ width: 100%;
     aspect-ratio: 1;
 }
 .radar-svg { width: 100%; height: 100%; overflow: visible; }
+
+.dimensions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1rem;
