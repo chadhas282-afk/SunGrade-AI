@@ -553,3 +553,8 @@ font-size: 0.76rem;
 .score-good             { border-color: rgba(59,130,246,0.18); }
 
 .score-average .dim-score { color: #eab308; }
+.score-average .dim-bar   { background: linear-gradient(90deg, #ca8a04, #eab308); }
+.score-average             { border-color: rgba(234,179,8,0.18); }
+
+.score-poor .dim-score { color: #ef4444; }
+.score-poor .dim-bar   { background: linear-gradient(90deg, #dc2626, #ef4444); }
