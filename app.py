@@ -588,3 +588,8 @@ font-size: 0.76rem;
     color: #cbd5e1;
     background: rgba(0,0,0,0.28);
     padding: 1.2rem;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.04);
+    max-height: 280px;
+    overflow-y: auto;
+    white-space: pre-wrap;
