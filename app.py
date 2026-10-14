@@ -558,3 +558,8 @@ font-size: 0.76rem;
 
 .score-poor .dim-score { color: #ef4444; }
 .score-poor .dim-bar   { background: linear-gradient(90deg, #dc2626, #ef4444); }
+.score-poor             { border-color: rgba(239,68,68,0.18); }
+
+.extracted-card {
+    background: var(--surface);
+    backdrop-filter: blur(20px);
