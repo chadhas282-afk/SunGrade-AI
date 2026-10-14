@@ -498,3 +498,8 @@ width: 100%;
 .dim-card {
     background: var(--surface);
     backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 1.35rem;
+    box-shadow: var(--shadow);
