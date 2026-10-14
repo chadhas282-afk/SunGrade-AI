@@ -458,3 +458,8 @@ display: grid;
     font-weight: 700;
     padding: 0.4rem 1.2rem;
     border-radius: 100px;
+    display: inline-block;
+}
+
+.radar-card {
+    background: var(--surface);
