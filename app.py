@@ -538,3 +538,8 @@ transform: translateY(-3px);
     transition: width 1.1s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 .dim-feedback {
+font-size: 0.76rem;
+    color: var(--text-2);
+    line-height: 1.5;
+    margin-top: 0.4rem;
+}
