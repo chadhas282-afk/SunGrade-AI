@@ -508,3 +508,7 @@ width: 100%;
     cursor: default;
 }
 .dim-card:hover {
+transform: translateY(-3px);
+    box-shadow: 0 14px 45px rgba(0,0,0,0.5);
+    border-color: var(--border-2);
+}
