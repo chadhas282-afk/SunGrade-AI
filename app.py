@@ -543,3 +543,7 @@ font-size: 0.76rem;
     line-height: 1.5;
     margin-top: 0.4rem;
 }
+
+.score-excellent .dim-score { color: #22c55e; }
+.score-excellent .dim-bar   { background: linear-gradient(90deg, #16a34a, #22c55e); }
+.score-excellent             { border-color: rgba(34,197,94,0.18); }
