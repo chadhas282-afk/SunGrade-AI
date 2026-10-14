@@ -563,3 +563,8 @@ font-size: 0.76rem;
 .extracted-card {
     background: var(--surface);
     backdrop-filter: blur(20px);
+     border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.65rem;
+    box-shadow: var(--shadow);
+}
