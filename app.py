@@ -503,3 +503,8 @@ width: 100%;
     border-radius: var(--radius-sm);
     padding: 1.35rem;
     box-shadow: var(--shadow);
+    ransition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    animation: fadeUp 0.5s ease backwards;
+    cursor: default;
+}
+.dim-card:hover {
