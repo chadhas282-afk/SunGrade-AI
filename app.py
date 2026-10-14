@@ -583,3 +583,8 @@ font-size: 0.76rem;
 }
 .extracted-body {
     font-family: 'Fira Code', 'JetBrains Mono', monospace;
+    font-size: 0.875rem;
+    line-height: 1.75;
+    color: #cbd5e1;
+    background: rgba(0,0,0,0.28);
+    padding: 1.2rem;
