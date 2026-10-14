@@ -468,3 +468,8 @@ display: grid;
     border: 1px solid var(--border);
     border-radius: var(--radius);
     padding: 1.5rem;
+     box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
