@@ -568,3 +568,8 @@ font-size: 0.76rem;
     padding: 1.65rem;
     box-shadow: var(--shadow);
 }
+.extracted-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.85rem;
