@@ -453,3 +453,8 @@ display: grid;
     line-height: 1;
 }
 .ring-max { font-size: 0.9rem; color: var(--text-3); font-weight: 500; }
+.overall-grade {
+    font-size: 1.05rem;
+    font-weight: 700;
+    padding: 0.4rem 1.2rem;
+    border-radius: 100px;
