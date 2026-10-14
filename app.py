@@ -478,3 +478,8 @@ display: grid;
     font-size: 0.78rem;
     font-weight: 700;
     color: var(--text-2);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    align-self: flex-start;
+}
+.radar-wrapper {
