@@ -593,3 +593,8 @@ font-size: 0.76rem;
     max-height: 280px;
     overflow-y: auto;
     white-space: pre-wrap;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255,255,255,0.1) transparent;
+}
+
+.suggestions-card {
