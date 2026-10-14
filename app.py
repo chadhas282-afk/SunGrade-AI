@@ -528,3 +528,8 @@ transform: translateY(-3px);
     height: 5px;
     background: rgba(255,255,255,0.06);
     border-radius: 3px;
+     overflow: hidden;
+    margin-bottom: 0.5rem;
+}
+.dim-bar {
+    height: 100%;
