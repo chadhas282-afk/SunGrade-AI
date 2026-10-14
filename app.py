@@ -547,3 +547,9 @@ font-size: 0.76rem;
 .score-excellent .dim-score { color: #22c55e; }
 .score-excellent .dim-bar   { background: linear-gradient(90deg, #16a34a, #22c55e); }
 .score-excellent             { border-color: rgba(34,197,94,0.18); }
+
+.score-good .dim-score { color: #3b82f6; }
+.score-good .dim-bar   { background: linear-gradient(90deg, #2563eb, #3b82f6); }
+.score-good             { border-color: rgba(59,130,246,0.18); }
+
+.score-average .dim-score { color: #eab308; }
