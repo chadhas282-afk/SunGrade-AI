@@ -533,3 +533,8 @@ transform: translateY(-3px);
 }
 .dim-bar {
     height: 100%;
+    width: 0%;
+    border-radius: 3px;
+    transition: width 1.1s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.dim-feedback {
