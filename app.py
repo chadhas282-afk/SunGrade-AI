@@ -523,3 +523,8 @@ transform: translateY(-3px);
     margin-bottom: 0.75rem;
 }
 .dim-score { font-size: 1.9rem; font-weight: 800; margin: 0.5rem 0 0.7rem; }
+
+.dim-bar-track {
+    height: 5px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 3px;
