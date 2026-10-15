@@ -633,3 +633,8 @@ display: flex;
     display: flex;
     align-items: center;
     gap: 0.55rem;
+    margin-bottom: 0.3rem;
+    flex-wrap: wrap;
+}
+.suggestion-title {
+    font-size: 0.92rem;
