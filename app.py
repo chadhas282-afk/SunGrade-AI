@@ -648,3 +648,8 @@ display: flex;
     letter-spacing: 0.07em;
     padding: 0.18rem 0.55rem;
     border-radius: 100px;
+    }
+.badge-high   { background: rgba(239,68,68,0.15);  color: #f87171; border: 1px solid rgba(239,68,68,0.28); }
+.badge-medium { background: rgba(234,179,8,0.12);  color: #facc15; border: 1px solid rgba(234,179,8,0.28); }
+.badge-low    { background: rgba(59,130,246,0.12); color: #60a5fa; border: 1px solid rgba(59,130,246,0.28); }
+.suggestion-cat {
