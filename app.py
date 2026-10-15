@@ -718,3 +718,8 @@ font-size: 0.82rem;
     border: 1px solid var(--border);
     border-radius: 1rem;
     padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+.table-responsive {
+    overflow-x: auto;
+}
