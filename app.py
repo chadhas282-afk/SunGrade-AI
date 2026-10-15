@@ -693,3 +693,8 @@ font-size: 0.82rem;
     display: flex;
     flex-direction: column;
     align-items: center;
+    flex: 1;
+    min-width: 80px;
+    border-right: 1px solid var(--border);
+}
+.stat-item:last-child {
