@@ -688,3 +688,8 @@ font-size: 0.82rem;
     padding: 1rem 1.5rem;
     margin-bottom: 1.5rem;
     box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
