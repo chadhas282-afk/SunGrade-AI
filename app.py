@@ -668,3 +668,8 @@ font-size: 0.82rem;
     border: 1px solid var(--border);
     border-radius: 1rem;
     padding: 1.5rem;
+    box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5);
+    margin-top: 2rem;
+}
+.history-list {
+    display: flex;
