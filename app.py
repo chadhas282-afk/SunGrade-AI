@@ -683,3 +683,8 @@ font-size: 0.82rem;
     gap: 1rem;
     justify-content: center;
     background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 1rem;
+    padding: 1rem 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
