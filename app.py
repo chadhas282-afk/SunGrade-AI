@@ -708,3 +708,7 @@ font-size: 0.82rem;
 .stat-label {
     font-size: 0.75rem;
     color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-top: 0.25rem;
+}
