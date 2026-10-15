@@ -673,3 +673,8 @@ font-size: 0.82rem;
 }
 .history-list {
     display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.stats-strip {
