@@ -653,3 +653,8 @@ display: flex;
 .badge-medium { background: rgba(234,179,8,0.12);  color: #facc15; border: 1px solid rgba(234,179,8,0.28); }
 .badge-low    { background: rgba(59,130,246,0.12); color: #60a5fa; border: 1px solid rgba(59,130,246,0.28); }
 .suggestion-cat {
+font-size: 0.65rem;
+    color: var(--text-3);
+    font-weight: 500;
+}
+.suggestion-detail {
