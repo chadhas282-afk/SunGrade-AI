@@ -748,3 +748,8 @@ font-size: 0.82rem;
     display: inline-block;
     padding: 0.25rem 0.5rem;
     border-radius: 4px;
+    font-weight: 700;
+    font-size: 0.85rem;
+}
+.para-table .para-preview {
+    color: var(--text-muted);
