@@ -738,3 +738,8 @@ font-size: 0.82rem;
 }
 .para-table td {
     padding: 0.75rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    vertical-align: middle;
+}
+.para-table tr:last-child td {
+    border-bottom: none;
