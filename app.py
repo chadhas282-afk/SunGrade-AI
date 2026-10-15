@@ -678,3 +678,8 @@ font-size: 0.82rem;
 }
 
 .stats-strip {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    background: var(--bg-card);
