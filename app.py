@@ -662,3 +662,9 @@ font-size: 0.82rem;
     color: var(--text-2);
     line-height: 1.55;
 }
+
+.history-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 1rem;
+    padding: 1.5rem;
