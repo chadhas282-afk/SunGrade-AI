@@ -608,3 +608,8 @@ font-size: 0.76rem;
 .suggestions-list {
     list-style: none;
     display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin-top: 0.65rem;
+}
+.suggestion-item {
