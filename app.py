@@ -703,3 +703,8 @@ font-size: 0.82rem;
 .stat-val {
     font-size: 1.25rem;
     font-weight: 700;
+    color: var(--primary);
+}
+.stat-label {
+    font-size: 0.75rem;
+    color: var(--text-muted);
