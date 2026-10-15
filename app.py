@@ -613,3 +613,8 @@ font-size: 0.76rem;
     margin-top: 0.65rem;
 }
 .suggestion-item {
+display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
