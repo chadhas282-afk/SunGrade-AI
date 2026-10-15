@@ -643,3 +643,8 @@ display: flex;
 }
 .suggestion-badge {
     font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    padding: 0.18rem 0.55rem;
+    border-radius: 100px;
