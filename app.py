@@ -728,3 +728,8 @@ font-size: 0.82rem;
     border-collapse: collapse;
     font-size: 0.9rem;
     text-align: left;
+    }
+.para-table th {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 0.75rem;
+    font-weight: 600;
