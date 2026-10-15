@@ -733,3 +733,8 @@ font-size: 0.82rem;
     background: rgba(255, 255, 255, 0.05);
     padding: 0.75rem;
     font-weight: 600;
+    color: var(--text-muted);
+    border-bottom: 1px solid var(--border);
+}
+.para-table td {
+    padding: 0.75rem;
