@@ -638,3 +638,8 @@ display: flex;
 }
 .suggestion-title {
     font-size: 0.92rem;
+    font-weight: 600;
+    color: var(--text-1);
+}
+.suggestion-badge {
+    font-size: 0.65rem;
