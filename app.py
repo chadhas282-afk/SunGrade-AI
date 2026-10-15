@@ -618,3 +618,8 @@ display: flex;
     align-items: flex-start;
     background: var(--surface-2);
     border: 1px solid var(--border);
+     border-radius: var(--radius-sm);
+    padding: 1rem 1.2rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    animation: fadeUp 0.4s ease backwards;
+}
