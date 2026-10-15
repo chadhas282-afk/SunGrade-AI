@@ -628,3 +628,8 @@ display: flex;
     box-shadow: 0 4px 22px rgba(0,0,0,0.3);
 }
 .suggestion-icon { font-size: 1.35rem; flex-shrink: 0; line-height: 1; }
+.suggestion-body  { flex: 1; }
+.suggestion-header {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
