@@ -712,3 +712,9 @@ font-size: 0.82rem;
     letter-spacing: 0.05em;
     margin-top: 0.25rem;
 }
+
+.paragraphs-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 1rem;
+    padding: 1.5rem;
