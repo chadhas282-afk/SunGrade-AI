@@ -743,3 +743,8 @@ font-size: 0.82rem;
 }
 .para-table tr:last-child td {
     border-bottom: none;
+    }
+.para-table .score-badge {
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
