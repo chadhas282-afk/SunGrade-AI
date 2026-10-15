@@ -658,3 +658,7 @@ font-size: 0.65rem;
     font-weight: 500;
 }
 .suggestion-detail {
+font-size: 0.82rem;
+    color: var(--text-2);
+    line-height: 1.55;
+}
