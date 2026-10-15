@@ -698,3 +698,8 @@ font-size: 0.82rem;
     border-right: 1px solid var(--border);
 }
 .stat-item:last-child {
+    border-right: none;
+}
+.stat-val {
+    font-size: 1.25rem;
+    font-weight: 700;
