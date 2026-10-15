@@ -603,3 +603,8 @@ font-size: 0.76rem;
     border: 1px solid var(--border);
     border-radius: var(--radius);
     padding: 1.65rem;
+    box-shadow: var(--shadow);
+}
+.suggestions-list {
+    list-style: none;
+    display: flex;
