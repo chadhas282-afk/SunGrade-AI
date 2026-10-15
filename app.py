@@ -623,3 +623,8 @@ display: flex;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     animation: fadeUp 0.4s ease backwards;
 }
+.suggestion-item:hover {
+    transform: translateX(5px);
+    box-shadow: 0 4px 22px rgba(0,0,0,0.3);
+}
+.suggestion-icon { font-size: 1.35rem; flex-shrink: 0; line-height: 1; }
