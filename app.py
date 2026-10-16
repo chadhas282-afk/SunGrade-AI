@@ -828,3 +828,8 @@ display: flex;
     width: 46px;
     height: 46px;
     border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    font-weight: 800;
