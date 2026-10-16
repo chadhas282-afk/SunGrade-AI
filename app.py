@@ -783,3 +783,8 @@ font-size: 0.82rem;
     border-radius: 20px;
     border: 1px solid var(--border);
     transition: 0.3s;
+    }
+.toggle-slider:before {
+    content: "";
+    position: absolute;
+    height: 14px;
