@@ -808,3 +808,8 @@ font-size: 0.82rem;
     color: var(--text-muted);
     user-select: none;
 }
+.toggle-switch input:checked ~ .toggle-label {
+    color: var(--text);
+}
+
+.history-item {
