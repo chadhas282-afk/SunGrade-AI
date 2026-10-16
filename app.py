@@ -788,3 +788,8 @@ font-size: 0.82rem;
     content: "";
     position: absolute;
     height: 14px;
+     width: 14px;
+    left: 2px;
+    bottom: 2px;
+    background-color: var(--text-muted);
+    border-radius: 50%;
