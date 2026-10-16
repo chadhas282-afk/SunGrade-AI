@@ -868,3 +868,12 @@ display: flex;
     .metrics-row { flex-direction: column; align-items: stretch; }
     .history-meta { flex-direction: column; align-items: flex-start; }
 }
+
+.annotated-body {
+    font-size: 0.92rem;
+    line-height: 1.85;
+    color: var(--text-1);
+    white-space: pre-wrap;
+    word-break: break-word;
+    padding: 0.25rem 0;
+}
