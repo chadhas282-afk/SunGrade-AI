@@ -948,3 +948,13 @@ display: flex;
 .ann-swatch.ann-overused   { background: rgba(249,115,22,0.4); border-bottom: 2px dotted #f97316; }
 
 .ann[data-tip]:hover::after {
+content: attr(data-tip);
+    position: absolute;
+    bottom: calc(100% + 6px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: #1e293b;
+    color: #f1f5f9;
+    font-size: 0.72rem;
+    padding: 4px 8px;
+    border-radius: 6px;
