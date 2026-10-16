@@ -758,3 +758,8 @@ font-size: 0.82rem;
     max-width: 300px;
     white-space: nowrap;
     overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.header-actions {
+    display: flex;
