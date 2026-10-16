@@ -803,3 +803,8 @@ font-size: 0.82rem;
     transform: translateX(16px);
     background-color: #fff;
 }
+.toggle-label {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    user-select: none;
+}
