@@ -823,3 +823,8 @@ display: flex;
     cursor: pointer;
     transition: all 0.2s ease;
 }
+.history-item:hover { border-color: var(--border-2); transform: translateX(4px); }
+.history-score-badge {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
