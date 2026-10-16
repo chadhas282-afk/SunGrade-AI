@@ -778,3 +778,8 @@ font-size: 0.82rem;
 .toggle-slider {
     position: relative;
     width: 36px;
+    height: 20px;
+    background-color: var(--bg-surface);
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    transition: 0.3s;
