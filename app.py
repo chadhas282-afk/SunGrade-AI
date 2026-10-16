@@ -858,3 +858,13 @@ display: flex;
 }
 
 @media (max-width: 480px) {
+.dimensions-grid { grid-template-columns: 1fr; }
+    .progress-steps { gap: 0; flex-direction: column; align-items: flex-start; padding-left: 1rem; }
+    .step { margin-bottom: 0.5rem; }
+    .step-label { font-size: 0.75rem; }
+    .app-title { font-size: 2rem; }
+    .tab-btn { flex-direction: column; gap: 0.2rem; font-size: 0.75rem; }
+    .btn { width: 100%; justify-content: center; }
+    .metrics-row { flex-direction: column; align-items: stretch; }
+    .history-meta { flex-direction: column; align-items: flex-start; }
+}
