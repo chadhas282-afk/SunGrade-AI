@@ -958,3 +958,13 @@ content: attr(data-tip);
     font-size: 0.72rem;
     padding: 4px 8px;
     border-radius: 6px;
+     white-space: nowrap;
+    pointer-events: none;
+    border: 1px solid rgba(255,255,255,0.1);
+    z-index: 100;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+
+.dim-card {
+    cursor: pointer;
+    user-select: none;
