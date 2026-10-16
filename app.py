@@ -768,3 +768,8 @@ font-size: 0.82rem;
 }
 .toggle-switch {
     display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+}
+.toggle-switch input {
