@@ -848,3 +848,13 @@ display: flex;
 @media (max-width: 768px) {
     body { padding: 1rem 0.5rem 3rem; }
     .overview-row { grid-template-columns: 1fr; }
+    .dimensions-grid { grid-template-columns: 1fr 1fr; }
+    .radar-wrapper { max-width: 320px; margin: 0 auto; }
+    .upload-section { padding: 0; }
+    .tab-btn { padding: 0.8rem 0.5rem; font-size: 0.85rem; }
+    .history-preview { max-width: calc(100vw - 120px); }
+    .score-circle { width: 120px; height: 120px; }
+    .score-number { font-size: 2.5rem; }
+}
+
+@media (max-width: 480px) {
