@@ -753,3 +753,8 @@ font-size: 0.82rem;
 }
 .para-table .para-preview {
     color: var(--text-muted);
+    font-size: 0.85rem;
+    font-style: italic;
+    max-width: 300px;
+    white-space: nowrap;
+    overflow: hidden;
