@@ -773,3 +773,8 @@ font-size: 0.82rem;
     cursor: pointer;
 }
 .toggle-switch input {
+    display: none;
+}
+.toggle-slider {
+    position: relative;
+    width: 36px;
