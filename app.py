@@ -938,3 +938,13 @@ display: flex;
     display: inline-block;
     width: 14px;
     height: 10px;
+    border-radius: 2px;
+    flex-shrink: 0;
+}
+.ann-swatch.ann-spelling  { background: rgba(239,68,68,0.5);   border-bottom: 2px dotted #ef4444; }
+.ann-swatch.ann-transition { background: rgba(34,197,94,0.4);  border-bottom: 2px solid #22c55e; }
+.ann-swatch.ann-academic   { background: rgba(139,92,246,0.4); border-bottom: 2px solid #8b5cf6; }
+.ann-swatch.ann-passive    { background: rgba(245,158,11,0.4); border-bottom: 2px solid #f59e0b; }
+.ann-swatch.ann-overused   { background: rgba(249,115,22,0.4); border-bottom: 2px dotted #f97316; }
+
+.ann[data-tip]:hover::after {
