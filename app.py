@@ -928,3 +928,13 @@ background: rgba(239, 68, 68, 0.18);
     border: 1px solid var(--border);
 }
 .ann-legend-item {
+display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.75rem;
+    color: var(--text-2);
+}
+.ann-swatch {
+    display: inline-block;
+    width: 14px;
+    height: 10px;
