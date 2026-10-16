@@ -877,3 +877,14 @@ display: flex;
     word-break: break-word;
     padding: 0.25rem 0;
 }
+
+.ann {
+    border-radius: 3px;
+    padding: 1px 2px;
+    cursor: help;
+    position: relative;
+    transition: opacity 0.15s;
+}
+.ann:hover { opacity: 0.85; }
+
+.ann-spelling {
