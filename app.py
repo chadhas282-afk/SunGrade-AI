@@ -763,3 +763,8 @@ font-size: 0.82rem;
 
 .header-actions {
     display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.toggle-switch {
+    display: flex;
