@@ -918,3 +918,13 @@ background: rgba(239, 68, 68, 0.18);
 }
 
 .ann-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem 1.2rem;
+    margin-bottom: 1rem;
+    padding: 0.75rem 1rem;
+    background: var(--surface-2);
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border);
+}
+.ann-legend-item {
