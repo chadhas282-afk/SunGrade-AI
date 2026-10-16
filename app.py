@@ -833,3 +833,9 @@ display: flex;
     justify-content: center;
     font-size: 1rem;
     font-weight: 800;
+    flex-shrink: 0;
+}
+.history-meta { flex: 1; }
+.history-time { font-size: 0.72rem; color: var(--text-3); }
+.history-preview { font-size: 0.82rem; color: var(--text-2); margin-top: 0.2rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 400px; }
+.history-empty { color: var(--text-3); font-size: 0.85rem; text-align: center; padding: 1rem 0; }
