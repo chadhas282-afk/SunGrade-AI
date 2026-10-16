@@ -888,3 +888,13 @@ display: flex;
 .ann:hover { opacity: 0.85; }
 
 .ann-spelling {
+background: rgba(239, 68, 68, 0.18);
+    border-bottom: 2px dotted #ef4444;
+    color: #fca5a5;
+}
+
+.ann-transition {
+    background: rgba(34, 197, 94, 0.15);
+    border-bottom: 2px solid rgba(34,197,94,0.5);
+    color: #86efac;
+}
