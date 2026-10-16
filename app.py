@@ -798,3 +798,8 @@ font-size: 0.82rem;
 .toggle-switch input:checked + .toggle-slider {
     background-color: var(--primary);
     border-color: var(--primary);
+    }
+.toggle-switch input:checked + .toggle-slider:before {
+    transform: translateX(16px);
+    background-color: #fff;
+}
