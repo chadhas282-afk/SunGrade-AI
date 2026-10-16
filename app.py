@@ -908,3 +908,13 @@ background: rgba(239, 68, 68, 0.18);
 .ann-passive {
     background: rgba(245, 158, 11, 0.15);
     border-bottom: 2px solid rgba(245,158,11,0.5);
+    color: #fcd34d;
+}
+
+.ann-overused {
+    background: rgba(249, 115, 22, 0.15);
+    border-bottom: 2px dotted rgba(249,115,22,0.7);
+    color: #fdba74;
+}
+
+.ann-legend {
