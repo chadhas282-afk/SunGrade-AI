@@ -793,3 +793,8 @@ font-size: 0.82rem;
     bottom: 2px;
     background-color: var(--text-muted);
     border-radius: 50%;
+     transition: 0.3s;
+}
+.toggle-switch input:checked + .toggle-slider {
+    background-color: var(--primary);
+    border-color: var(--primary);
