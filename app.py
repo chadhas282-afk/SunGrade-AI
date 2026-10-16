@@ -813,3 +813,8 @@ font-size: 0.82rem;
 }
 
 .history-item {
+display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
