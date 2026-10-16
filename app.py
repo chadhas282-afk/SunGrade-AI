@@ -839,3 +839,12 @@ display: flex;
 .history-time { font-size: 0.72rem; color: var(--text-3); }
 .history-preview { font-size: 0.82rem; color: var(--text-2); margin-top: 0.2rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 400px; }
 .history-empty { color: var(--text-3); font-size: 0.85rem; text-align: center; padding: 1rem 0; }
+
+@media (max-width: 900px) {
+    .app-wrapper { gap: 1.25rem; }
+    .overall-card { padding: 1.5rem 1rem; }
+}
+
+@media (max-width: 768px) {
+    body { padding: 1rem 0.5rem 3rem; }
+    .overview-row { grid-template-columns: 1fr; }
