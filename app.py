@@ -898,3 +898,13 @@ background: rgba(239, 68, 68, 0.18);
     border-bottom: 2px solid rgba(34,197,94,0.5);
     color: #86efac;
 }
+
+.ann-academic {
+    background: rgba(139, 92, 246, 0.18);
+    border-bottom: 2px solid rgba(139,92,246,0.45);
+    color: #c4b5fd;
+}
+
+.ann-passive {
+    background: rgba(245, 158, 11, 0.15);
+    border-bottom: 2px solid rgba(245,158,11,0.5);
