@@ -818,3 +818,8 @@ display: flex;
     gap: 1rem;
     background: var(--surface-2);
     border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 0.85rem 1.1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
