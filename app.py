@@ -968,3 +968,13 @@ content: attr(data-tip);
 .dim-card {
     cursor: pointer;
     user-select: none;
+    }
+.dim-card:focus-visible { outline: 2px solid var(--accent); }
+
+.dim-detail {
+    display: none;
+    margin-top: 0.75rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.78rem;
+    color: var(--text-2);
