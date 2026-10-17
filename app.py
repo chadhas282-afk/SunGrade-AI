@@ -1168,3 +1168,13 @@ content: attr(data-tip);
                         <thead>
                             <tr>
                                 <th>¶</th>
+                                <th>Role</th>
+                                <th>Words</th>
+                                <th>Avg Len</th>
+                                <th>Score</th>
+                                <th>Preview</th>
+                            </tr>
+                        </thead>
+                        <tbody id="paragraphsTableBody">
+                            
+                        </tbody>
