@@ -1128,3 +1128,13 @@ content: attr(data-tip);
                                 stroke-dasharray="314" stroke-dashoffset="314"/>
                         </svg>
                         <div class="ring-score-label">
+                         <span id="overallScoreNum" class="ring-score">--</span>
+                            <span class="ring-max">/ 10</span>
+                        </div>
+                    </div>
+                    <div id="overallGrade" class="overall-grade"></div>
+                </div>
+
+                <div class="radar-card">
+                    <div class="radar-title">Dimension Radar</div>
+                    <div class="radar-wrapper">
