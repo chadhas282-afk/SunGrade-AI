@@ -1151,3 +1151,10 @@ content: attr(data-tip);
                 <div class="stat-item"><span class="stat-val" id="statGrade">--</span><span class="stat-label">Grade Lvl</span></div>
                 <div class="stat-item"><span class="stat-val" id="statSpell">--</span><span class="stat-label">Errors</span></div>
             </div>
+
+            <div class="dimensions-grid" id="dimensionsGrid">
+                
+            </div>
+
+            <div class="suggestions-card">
+                <h2 class="card-heading">💬 Improvement Suggestions</h2>
