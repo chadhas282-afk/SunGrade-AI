@@ -1028,3 +1028,14 @@ content: attr(data-tip);
             <div class="logo">
                 <img src="/static/logo.png" class="logo-icon" alt="Logo" style="height: 18px; width: 18px; border-radius: 4px; object-fit: cover;">
                 <span class="logo-text">SunGrade AI</span>
+                <span class="logo-version">v4.0</span>
+            </div>
+            <h1 class="app-title">SunGrade AI</h1>
+            <p class="app-subtitle">8-dimensional AI writing assessment — now with Academic Word List scoring, thesis detection &amp; text highlighting</p>
+        </header>
+
+        <section class="upload-section" id="inputSection">
+            
+            <div class="tab-bar" role="tablist" aria-label="Input method">
+                <button class="tab-btn active" id="tab-upload" role="tab" aria-selected="true" aria-controls="panel-upload">
+                    <span class="tab-icon">📷</span> Upload Photo
