@@ -1258,3 +1258,13 @@ const DIM_ORDER = [
     { key: 'readability',   label: 'Readability',   icon: '📖' },
     { key: 'vocabulary',    label: 'Vocabulary',     icon: '🔤' },
     { key: 'structure',     label: 'Structure',      icon: '📐' },
+    { key: 'spelling',      label: 'Spelling',       icon: '✅' },
+    { key: 'transitions',   label: 'Transitions',    icon: '🔗' },
+    { key: 'passive_voice', label: 'Active Voice',   icon: '💪' },
+    { key: 'argument',      label: 'Argument',       icon: '🎯' },
+    { key: 'coherence',     label: 'Coherence',      icon: '🧠' },
+];
+
+function switchTab(tab) {
+    activeTab = tab;
+    tabUpload.classList.toggle('active', tab === 'upload');
