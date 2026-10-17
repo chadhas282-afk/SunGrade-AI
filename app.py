@@ -1007,3 +1007,14 @@ content: attr(data-tip);
     flex-shrink: 0;
 }
 .dim-card.expanded .dim-expand-icon { transform: rotate(180deg); }
+
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-4px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+</style>
+</head>
+<body>
+    <div class="bg-orbs">
+        <div class="orb orb-1"></div>
