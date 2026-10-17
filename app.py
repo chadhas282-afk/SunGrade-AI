@@ -1039,3 +1039,12 @@ content: attr(data-tip);
             <div class="tab-bar" role="tablist" aria-label="Input method">
                 <button class="tab-btn active" id="tab-upload" role="tab" aria-selected="true" aria-controls="panel-upload">
                     <span class="tab-icon">📷</span> Upload Photo
+                    </button>
+                <button class="tab-btn" id="tab-text" role="tab" aria-selected="false" aria-controls="panel-text">
+                    <span class="tab-icon">✍️</span> Paste Text
+                </button>
+            </div>
+
+            <div id="panel-upload" class="tab-panel" role="tabpanel" aria-labelledby="tab-upload">
+                <div id="dropzone" class="dropzone" role="button" tabindex="0" aria-label="Upload essay image">
+                    <div class="dz-icon">📄</div>
