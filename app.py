@@ -1138,3 +1138,16 @@ content: attr(data-tip);
                 <div class="radar-card">
                     <div class="radar-title">Dimension Radar</div>
                     <div class="radar-wrapper">
+                    <svg id="radarChart" class="radar-svg" viewBox="0 0 300 300" aria-label="Radar chart of dimension scores"></svg>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stats-strip" id="statsStrip">
+                <div class="stat-item"><span class="stat-val" id="statWords">--</span><span class="stat-label">Words</span></div>
+                <div class="stat-item"><span class="stat-val" id="statSents">--</span><span class="stat-label">Sentences</span></div>
+                <div class="stat-item"><span class="stat-val" id="statParas">--</span><span class="stat-label">Paragraphs</span></div>
+                <div class="stat-item"><span class="stat-val" id="statTime">--</span><span class="stat-label">Min read</span></div>
+                <div class="stat-item"><span class="stat-val" id="statGrade">--</span><span class="stat-label">Grade Lvl</span></div>
+                <div class="stat-item"><span class="stat-val" id="statSpell">--</span><span class="stat-label">Errors</span></div>
+            </div>
