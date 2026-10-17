@@ -1208,3 +1208,13 @@ content: attr(data-tip);
                     <span class="ann-legend-item">
                         <span class="ann-swatch ann-passive"></span>Passive voice
                     </span>
+                    <span class="ann-legend-item">
+                        <span class="ann-swatch ann-overused"></span>Overused word
+                    </span>
+                </div>
+                <div id="annotatedText" class="annotated-body"></div>
+                
+                <div id="extractedText" class="extracted-body" style="display:none"></div>
+            </div>
+
+            <div class="history-card" id="historyCard">
