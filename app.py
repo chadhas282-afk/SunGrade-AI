@@ -1098,3 +1098,12 @@ content: attr(data-tip);
                     <span class="step-dot"></span>
                     <span class="step-label">Neural Scoring</span>
                 </div>
+                <div class="step-divider"></div>
+                <div class="step" id="step-done">
+                    <span class="step-dot"></span>
+                    <span class="step-label">Complete</span>
+                </div>
+            </div>
+
+            <p id="statusMessage" class="status-msg" role="status" aria-live="polite"></p>
+        </section>
