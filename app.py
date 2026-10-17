@@ -1178,3 +1178,13 @@ content: attr(data-tip);
                         <tbody id="paragraphsTableBody">
                             
                         </tbody>
+                         </table>
+                </div>
+            </div>
+
+            <div class="extracted-card">
+                <div class="extracted-header">
+                    <h2 class="card-heading">📄 Analysed Text</h2>
+                    <div class="header-actions">
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="toggleAnnotations" checked>
