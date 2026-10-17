@@ -1188,3 +1188,14 @@ content: attr(data-tip);
                     <div class="header-actions">
                         <label class="toggle-switch">
                             <input type="checkbox" id="toggleAnnotations" checked>
+                            <span class="toggle-slider"></span>
+                            <span class="toggle-label">Highlights</span>
+                        </label>
+                        <button id="btnCopyText" class="btn-icon-sm">Copy</button>
+                    </div>
+                </div>
+                
+                <div class="ann-legend" id="annLegend">
+                    <span class="ann-legend-item">
+                        <span class="ann-swatch ann-spelling"></span>Spelling error
+                    </span>
