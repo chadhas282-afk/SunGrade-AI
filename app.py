@@ -1057,3 +1057,14 @@ content: attr(data-tip);
                     <button id="btnRemove" class="btn-icon" aria-label="Remove image">✕ Remove</button>
                 </div>
             </div>
+
+             <div id="panel-text" class="tab-panel hidden" role="tabpanel" aria-labelledby="tab-text">
+                <div class="text-input-wrapper">
+                    <textarea
+                        id="essayTextarea"
+                        class="essay-textarea"
+                        placeholder="Paste or type your essay here…&#10;&#10;A minimum of 50 words is recommended for a meaningful analysis."
+                        aria-label="Essay text input"
+                        rows="10"
+                        maxlength="50000"
+                    ></textarea>
