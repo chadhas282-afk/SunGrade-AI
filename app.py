@@ -1018,3 +1018,13 @@ content: attr(data-tip);
 <body>
     <div class="bg-orbs">
         <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+
+    <main class="app-wrapper">
+        
+        <header class="app-header">
+            <div class="logo">
+                <img src="/static/logo.png" class="logo-icon" alt="Logo" style="height: 18px; width: 18px; border-radius: 4px; object-fit: cover;">
+                <span class="logo-text">SunGrade AI</span>
