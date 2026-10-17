@@ -1118,3 +1118,13 @@ content: attr(data-tip);
                         <svg class="score-ring" viewBox="0 0 120 120" aria-hidden="true">
                             <defs>
                                 <linearGradient id="ringGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%"   stop-color="#60a5fa"/>
+                                    <stop offset="50%"  stop-color="#a78bfa"/>
+                                    <stop offset="100%" stop-color="#34d399"/>
+                                </linearGradient>
+                            </defs>
+                            <circle class="ring-bg" cx="60" cy="60" r="50"/>
+                            <circle id="overallRing" class="ring-fill" cx="60" cy="60" r="50"
+                                stroke-dasharray="314" stroke-dashoffset="314"/>
+                        </svg>
+                        <div class="ring-score-label">
