@@ -1158,3 +1158,13 @@ content: attr(data-tip);
 
             <div class="suggestions-card">
                 <h2 class="card-heading">💬 Improvement Suggestions</h2>
+                <ul id="suggestionsList" class="suggestions-list"></ul>
+            </div>
+
+            <div class="paragraphs-card">
+                <h2 class="card-heading">📊 Paragraph Breakdown</h2>
+                <div class="table-responsive">
+                    <table class="para-table">
+                        <thead>
+                            <tr>
+                                <th>¶</th>
