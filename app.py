@@ -1078,3 +1078,13 @@ content: attr(data-tip);
             <div class="action-bar">
                 <button id="btnAnalyze" class="btn-primary" disabled>
                     <span class="btn-icon-inner">🔬</span>
+                    <span class="btn-text">Analyse Essay</span>
+                    <span class="btn-spinner hidden" aria-label="Analysing..."></span>
+                </button>
+            </div>
+
+            <div id="progressSteps" class="progress-steps hidden" role="status" aria-live="polite">
+                <div class="step" id="step-ocr">
+                    <span class="step-dot"></span>
+                    <span class="step-label">Extracting Text (OCR)</span>
+                </div>
