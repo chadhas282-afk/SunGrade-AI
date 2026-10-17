@@ -1218,3 +1218,13 @@ content: attr(data-tip);
             </div>
 
             <div class="history-card" id="historyCard">
+            <h2 class="card-heading">🕐 Recent Analyses</h2>
+                <div id="historyList" class="history-list"></div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+
+const tabUpload      = document.getElementById('tab-upload');
+const tabText        = document.getElementById('tab-text');
