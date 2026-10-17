@@ -1048,3 +1048,12 @@ content: attr(data-tip);
             <div id="panel-upload" class="tab-panel" role="tabpanel" aria-labelledby="tab-upload">
                 <div id="dropzone" class="dropzone" role="button" tabindex="0" aria-label="Upload essay image">
                     <div class="dz-icon">📄</div>
+                     <p class="dz-title">Drop your essay photo here</p>
+                    <p class="dz-subtitle">or click to browse — JPG, PNG supported</p>
+                    <input type="file" id="fileInput" accept=".jpg,.jpeg,.png" hidden aria-label="File input">
+                </div>
+                <div id="previewContainer" class="preview-container hidden">
+                    <img id="imagePreview" src="" alt="Uploaded essay preview">
+                    <button id="btnRemove" class="btn-icon" aria-label="Remove image">✕ Remove</button>
+                </div>
+            </div>
