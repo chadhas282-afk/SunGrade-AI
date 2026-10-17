@@ -998,3 +998,12 @@ content: attr(data-tip);
 .dim-detail dd {
     color: var(--text-2);
 }
+
+.dim-expand-icon {
+    margin-left: auto;
+    font-size: 0.7rem;
+    color: var(--text-3);
+    transition: transform 0.2s ease;
+    flex-shrink: 0;
+}
+.dim-card.expanded .dim-expand-icon { transform: rotate(180deg); }
