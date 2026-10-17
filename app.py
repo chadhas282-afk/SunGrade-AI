@@ -1107,3 +1107,14 @@ content: attr(data-tip);
 
             <p id="statusMessage" class="status-msg" role="status" aria-live="polite"></p>
         </section>
+
+        <section id="resultsSection" class="results-section hidden">
+
+            <div class="overview-row">
+                
+                <div class="overall-card">
+                    <div class="overall-label">Overall Score</div>
+                    <div class="score-ring-wrapper">
+                        <svg class="score-ring" viewBox="0 0 120 120" aria-hidden="true">
+                            <defs>
+                                <linearGradient id="ringGradient" x1="0%" y1="0%" x2="100%" y2="100%">
