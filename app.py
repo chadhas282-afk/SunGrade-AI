@@ -1199,3 +1199,12 @@ content: attr(data-tip);
                     <span class="ann-legend-item">
                         <span class="ann-swatch ann-spelling"></span>Spelling error
                     </span>
+                    <span class="ann-legend-item">
+                        <span class="ann-swatch ann-transition"></span>Transition word
+                    </span>
+                    <span class="ann-legend-item">
+                        <span class="ann-swatch ann-academic"></span>Academic word (AWL)
+                    </span>
+                    <span class="ann-legend-item">
+                        <span class="ann-swatch ann-passive"></span>Passive voice
+                    </span>
