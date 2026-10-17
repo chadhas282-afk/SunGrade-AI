@@ -1248,3 +1248,13 @@ const dimensionsGrid = document.getElementById('dimensionsGrid');
 const historyCard    = document.getElementById('historyCard');
 const historyList    = document.getElementById('historyList');
 const btnCopyText    = document.getElementById('btnCopyText');
+
+let selectedFile  = null;
+let activeTab     = 'upload';
+const HISTORY_KEY = 'sungrade_history';
+const MAX_HISTORY = 3;
+
+const DIM_ORDER = [
+    { key: 'readability',   label: 'Readability',   icon: '📖' },
+    { key: 'vocabulary',    label: 'Vocabulary',     icon: '🔤' },
+    { key: 'structure',     label: 'Structure',      icon: '📐' },
