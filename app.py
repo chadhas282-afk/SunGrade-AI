@@ -1088,3 +1088,13 @@ content: attr(data-tip);
                     <span class="step-dot"></span>
                     <span class="step-label">Extracting Text (OCR)</span>
                 </div>
+                <div class="step-divider"></div>
+                <div class="step" id="step-nlp">
+                    <span class="step-dot"></span>
+                    <span class="step-label">NLP Analysis</span>
+                </div>
+                <div class="step-divider"></div>
+                <div class="step" id="step-ml">
+                    <span class="step-dot"></span>
+                    <span class="step-label">Neural Scoring</span>
+                </div>
