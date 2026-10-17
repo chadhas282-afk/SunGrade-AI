@@ -988,3 +988,13 @@ content: attr(data-tip);
     grid-template-columns: auto 1fr;
     gap: 0.25rem 0.75rem;
 }
+.dim-detail dt {
+    color: var(--text-3);
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+.dim-detail dd {
+    color: var(--text-2);
+}
