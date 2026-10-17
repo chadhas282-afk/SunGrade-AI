@@ -1068,3 +1068,13 @@ content: attr(data-tip);
                         rows="10"
                         maxlength="50000"
                     ></textarea>
+                    <div class="textarea-footer">
+                        <span id="charCount" class="char-count">0 words</span>
+                        <button id="btnClearText" class="btn-icon-sm">Clear</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="action-bar">
+                <button id="btnAnalyze" class="btn-primary" disabled>
+                    <span class="btn-icon-inner">🔬</span>
