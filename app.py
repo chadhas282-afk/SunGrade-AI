@@ -1228,3 +1228,13 @@ content: attr(data-tip);
 
 const tabUpload      = document.getElementById('tab-upload');
 const tabText        = document.getElementById('tab-text');
+const panelUpload    = document.getElementById('panel-upload');
+const panelText      = document.getElementById('panel-text');
+const dropzone       = document.getElementById('dropzone');
+const fileInput      = document.getElementById('fileInput');
+const prevCont       = document.getElementById('previewContainer');
+const imgPreview     = document.getElementById('imagePreview');
+const btnRemove      = document.getElementById('btnRemove');
+const essayTextarea  = document.getElementById('essayTextarea');
+const charCount      = document.getElementById('charCount');
+const btnClearText   = document.getElementById('btnClearText');
