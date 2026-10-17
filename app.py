@@ -978,3 +978,13 @@ content: attr(data-tip);
     border-top: 1px solid var(--border);
     font-size: 0.78rem;
     color: var(--text-2);
+    line-height: 1.6;
+    animation: fadeInDown 0.2s ease;
+}
+.dim-card.expanded .dim-detail { display: block; }
+
+.dim-detail dl {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.25rem 0.75rem;
+}
