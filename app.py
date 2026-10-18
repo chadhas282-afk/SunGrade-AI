@@ -1478,3 +1478,13 @@ function renderResults(data) {
     gradeEl.style.border = `1px solid ${color}55`;
 
     dimensionsGrid.innerHTML = '';
+    DIM_ORDER.forEach(({ key, label: dimLabel, icon }, idx) => {
+        const dim = dims[key];
+        if (!dim) return;
+        const score = dim.score;
+        const tier  = getTierClass(score);
+
+        let detailHtml = '';
+        if (dim.detail && Object.keys(dim.detail).length > 0) {
+            const rows = [];
+            const d = dim.detail;
