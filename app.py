@@ -1458,3 +1458,13 @@ async function analyzeText() {
         progressSteps.classList.add('hidden');
     }
 }
+
+function renderResults(data) {
+    const dims = data.dimensions;
+    const overall = data.overall_score;
+
+    document.getElementById('overallScoreNum').textContent = overall.toFixed(1);
+    const circumference = 314;
+    const offset = circumference * (1 - overall / 10);
+    const ring = document.getElementById('overallRing');
+    ring.setAttribute('stroke-dashoffset', circumference);
