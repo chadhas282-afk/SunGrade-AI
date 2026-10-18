@@ -1358,3 +1358,13 @@ function advanceStep(index) {
         const el = document.getElementById(id);
         el.classList.remove('active', 'done');
         if (i < index) el.classList.add('done');
+        if (i === index) el.classList.add('active');
+    });
+}
+
+btnAnalyze.addEventListener('click', async () => {
+    btnText.textContent = 'Analysing…';
+    btnSpinner.classList.remove('hidden');
+    btnAnalyze.disabled = true;
+    resultsSection.classList.add('hidden');
+    progressSteps.classList.remove('hidden');
