@@ -1438,3 +1438,13 @@ async function analyzeText() {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ text })
         });
+        const data = await response.json();
+
+        setStatus('Neural scoring complete…');
+        await delay(400);
+        advanceStep(3);
+
+        if (response.ok && data.status === 'success') {
+            await delay(250);
+            renderResults(data);
+            setStatus('Analysis complete!', 'success');
