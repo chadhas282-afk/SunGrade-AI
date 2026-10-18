@@ -1368,3 +1368,13 @@ btnAnalyze.addEventListener('click', async () => {
     btnAnalyze.disabled = true;
     resultsSection.classList.add('hidden');
     progressSteps.classList.remove('hidden');
+    resetSteps();
+
+    if (activeTab === 'upload') {
+        await analyzeImage();
+    } else {
+        await analyzeText();
+    }
+
+    btnText.textContent = 'Analyse Essay';
+    btnSpinner.classList.add('hidden');
