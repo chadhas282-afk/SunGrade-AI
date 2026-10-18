@@ -1298,3 +1298,13 @@ function handleFile(file) {
         return;
     }
     selectedFile = file;
+    setStatus('');
+    const reader = new FileReader();
+    reader.onload = e => {
+        imgPreview.src = e.target.result;
+        dropzone.classList.add('hidden');
+        prevCont.classList.remove('hidden');
+        updateAnalyzeBtn();
+    };
+    reader.readAsDataURL(file);
+}
