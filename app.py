@@ -1378,3 +1378,12 @@ btnAnalyze.addEventListener('click', async () => {
 
     btnText.textContent = 'Analyse Essay';
     btnSpinner.classList.add('hidden');
+    updateAnalyzeBtn();
+});
+
+async function analyzeImage() {
+    if (!selectedFile) return;
+    if (btnRemove) btnRemove.disabled = true;
+
+    advanceStep(0);
+    setStatus('Running OCR — extracting text from image…');
