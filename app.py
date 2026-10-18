@@ -1488,3 +1488,13 @@ function renderResults(data) {
         if (dim.detail && Object.keys(dim.detail).length > 0) {
             const rows = [];
             const d = dim.detail;
+            if (key === 'vocabulary') {
+                rows.push(`<dt>AWL words</dt><dd>${d.awl_count || 0} (${d.awl_pct || 0}% of content words)</dd>`);
+            } else if (key === 'structure') {
+                rows.push(`<dt>Thesis detected</dt><dd>${d.has_thesis ? '✅ Yes' : '❌ No'}</dd>`);
+                rows.push(`<dt>Conclusion detected</dt><dd>${d.has_conclusion ? '✅ Yes' : '❌ No'}</dd>`);
+            } else if (key === 'spelling' && d.errors && d.errors.length > 0) {
+                rows.push(`<dt>Errors found</dt><dd>${d.errors.slice(0,8).map(escapeHtml).join(', ')}</dd>`);
+            } else if (key === 'transitions' && d.found && d.found.length > 0) {
+                rows.push(`<dt>Found</dt><dd>${d.found.slice(0,8).map(escapeHtml).join(', ')}</dd>`);
+            }
