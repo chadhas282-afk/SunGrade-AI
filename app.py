@@ -1348,3 +1348,13 @@ const STEPS = ['step-ocr', 'step-nlp', 'step-ml', 'step-done'];
 
 function resetSteps() {
     STEPS.forEach(id => {
+    const el = document.getElementById(id);
+        el.classList.remove('active', 'done');
+    });
+}
+
+function advanceStep(index) {
+    STEPS.forEach((id, i) => {
+        const el = document.getElementById(id);
+        el.classList.remove('active', 'done');
+        if (i < index) el.classList.add('done');
