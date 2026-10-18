@@ -1558,3 +1558,13 @@ function renderResults(data) {
 
     const rawText = data.extracted_text || '';
     document.getElementById('extractedText').textContent = rawText;
+    renderAnnotatedText(rawText, data.annotations || []);
+
+    renderSuggestions(data.suggestions || []);
+
+    saveHistory(data);
+    renderHistory();
+
+    resultsSection.classList.remove('hidden');
+    setTimeout(() => resultsSection.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
+}
