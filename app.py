@@ -1268,3 +1268,13 @@ const DIM_ORDER = [
 function switchTab(tab) {
     activeTab = tab;
     tabUpload.classList.toggle('active', tab === 'upload');
+    tabText.classList.toggle('active', tab === 'text');
+    tabUpload.setAttribute('aria-selected', tab === 'upload');
+    tabText.setAttribute('aria-selected', tab === 'text');
+    panelUpload.classList.toggle('hidden', tab !== 'upload');
+    panelText.classList.toggle('hidden', tab !== 'text');
+    updateAnalyzeBtn();
+    setStatus('');
+}
+
+tabUpload.addEventListener('click', () => switchTab('upload'));
