@@ -1408,3 +1408,13 @@ async function analyzeImage() {
         if (response.ok && data.status === 'success') {
             await delay(300);
             renderResults(data);
+            setStatus('Analysis complete!', 'success');
+        } else {
+            setStatus(data.error || 'An error occurred.', 'error');
+            progressSteps.classList.add('hidden');
+        }
+    } catch (err) {
+        console.error(err);
+        setStatus('Network error. Please try again.', 'error');
+        progressSteps.classList.add('hidden');
+    } finally {
