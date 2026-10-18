@@ -1548,3 +1548,13 @@ function renderResults(data) {
         document.getElementById('statSents').textContent = data.stats.sentence_count || 0;
         document.getElementById('statParas').textContent = data.stats.paragraph_count || 0;
         document.getElementById('statTime').textContent  = data.stats.reading_time_min || 0;
+        document.getElementById('statGrade').textContent = data.stats.grade_level || 0;
+        document.getElementById('statSpell').textContent = data.stats.spelling_errors || 0;
+    }
+
+    if (data.paragraphs) {
+        renderParagraphs(data.paragraphs);
+    }
+
+    const rawText = data.extracted_text || '';
+    document.getElementById('extractedText').textContent = rawText;
