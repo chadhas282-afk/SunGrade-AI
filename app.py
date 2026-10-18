@@ -1328,3 +1328,13 @@ essayTextarea.addEventListener('input', () => {
 
 btnClearText.addEventListener('click', () => {
     essayTextarea.value = '';
+    charCount.textContent = '0 words';
+    updateAnalyzeBtn();
+});
+
+function countWords(text) {
+    return (text.trim().match(/\b\w+\b/g) || []).length;
+}
+
+function updateAnalyzeBtn() {
+    if (activeTab === 'upload') {
