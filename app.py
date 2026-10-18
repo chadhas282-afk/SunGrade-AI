@@ -1498,3 +1498,13 @@ function renderResults(data) {
             } else if (key === 'transitions' && d.found && d.found.length > 0) {
                 rows.push(`<dt>Found</dt><dd>${d.found.slice(0,8).map(escapeHtml).join(', ')}</dd>`);
             }
+            if (rows.length) {
+                detailHtml = `<div class="dim-detail"><dl>${rows.join('')}</dl></div>`;
+            }
+        }
+
+        const card = document.createElement('div');
+        card.className = `dim-card ${tier}`;
+        card.id = `card-${key}`;
+        card.style.animationDelay = `${idx * 0.06}s`;
+        card.setAttribute('tabindex', '0');
