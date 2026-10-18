@@ -1468,3 +1468,13 @@ function renderResults(data) {
     const offset = circumference * (1 - overall / 10);
     const ring = document.getElementById('overallRing');
     ring.setAttribute('stroke-dashoffset', circumference);
+    setTimeout(() => ring.setAttribute('stroke-dashoffset', offset), 50);
+
+    const gradeEl = document.getElementById('overallGrade');
+    const { label, color } = getGrade(overall);
+    gradeEl.textContent = label;
+    gradeEl.style.background = color + '22';
+    gradeEl.style.color = color;
+    gradeEl.style.border = `1px solid ${color}55`;
+
+    dimensionsGrid.innerHTML = '';
