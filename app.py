@@ -1508,3 +1508,13 @@ function renderResults(data) {
         card.id = `card-${key}`;
         card.style.animationDelay = `${idx * 0.06}s`;
         card.setAttribute('tabindex', '0');
+        card.setAttribute('role', 'button');
+        card.setAttribute('aria-expanded', 'false');
+
+        card.innerHTML = `
+            <div class="dim-icon">${dim.icon || icon}</div>
+            <div class="dim-label">${dim.label || dimLabel}</div>
+            <div class="dim-bar-track"><div class="dim-bar" id="bar-${key}"></div></div>
+            <div class="dim-score">${score.toFixed(1)}</div>
+            <div class="dim-feedback">${escapeHtml(dim.feedback)}</div>
+            ${detailHtml}
