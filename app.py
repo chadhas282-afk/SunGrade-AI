@@ -1538,3 +1538,13 @@ function renderResults(data) {
         setTimeout(() => {
             const bar = document.getElementById(`bar-${key}`);
             if (bar) bar.style.width = `${score * 10}%`;
+            }, 100 + idx * 60);
+    });
+
+    renderRadar(dims);
+
+    if (data.stats) {
+        document.getElementById('statWords').textContent = data.stats.word_count || 0;
+        document.getElementById('statSents').textContent = data.stats.sentence_count || 0;
+        document.getElementById('statParas').textContent = data.stats.paragraph_count || 0;
+        document.getElementById('statTime').textContent  = data.stats.reading_time_min || 0;
