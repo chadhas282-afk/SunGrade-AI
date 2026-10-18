@@ -1387,3 +1387,14 @@ async function analyzeImage() {
 
     advanceStep(0);
     setStatus('Running OCR — extracting text from image…');
+
+    const formData = new FormData();
+    formData.append('file', selectedFile);
+
+    try {
+
+        await delay(600);
+        advanceStep(1);
+        setStatus('Running NLP analysis across 8 dimensions…');
+
+        const response = await fetch('/api/analyze', { method: 'POST', body: formData });
