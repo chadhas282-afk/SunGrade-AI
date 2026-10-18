@@ -1528,3 +1528,13 @@ function renderResults(data) {
                 card.setAttribute('aria-expanded', expanded);
             });
             card.addEventListener('keydown', e => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    card.click();
+                }
+            });
+        }
+
+        setTimeout(() => {
+            const bar = document.getElementById(`bar-${key}`);
+            if (bar) bar.style.width = `${score * 10}%`;
