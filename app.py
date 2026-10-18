@@ -1318,3 +1318,13 @@ function resetUpload() {
     dropzone.classList.remove('hidden');
     updateAnalyzeBtn();
     setStatus('');
+    }
+
+essayTextarea.addEventListener('input', () => {
+    const wordCount = countWords(essayTextarea.value);
+    charCount.textContent = `${wordCount} word${wordCount !== 1 ? 's' : ''}`;
+    updateAnalyzeBtn();
+});
+
+btnClearText.addEventListener('click', () => {
+    essayTextarea.value = '';
