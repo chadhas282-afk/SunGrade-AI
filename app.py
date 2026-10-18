@@ -1418,3 +1418,13 @@ async function analyzeImage() {
         setStatus('Network error. Please try again.', 'error');
         progressSteps.classList.add('hidden');
     } finally {
+     if (btnRemove) btnRemove.disabled = false;
+    }
+}
+
+async function analyzeText() {
+    const text = essayTextarea.value.trim();
+    if (!text) return;
+
+    advanceStep(1);
+    setStatus('Running NLP analysis across 8 dimensions…');
