@@ -1338,3 +1338,13 @@ function countWords(text) {
 
 function updateAnalyzeBtn() {
     if (activeTab === 'upload') {
+    btnAnalyze.disabled = !selectedFile;
+    } else {
+        btnAnalyze.disabled = countWords(essayTextarea.value) < 5;
+    }
+}
+
+const STEPS = ['step-ocr', 'step-nlp', 'step-ml', 'step-done'];
+
+function resetSteps() {
+    STEPS.forEach(id => {
