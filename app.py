@@ -1398,3 +1398,13 @@ async function analyzeImage() {
         setStatus('Running NLP analysis across 8 dimensions…');
 
         const response = await fetch('/api/analyze', { method: 'POST', body: formData });
+        const data = await response.json();
+
+        advanceStep(2);
+        setStatus('Neural scoring complete…');
+        await delay(400);
+        advanceStep(3);
+
+        if (response.ok && data.status === 'success') {
+            await delay(300);
+            renderResults(data);
