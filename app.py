@@ -1428,3 +1428,13 @@ async function analyzeText() {
 
     advanceStep(1);
     setStatus('Running NLP analysis across 8 dimensions…');
+
+    try {
+        await delay(300);
+        advanceStep(2);
+
+        const response = await fetch('/api/analyze-text', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ text })
+        });
