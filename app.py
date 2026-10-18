@@ -1448,3 +1448,13 @@ async function analyzeText() {
             await delay(250);
             renderResults(data);
             setStatus('Analysis complete!', 'success');
+            } else {
+            setStatus(data.error || 'An error occurred.', 'error');
+            progressSteps.classList.add('hidden');
+        }
+    } catch (err) {
+        console.error(err);
+        setStatus('Network error. Please try again.', 'error');
+        progressSteps.classList.add('hidden');
+    }
+}
