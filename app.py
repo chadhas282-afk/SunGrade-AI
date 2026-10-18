@@ -1518,3 +1518,13 @@ function renderResults(data) {
             <div class="dim-score">${score.toFixed(1)}</div>
             <div class="dim-feedback">${escapeHtml(dim.feedback)}</div>
             ${detailHtml}
+            ${detailHtml ? '<div class="dim-expand-icon">▼</div>' : ''}
+        `;
+        dimensionsGrid.appendChild(card);
+
+        if (detailHtml) {
+            card.addEventListener('click', () => {
+                const expanded = card.classList.toggle('expanded');
+                card.setAttribute('aria-expanded', expanded);
+            });
+            card.addEventListener('keydown', e => {
