@@ -1289,3 +1289,12 @@ dropzone.addEventListener('drop', e => {
 });
 dropzone.addEventListener('click', () => fileInput.click());
 dropzone.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') fileInput.click(); });
+fileInput.addEventListener('change', e => { if (e.target.files.length) handleFile(e.target.files[0]); });
+
+function handleFile(file) {
+    const valid = ['image/jpeg', 'image/png'];
+    if (!valid.includes(file.type)) {
+        setStatus('Please upload a valid JPG or PNG image.', 'error');
+        return;
+    }
+    selectedFile = file;
