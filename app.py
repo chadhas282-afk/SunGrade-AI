@@ -1308,3 +1308,13 @@ function handleFile(file) {
     };
     reader.readAsDataURL(file);
 }
+
+btnRemove.addEventListener('click', resetUpload);
+function resetUpload() {
+    selectedFile = null;
+    fileInput.value = '';
+    imgPreview.src = '';
+    prevCont.classList.add('hidden');
+    dropzone.classList.remove('hidden');
+    updateAnalyzeBtn();
+    setStatus('');
