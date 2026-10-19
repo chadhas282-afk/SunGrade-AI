@@ -1598,3 +1598,13 @@ function renderRadar(dims) {
     });
 
     keys.forEach((_, i) => {
+    const [x, y] = polar(i * angleStep, maxR);
+        const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+        line.setAttribute('x1', cx); line.setAttribute('y1', cy);
+        line.setAttribute('x2', x);  line.setAttribute('y2', y);
+        line.setAttribute('stroke', 'rgba(255,255,255,0.08)');
+        line.setAttribute('stroke-width', '1');
+        svg.appendChild(line);
+    });
+
+    const scorePts = scores.map((s, i) => polar(i * angleStep, maxR * s));
