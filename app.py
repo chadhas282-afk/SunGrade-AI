@@ -1628,3 +1628,12 @@ function renderRadar(dims) {
     for (let i = 0; i < n; i++) {
         const a = (Math.PI * 2 * i) / n - Math.PI / 2;
         const x = cx + Math.cos(a) * (maxR + 25);
+        const y = cy + Math.sin(a) * (maxR + 25);
+        svg.appendChild(createSvg('text', {
+            x, y,
+            'text-anchor': 'middle',
+            'dominant-baseline': 'middle',
+            class: 'radar-label'
+        }, labels[i]));
+    }
+}
