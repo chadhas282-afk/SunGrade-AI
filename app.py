@@ -1568,3 +1568,13 @@ function renderResults(data) {
     resultsSection.classList.remove('hidden');
     setTimeout(() => resultsSection.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
 }
+
+function renderRadar(dims) {
+    const svg = document.getElementById('radarChart');
+    svg.innerHTML = '';
+
+    const cx = 150, cy = 150, maxR = 108;
+    const keys = DIM_ORDER.map(d => d.key);
+    const labels = DIM_ORDER.map(d => d.label);
+    const n = keys.length;
+    const scores = keys.map(k => (dims[k] ? dims[k].score : 0) / 10);
