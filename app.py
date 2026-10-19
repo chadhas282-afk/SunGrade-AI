@@ -1658,3 +1658,12 @@ function renderParagraphs(paragraphs) {
 
     if (!paragraphs || paragraphs.length === 0) {
         tbody.innerHTML = '<tr><td colspan="6">No paragraph data available.</td></tr>';
+        return;
+    }
+
+    paragraphs.forEach(p => {
+        const tr = document.createElement('tr');
+        
+        let colorClass = 'score-high';
+        if (p.score < 5.0) colorClass = 'score-low';
+        else if (p.score < 7.5) colorClass = 'score-mid';
