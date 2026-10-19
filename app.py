@@ -1678,3 +1678,13 @@ function renderParagraphs(paragraphs) {
         `;
         tbody.appendChild(tr);
     });
+    }
+
+function renderAnnotatedText(text, annotations) {
+    const container = document.getElementById('annotatedText');
+    container.innerHTML = '';
+
+    if (!text) return;
+
+    const sorted = [...annotations]
+        .filter(a => typeof a.start === 'number' && typeof a.end === 'number'
