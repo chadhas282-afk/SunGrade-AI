@@ -1838,3 +1838,13 @@ btnCopyText.addEventListener('click', async () => {
     const text = document.getElementById('extractedText').textContent;
     if (!text) return;
     try {
+    await navigator.clipboard.writeText(text);
+        btnCopyText.textContent = 'Copied!';
+        setTimeout(() => { btnCopyText.textContent = 'Copy'; }, 2000);
+    } catch {
+        btnCopyText.textContent = 'Failed';
+        setTimeout(() => { btnCopyText.textContent = 'Copy'; }, 2000);
+    }
+});
+
+const toggleAnn = document.getElementById('toggleAnnotations');
