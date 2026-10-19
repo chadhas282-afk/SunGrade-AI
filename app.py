@@ -1707,3 +1707,14 @@ function renderAnnotatedText(text, annotations) {
 
         const safeEnd = Math.min(ann.end, text.length);
         if (safeEnd <= ann.start) continue;
+
+        if (ann.start > cursor) {
+            container.appendChild(document.createTextNode(text.slice(cursor, ann.start)));
+        }
+
+        const span = document.createElement('span');
+        span.className = `ann ann-${ann.tag}`;
+        span.textContent = text.slice(ann.start, safeEnd);
+        const tipFn = tips[ann.tag];
+        if (tipFn) span.setAttribute('data-tip', tipFn(ann));
+        container.appendChild(span);
