@@ -1718,3 +1718,13 @@ function renderAnnotatedText(text, annotations) {
         const tipFn = tips[ann.tag];
         if (tipFn) span.setAttribute('data-tip', tipFn(ann));
         container.appendChild(span);
+
+        cursor = safeEnd;
+    }
+
+    if (cursor < text.length) {
+        container.appendChild(document.createTextNode(text.slice(cursor)));
+    }
+
+    if (!container.hasChildNodes()) {
+        container.textContent = text;
