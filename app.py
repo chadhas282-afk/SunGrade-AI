@@ -1588,3 +1588,13 @@ function renderRadar(dims) {
 
     const gridLevels = [0.2, 0.4, 0.6, 0.8, 1.0];
     gridLevels.forEach(level => {
+    const pts = keys.map((_, i) => polar(i * angleStep, maxR * level));
+        const poly = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
+        poly.setAttribute('points', pts.map(p => p.join(',')).join(' '));
+        poly.setAttribute('fill', 'none');
+        poly.setAttribute('stroke', 'rgba(255,255,255,0.06)');
+        poly.setAttribute('stroke-width', '1');
+        svg.appendChild(poly);
+    });
+
+    keys.forEach((_, i) => {
