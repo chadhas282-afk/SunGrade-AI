@@ -1777,3 +1777,14 @@ function renderSuggestions(suggestions) {
         const detail = document.createElement('p');
         detail.className = 'suggestion-detail';
         detail.textContent = s.detail;
+
+        body.appendChild(header);
+        body.appendChild(detail);
+        li.appendChild(icon);
+        li.appendChild(body);
+        list.appendChild(li);
+    });
+}
+
+function saveHistory(data) {
+    const history = getHistory();
