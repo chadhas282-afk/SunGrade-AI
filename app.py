@@ -1858,3 +1858,13 @@ if (toggleAnn) {
             annBody.style.display = 'block';
             legend.style.display = 'flex';
             extBody.style.display = 'none';
+            } else {
+            annBody.style.display = 'none';
+            legend.style.display = 'none';
+            extBody.style.display = 'block';
+        }
+    });
+}
+
+function getGrade(score) {
+    if (score >= 8.5) return { label: 'Outstanding ⭐', color: '#22c55e' };
