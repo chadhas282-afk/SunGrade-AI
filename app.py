@@ -1848,3 +1848,13 @@ btnCopyText.addEventListener('click', async () => {
 });
 
 const toggleAnn = document.getElementById('toggleAnnotations');
+if (toggleAnn) {
+    toggleAnn.addEventListener('change', (e) => {
+        const annBody = document.getElementById('annotatedText');
+        const extBody = document.getElementById('extractedText');
+        const legend = document.getElementById('annLegend');
+        
+        if (e.target.checked) {
+            annBody.style.display = 'block';
+            legend.style.display = 'flex';
+            extBody.style.display = 'none';
