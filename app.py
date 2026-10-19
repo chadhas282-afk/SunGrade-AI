@@ -1818,3 +1818,13 @@ function renderHistory() {
     history.forEach(entry => {
         const item = document.createElement('div');
         item.className = 'history-item';
+         const { label, color } = getGrade(entry.overall);
+        const timeStr = new Date(entry.timestamp).toLocaleString();
+
+        item.innerHTML = `
+            <div class="history-score-badge" style="background:${color}22; color:${color}; border:1.5px solid ${color}55;">
+                ${entry.overall.toFixed(1)}
+            </div>
+            <div class="history-meta">
+                <div class="history-time">${timeStr} · ${entry.mode === 'text' ? '✍️ Text' : '📷 Image'} · ${label}</div>
+                <div class="history-preview">${escapeHtml(entry.preview)}…</div>
