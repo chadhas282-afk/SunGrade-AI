@@ -1667,3 +1667,14 @@ function renderParagraphs(paragraphs) {
         let colorClass = 'score-high';
         if (p.score < 5.0) colorClass = 'score-low';
         else if (p.score < 7.5) colorClass = 'score-mid';
+
+         tr.innerHTML = `
+            <td><strong>${p.index}</strong></td>
+            <td><span style="color: var(--text-muted); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em;">${p.role}</span></td>
+            <td>${p.words}</td>
+            <td>${p.avg_len}</td>
+            <td><span class="score-badge ${colorClass}">${p.score.toFixed(1)}</span></td>
+            <td class="para-preview">${escapeHtml(p.preview)}</td>
+        `;
+        tbody.appendChild(tr);
+    });
