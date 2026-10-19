@@ -1828,3 +1828,13 @@ function renderHistory() {
             <div class="history-meta">
                 <div class="history-time">${timeStr} · ${entry.mode === 'text' ? '✍️ Text' : '📷 Image'} · ${label}</div>
                 <div class="history-preview">${escapeHtml(entry.preview)}…</div>
+                </div>
+        `;
+        historyList.appendChild(item);
+    });
+}
+
+btnCopyText.addEventListener('click', async () => {
+    const text = document.getElementById('extractedText').textContent;
+    if (!text) return;
+    try {
