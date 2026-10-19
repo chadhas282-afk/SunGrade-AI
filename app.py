@@ -1618,3 +1618,13 @@ function renderRadar(dims) {
 
     scorePts.forEach(([x, y], i) => {
         const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+        circle.setAttribute('cx', x); circle.setAttribute('cy', y); circle.setAttribute('r', '4');
+        circle.setAttribute('fill', getScoreColor(scores[i]));
+        circle.setAttribute('stroke', 'rgba(255,255,255,0.5)');
+        circle.setAttribute('stroke-width', '1.2');
+        svg.appendChild(circle);
+    });
+
+    for (let i = 0; i < n; i++) {
+        const a = (Math.PI * 2 * i) / n - Math.PI / 2;
+        const x = cx + Math.cos(a) * (maxR + 25);
