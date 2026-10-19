@@ -1578,3 +1578,13 @@ function renderRadar(dims) {
     const labels = DIM_ORDER.map(d => d.label);
     const n = keys.length;
     const scores = keys.map(k => (dims[k] ? dims[k].score : 0) / 10);
+
+    function polar(angle, radius) {
+        const a = (angle - Math.PI / 2);
+        return [cx + radius * Math.cos(a), cy + radius * Math.sin(a)];
+    }
+
+    const angleStep = (2 * Math.PI) / n;
+
+    const gridLevels = [0.2, 0.4, 0.6, 0.8, 1.0];
+    gridLevels.forEach(level => {
