@@ -1738,3 +1738,12 @@ function renderSuggestions(suggestions) {
     if (!suggestions || suggestions.length === 0) {
         const li = document.createElement('li');
         li.className = 'suggestion-item';
+        li.textContent = 'Great work! No major suggestions at this time.';
+        list.appendChild(li);
+        return;
+    }
+
+    suggestions.forEach((s, i) => {
+        const li = document.createElement('li');
+        li.className = 'suggestion-item';
+        li.style.animationDelay = `${i * 0.065}s`;
