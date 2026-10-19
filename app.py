@@ -1637,3 +1637,14 @@ function renderRadar(dims) {
         }, labels[i]));
     }
 }
+
+function createSvg(tag, attrs, text) {
+    const el = document.createElementNS('http://www.w3.org/2000/svg', tag);
+    for (const k in attrs) el.setAttribute(k, attrs[k]);
+    if (text) el.textContent = text;
+    return el;
+}
+
+function getScoreColor(normalizedScore) {
+    if (normalizedScore >= 0.75) return '#22c55e';
+    if (normalizedScore >= 0.55) return '#3b82f6';
