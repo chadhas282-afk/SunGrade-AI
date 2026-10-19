@@ -1788,3 +1788,13 @@ function renderSuggestions(suggestions) {
 
 function saveHistory(data) {
     const history = getHistory();
+    const entry = {
+        timestamp: Date.now(),
+        overall: data.overall_score,
+        preview: (data.extracted_text || '').slice(0, 80),
+        mode: data.mode || 'ocr',
+    };
+    history.unshift(entry);
+    const trimmed = history.slice(0, MAX_HISTORY);
+    try { localStorage.setItem(HISTORY_KEY, JSON.stringify(trimmed)); } catch {}
+}
