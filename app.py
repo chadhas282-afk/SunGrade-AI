@@ -1747,3 +1747,13 @@ function renderSuggestions(suggestions) {
         const li = document.createElement('li');
         li.className = 'suggestion-item';
         li.style.animationDelay = `${i * 0.065}s`;
+
+        const icon = document.createElement('div');
+        icon.className = 'suggestion-icon';
+        icon.textContent = s.icon || '💡';
+
+        const body = document.createElement('div');
+        body.className = 'suggestion-body';
+
+        const header = document.createElement('div');
+        header.className = 'suggestion-header';
