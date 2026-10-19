@@ -1757,3 +1757,14 @@ function renderSuggestions(suggestions) {
 
         const header = document.createElement('div');
         header.className = 'suggestion-header';
+
+        const title = document.createElement('span');
+        title.className = 'suggestion-title';
+        title.textContent = s.title;
+
+        const badge = document.createElement('span');
+        badge.className = `suggestion-badge badge-${s.priority}`;
+        badge.textContent = s.priority;
+
+        const cat = document.createElement('span');
+        cat.className = 'suggestion-cat';
