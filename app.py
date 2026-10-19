@@ -1608,3 +1608,13 @@ function renderRadar(dims) {
     });
 
     const scorePts = scores.map((s, i) => polar(i * angleStep, maxR * s));
+    const poly = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
+    poly.setAttribute('points', scorePts.map(p => p.join(',')).join(' '));
+    poly.setAttribute('fill', 'rgba(79,142,247,0.18)');
+    poly.setAttribute('stroke', 'rgba(79,142,247,0.75)');
+    poly.setAttribute('stroke-width', '2');
+    poly.setAttribute('stroke-linejoin', 'round');
+    svg.appendChild(poly);
+
+    scorePts.forEach(([x, y], i) => {
+        const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
