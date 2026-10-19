@@ -1648,3 +1648,13 @@ function createSvg(tag, attrs, text) {
 function getScoreColor(normalizedScore) {
     if (normalizedScore >= 0.75) return '#22c55e';
     if (normalizedScore >= 0.55) return '#3b82f6';
+    if (normalizedScore >= 0.35) return '#eab308';
+    return '#ef4444';
+}
+
+function renderParagraphs(paragraphs) {
+    const tbody = document.getElementById('paragraphsTableBody');
+    tbody.innerHTML = '';
+
+    if (!paragraphs || paragraphs.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="6">No paragraph data available.</td></tr>';
