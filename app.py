@@ -1768,3 +1768,12 @@ function renderSuggestions(suggestions) {
 
         const cat = document.createElement('span');
         cat.className = 'suggestion-cat';
+        cat.textContent = s.category;
+
+        header.appendChild(title);
+        header.appendChild(badge);
+        header.appendChild(cat);
+
+        const detail = document.createElement('p');
+        detail.className = 'suggestion-detail';
+        detail.textContent = s.detail;
