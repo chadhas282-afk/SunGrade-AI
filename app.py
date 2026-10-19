@@ -1798,3 +1798,13 @@ function saveHistory(data) {
     const trimmed = history.slice(0, MAX_HISTORY);
     try { localStorage.setItem(HISTORY_KEY, JSON.stringify(trimmed)); } catch {}
 }
+
+function getHistory() {
+    try { return JSON.parse(localStorage.getItem(HISTORY_KEY) || '[]'); } catch { return []; }
+}
+
+function renderHistory() {
+    const history = getHistory();
+    historyList.innerHTML = '';
+
+    if (history.length === 0) {
