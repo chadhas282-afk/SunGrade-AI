@@ -1688,3 +1688,13 @@ function renderAnnotatedText(text, annotations) {
 
     const sorted = [...annotations]
         .filter(a => typeof a.start === 'number' && typeof a.end === 'number'
+        && a.start >= 0 && a.end > a.start && a.start < text.length)
+        .sort((a, b) => a.start - b.start);
+
+    const tips = {
+        spelling:   ann => ann.suggestion ? `Spelling error \u2014 try \u201c${ann.suggestion}\u201d` : 'Spelling error',
+        transition: () => 'Transition word \u2705',
+        academic:   () => 'Academic word (AWL) \u2705',
+        passive:    () => 'Passive voice construction',
+        overused:   () => 'Overused word',
+    };
