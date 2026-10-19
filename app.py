@@ -1808,3 +1808,13 @@ function renderHistory() {
     historyList.innerHTML = '';
 
     if (history.length === 0) {
+    const empty = document.createElement('div');
+        empty.className = 'history-empty';
+        empty.textContent = 'No previous analyses yet.';
+        historyList.appendChild(empty);
+        return;
+    }
+
+    history.forEach(entry => {
+        const item = document.createElement('div');
+        item.className = 'history-item';
