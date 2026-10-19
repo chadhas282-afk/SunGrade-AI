@@ -1728,3 +1728,13 @@ function renderAnnotatedText(text, annotations) {
 
     if (!container.hasChildNodes()) {
         container.textContent = text;
+         }
+}
+
+function renderSuggestions(suggestions) {
+    const list = document.getElementById('suggestionsList');
+    list.innerHTML = '';
+
+    if (!suggestions || suggestions.length === 0) {
+        const li = document.createElement('li');
+        li.className = 'suggestion-item';
