@@ -1698,3 +1698,12 @@ function renderAnnotatedText(text, annotations) {
         passive:    () => 'Passive voice construction',
         overused:   () => 'Overused word',
     };
+
+    let cursor = 0;
+
+    for (const ann of sorted) {
+
+        if (ann.start < cursor) continue;
+
+        const safeEnd = Math.min(ann.end, text.length);
+        if (safeEnd <= ann.start) continue;
