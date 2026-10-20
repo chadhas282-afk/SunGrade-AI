@@ -2148,3 +2148,12 @@ def score_structure(text):
     if has_thesis:
         parts.append("✓ Thesis detected")
     if has_conclusion:
+         parts.append("✓ Conclusion detected")
+    if parts:
+        feedback += " | ".join(parts) + ". "
+    if avg_sent_len < 8:
+        feedback += "Sentences are too short. Develop your ideas more fully."
+    elif avg_sent_len <= 25:
+        feedback += "Sentence structure is well-balanced."
+    else:
+        feedback += "Some sentences are very long. Consider breaking them up."
