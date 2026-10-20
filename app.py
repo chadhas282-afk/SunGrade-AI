@@ -2037,4 +2037,13 @@ def _normalize(value, min_val, max_val):
     return round(max(1.0, min(10.0, 1 + normalized * 9)), 1)
 
 def score_readability(text):
-    
+
+    ease = textstat.flesch_reading_ease(text)
+    grade = textstat.flesch_kincaid_grade(text)
+
+    if grade < 6:
+        score = _normalize(grade, 0, 6)
+    elif grade <= 14:
+        score = _normalize(grade, 6, 14)
+    else:
+        score = max(1.0, 10.0 - (grade - 14) * 0.5)
