@@ -2157,3 +2157,14 @@ def score_structure(text):
         feedback += "Sentence structure is well-balanced."
     else:
         feedback += "Some sentences are very long. Consider breaking them up."
+
+    return round(score, 1), feedback, has_thesis, has_conclusion
+
+def score_spelling(text):
+    
+    words = _words(text)
+    if not words:
+        return 1.0, "No words to check.", set()
+
+    misspelled = spell.unknown(words)
+    total      = len(words)
