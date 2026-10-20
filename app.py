@@ -2048,7 +2048,7 @@ def score_readability(text):
     else:
         score = max(1.0, 10.0 - (grade - 14) * 0.5)
 
-feedback = f"Flesch Reading Ease: {ease:.1f}/100 | Grade Level: {grade:.1f}. "
+    feedback = f"Flesch Reading Ease: {ease:.1f}/100 | Grade Level: {grade:.1f}. "
     if grade < 6:
         feedback += "Writing is too simple. Use more complex sentence structures."
     elif grade <= 12:
@@ -2067,3 +2067,13 @@ def score_vocabulary(text):
     total   = len(words)
     unique  = len(set(words))
     cttr    = unique / math.sqrt(2 * total) if total > 0 else 0
+
+    content_words = [w for w in words if w not in _STOP_WORDS and len(w) > 3]
+    awl_count  = sum(1 for w in content_words if w in _AWL_WORDS)
+    awl_ratio  = awl_count / max(len(content_words), 1)
+
+    cttr_score = _normalize(cttr, 2.0, 10.0)
+
+    awl_score  = _normalize(awl_ratio, 0.02, 0.25)
+
+    score = round(cttr_score * 0.55 + awl_score * 0.45, 1)
