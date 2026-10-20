@@ -1918,3 +1918,13 @@ _AWL_WORDS = {
     'structure', 'theory', 'vary', 'affect', 'achieve', 'impact',
 
     'achieve', 'acquisition', 'administration', 'affect', 'appropriate',
+    'aspect', 'assistance', 'category', 'chapter', 'commission', 'community',
+    'complex', 'compute', 'conclude', 'conduct', 'consequence', 'construct',
+    'consume', 'credit', 'culture', 'design', 'distinction', 'element',
+    'equate', 'evaluate', 'feature', 'final', 'focus', 'impact', 'injure',
+    'instance', 'interact', 'justify', 'layer', 'link', 'locate', 'maximize',
+    'mechanism', 'minimize', 'obvious', 'participate', 'perceive', 'positive',
+    'potential', 'previous', 'primary', 'purchase', 'range', 'region',
+    'regulate', 'relevant', 'reside', 'resources', 'restrict', 'secure',
+    'seek', 'select', 'site', 'strategy', 'survey', 'text', 'traditional',
+    'transfer',
