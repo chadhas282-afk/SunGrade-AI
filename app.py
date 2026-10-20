@@ -2047,3 +2047,13 @@ def score_readability(text):
         score = _normalize(grade, 6, 14)
     else:
         score = max(1.0, 10.0 - (grade - 14) * 0.5)
+
+feedback = f"Flesch Reading Ease: {ease:.1f}/100 | Grade Level: {grade:.1f}. "
+    if grade < 6:
+        feedback += "Writing is too simple. Use more complex sentence structures."
+    elif grade <= 12:
+        feedback += "Readability is excellent — well-structured sentences."
+    else:
+        feedback += "Writing may be overly complex. Consider shorter sentences."
+
+    return round(score, 1), feedback
