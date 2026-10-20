@@ -2128,3 +2128,13 @@ def score_structure(text):
 
     thesis_bonus     = 1.0 if has_thesis else 0.0
     conclusion_bonus = 1.0 if has_conclusion else 0.0
+
+    score = round(
+        sent_score     * 0.40 +
+        length_score   * 0.25 +
+        para_score     * 0.15 +
+        variance_bonus * 10 * 0.10 +
+        thesis_bonus   * 0.05 +                           
+        conclusion_bonus * 0.05,
+        1
+    )
