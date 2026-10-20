@@ -1928,3 +1928,13 @@ _AWL_WORDS = {
     'regulate', 'relevant', 'reside', 'resources', 'restrict', 'secure',
     'seek', 'select', 'site', 'strategy', 'survey', 'text', 'traditional',
     'transfer',
+
+    'alternative', 'circumstance', 'comment', 'compensate', 'component',
+    'consent', 'considerable', 'constant', 'constrain', 'contribute',
+    'convene', 'coordinate', 'core', 'corporate', 'correspond', 'criteria',
+    'deduce', 'demonstrate', 'document', 'dominate', 'emphasis', 'ensure',
+    'exclude', 'framework', 'fund', 'illustrate', 'immigrate', 'imply',
+    'initial', 'instance', 'interact', 'justify', 'layer', 'maintain',
+    'modify', 'monitor', 'negate', 'normal', 'obtain', 'parallel', 'parameter',
+    'phase', 'predict', 'principal', 'proportion', 'publish', 'react',
+    'register', 'rely', 'remove', 'scheme', 'sequence', 'significant',
