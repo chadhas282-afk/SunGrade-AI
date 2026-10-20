@@ -1978,3 +1978,13 @@ _AWL_WORDS = {
 _TRANSITION_WORDS = {
     'furthermore', 'moreover', 'additionally', 'in addition', 'also',
     'besides', 'likewise', 'similarly',
+    'however', 'nevertheless', 'on the other hand', 'in contrast',
+    'although', 'whereas', 'conversely', 'despite', 'yet',
+    'therefore', 'consequently', 'as a result', 'thus', 'hence',
+    'accordingly', 'for this reason',
+    'firstly', 'secondly', 'thirdly', 'finally', 'subsequently',
+    'next', 'then', 'afterwards',
+    'indeed', 'in fact', 'certainly', 'clearly', 'notably',
+    'in conclusion', 'to summarise', 'to summarize', 'in summary',
+    'ultimately', 'overall',
+    'for example', 'for instance', 'such as', 'namely',
