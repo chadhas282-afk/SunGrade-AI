@@ -2009,3 +2009,12 @@ _THESIS_PATTERNS = [
 
 _CONCLUSION_PATTERNS = [
     r'\bin conclusion\b', r'\bto (summarise|summarize)\b',
+    r'\bin summary\b', r'\boverall[,.]', r'\bto conclude\b',
+    r'\bfinally[,.]', r'\bultimately[,.]', r'\bthus[,.]',
+]
+
+_STOP_WORDS = {
+    'the', 'a', 'an', 'is', 'are', 'was', 'were', 'it', 'in', 'on',
+    'of', 'to', 'and', 'or', 'but', 'be', 'has', 'have', 'that', 'this',
+    'for', 'not', 'with', 'as', 'at', 'by', 'from', 'they', 'we', 'he',
+    'she', 'you', 'i', 'do', 'did', 'will', 'would', 'could', 'should',
