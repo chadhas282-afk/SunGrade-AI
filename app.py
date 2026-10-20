@@ -2138,3 +2138,13 @@ def score_structure(text):
         conclusion_bonus * 0.05,
         1
     )
+    score = max(1.0, min(10.0, score))
+
+    feedback = (
+        f"Sentences: {num_sentences} | Words: {num_words} | "
+        f"Paragraphs: {num_paragraphs} | Avg sentence: {avg_sent_len:.1f} words. "
+    )
+    parts = []
+    if has_thesis:
+        parts.append("✓ Thesis detected")
+    if has_conclusion:
