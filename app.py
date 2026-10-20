@@ -1868,3 +1868,13 @@ if (toggleAnn) {
 
 function getGrade(score) {
     if (score >= 8.5) return { label: 'Outstanding ⭐', color: '#22c55e' };
+    if (score >= 7.0) return { label: 'Excellent 🏆',   color: '#3b82f6' };
+    if (score >= 5.5) return { label: 'Good 👍',          color: '#8b5cf6' };
+    if (score >= 4.0) return { label: 'Average 📝',      color: '#eab308' };
+    return { label: 'Needs Work 🔧', color: '#ef4444' };
+}
+
+function getTierClass(score) {
+    if (score >= 7.5) return 'score-excellent';
+    if (score >= 5.5) return 'score-good';
+    if (score >= 3.5) return 'score-average';
