@@ -2118,3 +2118,13 @@ def score_structure(text):
 
     if avg_sent_len < 8:
         sent_score = _normalize(avg_sent_len, 0, 8)
+    elif avg_sent_len <= 25:
+        sent_score = _normalize(avg_sent_len, 8, 25)
+    else:
+        sent_score = max(1.0, 10.0 - (avg_sent_len - 25) * 0.2)
+
+    length_score = _normalize(min(num_words, 500), 30, 500)
+    para_score   = _normalize(min(num_paragraphs, 5), 1, 5)
+
+    thesis_bonus     = 1.0 if has_thesis else 0.0
+    conclusion_bonus = 1.0 if has_conclusion else 0.0
