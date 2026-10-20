@@ -2018,3 +2018,13 @@ _STOP_WORDS = {
     'of', 'to', 'and', 'or', 'but', 'be', 'has', 'have', 'that', 'this',
     'for', 'not', 'with', 'as', 'at', 'by', 'from', 'they', 'we', 'he',
     'she', 'you', 'i', 'do', 'did', 'will', 'would', 'could', 'should',
+    'may', 'might', 'can', 'our', 'their', 'its', 'been', 'had', 'also',
+    'than', 'then', 'when', 'if', 'so', 'up', 'out', 'my', 'your', 'his',
+    'her', 'them', 'which', 'who', 'what', 'all', 'more', 'about', 'into',
+}
+
+def _sentences(text):
+    return re.split(r'(?<=[.!?])\s+', text.strip())
+
+def _words(text):
+    return re.findall(r'\b[a-zA-Z]+\b', text.lower())
