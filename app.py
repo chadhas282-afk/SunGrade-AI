@@ -2028,3 +2028,13 @@ def _sentences(text):
 
 def _words(text):
     return re.findall(r'\b[a-zA-Z]+\b', text.lower())
+
+def _normalize(value, min_val, max_val):
+    
+    if max_val == min_val:
+        return 5.0
+    normalized = (value - min_val) / (max_val - min_val)
+    return round(max(1.0, min(10.0, 1 + normalized * 9)), 1)
+
+def score_readability(text):
+    
