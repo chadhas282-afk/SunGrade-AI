@@ -1898,3 +1898,13 @@ function delay(ms) {
 renderHistory();
 
 </script>
+</body>
+</html>
+"""
+
+spell = SpellChecker()
+
+_AWL_WORDS = {
+
+    'analyse', 'analyze', 'approach', 'area', 'assess', 'assume', 'authority',
+    'available', 'benefit', 'concept', 'consist', 'constitute', 'context',
