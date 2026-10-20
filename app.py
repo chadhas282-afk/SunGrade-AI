@@ -1997,3 +1997,15 @@ _ARGUMENT_MARKERS = {
     'this demonstrates', 'this suggests', 'this shows',
     'it is argued', 'it can be argued',
 }
+
+_THESIS_PATTERNS = [
+    r'\bthis essay (will |aims to |seeks to |argues?|examines?|explores?)',
+    r'\bi (argue|contend|believe|maintain|claim)\b',
+    r'\bthe (purpose|aim|objective|goal) of this',
+    r'\bit (is|can be) (argued|maintained|claimed|suggested)\b',
+    r'\bthis (paper|report|essay|work) (will |aims to |seeks to )',
+    r'\bthe (main|central|key) (argument|thesis|claim|point)',
+]
+
+_CONCLUSION_PATTERNS = [
+    r'\bin conclusion\b', r'\bto (summarise|summarize)\b',
