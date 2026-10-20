@@ -1948,3 +1948,13 @@ _AWL_WORDS = {
     'fluctuate', 'guideline', 'hence', 'hypothesis', 'implement', 'impose',
     'integrate', 'internal', 'investigate', 'liberal', 'likewise', 'media',
     'mode', 'network', 'notion', 'objective', 'orient', 'outcome', 'output',
+    'overall', 'passive', 'perceive', 'plus', 'potential', 'previous',
+    'primary', 'professional', 'prohibit', 'project', 'promote', 'proportion',
+    'pursue', 'radical', 'random', 'reinforce', 'restore', 'retain', 'series',
+    'statistic', 'status', 'straightforward', 'subsequent', 'substitute',
+    'sustain', 'symbolic', 'target', 'transition', 'trend', 'ultimate',
+    'underlie', 'utilize',
+
+    'abstract', 'acknowledge', 'aggregate', 'allocate', 'amend', 'analogy',
+    'anticipate', 'apparent', 'appendix', 'appreciate', 'arbitrary',
+    'assemble', 'coherent', 'coincide', 'collapse', 'compile', 'complement',
