@@ -2077,3 +2077,14 @@ def score_vocabulary(text):
     awl_score  = _normalize(awl_ratio, 0.02, 0.25)
 
     score = round(cttr_score * 0.55 + awl_score * 0.45, 1)
+
+   feedback = (
+        f"Words: {total} | Unique: {unique} | CTTR: {cttr:.2f} | "
+        f"Academic words: {awl_count} ({awl_ratio * 100:.1f}% of content words). "
+    )
+    if awl_ratio < 0.05:
+        feedback += "Very few academic words. Use subject-specific vocabulary to strengthen your writing."
+    elif awl_ratio < 0.12:
+        feedback += "Moderate academic vocabulary. Introducing more AWL words would elevate your essay."
+    else:
+        feedback += "Strong academic vocabulary — writing feels scholarly and precise."
