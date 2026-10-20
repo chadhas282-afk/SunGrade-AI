@@ -1968,3 +1968,13 @@ _AWL_WORDS = {
     'intermediate', 'intrinsic', 'label', 'legitimate', 'logic', 'marginal',
     'mature', 'mediate', 'mental', 'minimal', 'nuclear', 'offset', 'option',
     'orient', 'paradigm', 'phenomenon', 'priority', 'prospect', 'rational',
+    'react', 'recover', 'refine', 'regime', 'reinforce', 'reluctant', 'resolve',
+    'revise', 'rigid', 'scope', 'seek', 'shift', 'stable', 'subordinate',
+    'sum', 'supplement', 'suspend', 'systematic', 'terminate', 'thesis',
+    'trace', 'transform', 'undergo', 'unify', 'unique', 'undertake', 'visible',
+    'voluntary', 'widespread',
+}
+
+_TRANSITION_WORDS = {
+    'furthermore', 'moreover', 'additionally', 'in addition', 'also',
+    'besides', 'likewise', 'similarly',
