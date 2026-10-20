@@ -1878,3 +1878,13 @@ function getTierClass(score) {
     if (score >= 7.5) return 'score-excellent';
     if (score >= 5.5) return 'score-good';
     if (score >= 3.5) return 'score-average';
+    return 'score-poor';
+}
+
+function setStatus(msg, type = '') {
+    statusMsg.textContent = msg;
+    statusMsg.className = 'status-msg';
+    if (type) statusMsg.classList.add(type);
+}
+
+function escapeHtml(str) {
