@@ -1908,3 +1908,13 @@ _AWL_WORDS = {
 
     'analyse', 'analyze', 'approach', 'area', 'assess', 'assume', 'authority',
     'available', 'benefit', 'concept', 'consist', 'constitute', 'context',
+    'contract', 'create', 'data', 'define', 'derive', 'distribute', 'economy',
+    'environment', 'establish', 'estimate', 'evident', 'export', 'factor',
+    'finance', 'formula', 'function', 'identify', 'income', 'indicate',
+    'individual', 'interpret', 'involve', 'issue', 'labour', 'legal', 'legislate',
+    'major', 'method', 'occur', 'percent', 'period', 'policy', 'principle',
+    'procedure', 'process', 'require', 'research', 'response', 'role',
+    'section', 'sector', 'significant', 'similar', 'source', 'specific',
+    'structure', 'theory', 'vary', 'affect', 'achieve', 'impact',
+
+    'achieve', 'acquisition', 'administration', 'affect', 'appropriate',
