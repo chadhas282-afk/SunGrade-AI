@@ -1888,3 +1888,13 @@ function setStatus(msg, type = '') {
 }
 
 function escapeHtml(str) {
+    return (str || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+function delay(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+renderHistory();
+
+</script>
