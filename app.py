@@ -2078,7 +2078,7 @@ def score_vocabulary(text):
 
     score = round(cttr_score * 0.55 + awl_score * 0.45, 1)
 
-   feedback = (
+    feedback = (
         f"Words: {total} | Unique: {unique} | CTTR: {cttr:.2f} | "
         f"Academic words: {awl_count} ({awl_ratio * 100:.1f}% of content words). "
     )
@@ -2108,3 +2108,13 @@ def score_structure(text):
         std_dev   = math.sqrt(variance)
         variance_bonus = min(std_dev / 15.0, 1.0)
     else:
+        variance_bonus = 0.0
+
+    first_sent = sentences[0].lower() if sentences else ''
+    has_thesis = any(re.search(p, first_sent) for p in _THESIS_PATTERNS)
+
+    last_para = paragraphs[-1].lower() if paragraphs else ''
+    has_conclusion = any(re.search(p, last_para) for p in _CONCLUSION_PATTERNS)
+
+    if avg_sent_len < 8:
+        sent_score = _normalize(avg_sent_len, 0, 8)
