@@ -1938,3 +1938,13 @@ _AWL_WORDS = {
     'modify', 'monitor', 'negate', 'normal', 'obtain', 'parallel', 'parameter',
     'phase', 'predict', 'principal', 'proportion', 'publish', 'react',
     'register', 'rely', 'remove', 'scheme', 'sequence', 'significant',
+    'similar', 'simulate', 'sufficient', 'task', 'technical', 'technique',
+    'technology', 'valid', 'volume',
+
+    'access', 'adequate', 'annual', 'apparent', 'approximate', 'attitude',
+    'attribute', 'civil', 'code', 'commit', 'communicate', 'concentrate',
+    'confer', 'contrast', 'cycle', 'debate', 'despite', 'dimension',
+    'domestic', 'emerge', 'emphasis', 'ensure', 'exhibit', 'exploit',
+    'fluctuate', 'guideline', 'hence', 'hypothesis', 'implement', 'impose',
+    'integrate', 'internal', 'investigate', 'liberal', 'likewise', 'media',
+    'mode', 'network', 'notion', 'objective', 'orient', 'outcome', 'output',
