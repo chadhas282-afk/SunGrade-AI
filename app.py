@@ -2088,3 +2088,13 @@ def score_vocabulary(text):
         feedback += "Moderate academic vocabulary. Introducing more AWL words would elevate your essay."
     else:
         feedback += "Strong academic vocabulary — writing feels scholarly and precise."
+
+    return score, feedback, awl_count, awl_ratio
+
+def score_structure(text):
+    
+    sentences  = [s for s in _sentences(text) if len(s.strip()) > 3]
+    words      = _words(text)
+    paragraphs = [p.strip() for p in text.strip().split('\n\n') if p.strip()]
+
+    num_sentences  = len(sentences)
