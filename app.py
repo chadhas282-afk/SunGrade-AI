@@ -2098,3 +2098,13 @@ def score_structure(text):
     paragraphs = [p.strip() for p in text.strip().split('\n\n') if p.strip()]
 
     num_sentences  = len(sentences)
+    num_words      = len(words)
+    num_paragraphs = len(paragraphs)
+    avg_sent_len   = num_words / max(num_sentences, 1)
+
+    if num_sentences > 2:
+        sent_lens = [len(re.findall(r'\b[a-zA-Z]+\b', s)) for s in sentences]
+        variance  = sum((l - avg_sent_len) ** 2 for l in sent_lens) / num_sentences
+        std_dev   = math.sqrt(variance)
+        variance_bonus = min(std_dev / 15.0, 1.0)
+    else:
