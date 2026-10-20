@@ -2057,3 +2057,13 @@ feedback = f"Flesch Reading Ease: {ease:.1f}/100 | Grade Level: {grade:.1f}. "
         feedback += "Writing may be overly complex. Consider shorter sentences."
 
     return round(score, 1), feedback
+
+def score_vocabulary(text):
+    
+    words = _words(text)
+    if not words:
+        return 1.0, "No words detected.", 0, 0
+
+    total   = len(words)
+    unique  = len(set(words))
+    cttr    = unique / math.sqrt(2 * total) if total > 0 else 0
