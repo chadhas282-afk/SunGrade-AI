@@ -1988,3 +1988,12 @@ _TRANSITION_WORDS = {
     'in conclusion', 'to summarise', 'to summarize', 'in summary',
     'ultimately', 'overall',
     'for example', 'for instance', 'such as', 'namely',
+    }
+
+_ARGUMENT_MARKERS = {
+    'because', 'since', 'therefore', 'thus', 'hence', 'consequently',
+    'as a result', 'for example', 'for instance', 'evidence shows',
+    'research indicates', 'studies suggest', 'according to',
+    'this demonstrates', 'this suggests', 'this shows',
+    'it is argued', 'it can be argued',
+}
