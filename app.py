@@ -2338,3 +2338,13 @@ def generate_suggestions(text, r_score, v_score, s_score, sp_score, ml_score,
         for w in list(misspelled_set)[:8]:
             c = spell.correction(w)
             if c and c != w:
+                corrections[w] = c
+        if corrections:
+            examples = ", ".join([f'"{k}" → "{v}"' for k, v in list(corrections.items())[:5]])
+            suggestions.append({
+                "category": "Spelling", "priority": "high" if sp_score < 5 else "medium",
+                "icon": "🔡", "title": "Fix spelling errors",
+                "detail": f"Correct these misspelled words: {examples}."
+            })
+
+    if v_score < 6.5:
