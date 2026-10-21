@@ -2407,3 +2407,14 @@ def generate_suggestions(text, r_score, v_score, s_score, sp_score, ml_score,
                 "icon": "🏁", "title": "Add a conclusion paragraph",
                 "detail": "End with 'In conclusion…', 'To summarise…' or 'Overall…' followed by a restatement of your main argument."
             })
+
+    if r_score < 6.0:
+        try:
+            grade = textstat.flesch_kincaid_grade(text)
+            if grade > 14:
+                suggestions.append({
+                    "category": "Readability", "priority": "medium",
+                    "icon": "🔭", "title": "Simplify complex phrasing",
+                    "detail": f"Grade {grade:.0f} level — aim for Grade 10–12. Prefer active voice and concise sentences."
+                })
+            elif grade < 5:
