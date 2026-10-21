@@ -2438,3 +2438,13 @@ def generate_suggestions(text, r_score, v_score, s_score, sp_score, ml_score,
     if pv_score < 5.5:
         suggestions.append({
             "category": "Style", "priority": "low",
+            "icon": "💪", "title": "Reduce passive voice",
+            "detail": "Convert passive to active: e.g. 'The essay was written by me' → 'I wrote the essay'."
+        })
+
+    if arg_score < 5.5:
+        suggestions.append({
+            "category": "Argument", "priority": "high" if arg_score < 3.5 else "medium",
+            "icon": "🎯", "title": "Support your claims with evidence",
+            "detail": "Use: 'because', 'for example', 'research shows', or 'this demonstrates' to back up arguments."
+        })
