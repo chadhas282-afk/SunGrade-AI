@@ -2297,3 +2297,14 @@ def annotate_text(text, misspelled_set=None, transition_words_found=None):
             if not _overlaps(s, e):
                 annotations.append({"start": s, "end": e, "word": text[s:e], "tag": "transition"})
                 _claim(s, e)
+
+    for m in re.finditer(r'\b[a-zA-Z]+\b', text):
+        s, e       = m.start(), m.end()
+        word       = m.group()
+        word_lower = word.lower()
+
+        if _overlaps(s, e):
+            continue
+
+        if misspelled_set and word_lower in misspelled_set:
+            suggestion = spell.correction(word_lower)
