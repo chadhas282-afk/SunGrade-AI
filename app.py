@@ -2278,3 +2278,13 @@ def annotate_text(text, misspelled_set=None, transition_words_found=None):
     used_ranges = []
 
     def _overlaps(start, end):
+         return any(s < end and e > start for s, e in used_ranges)
+
+    def _claim(start, end):
+        used_ranges.append((start, end))
+
+    passive_re = re.compile(r'\b(is|are|was|were|be|been|being)\s+\w+ed\b', re.IGNORECASE)
+    for m in passive_re.finditer(text):
+        s, e = m.start(), m.end()
+        if not _overlaps(s, e):
+            annotations.append({"start": s, "end": e, "word": m.group(), "tag": "passive"})
