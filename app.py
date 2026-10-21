@@ -2258,3 +2258,13 @@ def compute_overall(readability, vocabulary, structure, spelling,
                     transitions, passive_voice, argument):
     weighted = (
         readability   * 0.16 +
+        vocabulary    * 0.16 +
+        structure     * 0.16 +
+        spelling      * 0.16 +
+        transitions   * 0.14 +
+        passive_voice * 0.10 +
+        argument      * 0.12
+    )
+    return round(max(1.0, min(10.0, weighted)), 1)
+
+def annotate_text(text, misspelled_set=None, transition_words_found=None):
