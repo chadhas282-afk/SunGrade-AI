@@ -2208,3 +2208,13 @@ def score_transitions(text):
 def score_passive_voice(text):
     
     passive_pattern = re.compile(
+         r'\b(is|are|was|were|be|been|being)\s+\w+ed\b', re.IGNORECASE
+    )
+    sentences     = [s for s in _sentences(text) if len(s.strip()) > 3]
+    num_sentences = max(len(sentences), 1)
+
+    passive_matches = passive_pattern.findall(text)
+    passive_count   = len(passive_matches)
+    passive_ratio   = passive_count / num_sentences
+
+    score = _normalize(1 - min(passive_ratio / 0.6, 1.0), 0.0, 1.0)
