@@ -2228,3 +2228,13 @@ def score_passive_voice(text):
         feedback += "Moderate passive voice. Try converting some sentences to active voice."
     else:
         feedback += "Heavy passive voice usage. Rewrite key sentences to use active voice."
+
+    return round(score, 1), feedback
+
+def score_argument(text):
+    
+    lower     = text.lower()
+    words     = _words(text)
+    num_words = max(len(words), 1)
+
+    found = []
