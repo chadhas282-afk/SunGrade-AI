@@ -2398,3 +2398,12 @@ def generate_suggestions(text, r_score, v_score, s_score, sp_score, ml_score,
         if not has_thesis:
             suggestions.append({
                 "category": "Structure", "priority": "high",
+                "icon": "📌", "title": "Add a clear thesis statement",
+                "detail": "Your opening sentence should state your argument clearly. Try: 'This essay argues that…' or 'I contend that…'."
+            })
+        if not has_conclusion:
+            suggestions.append({
+                "category": "Structure", "priority": "medium",
+                "icon": "🏁", "title": "Add a conclusion paragraph",
+                "detail": "End with 'In conclusion…', 'To summarise…' or 'Overall…' followed by a restatement of your main argument."
+            })
