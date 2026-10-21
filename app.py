@@ -2348,3 +2348,13 @@ def generate_suggestions(text, r_score, v_score, s_score, sp_score, ml_score,
             })
 
     if v_score < 6.5:
+        if awl_ratio < 0.08:
+            suggestions.append({
+                "category": "Vocabulary", "priority": "medium",
+                "icon": "🎓", "title": "Use more academic vocabulary",
+                "detail": (
+                    "Only {:.0f}% of your content words are from the Academic Word List. "
+                    "Substitute common words with academic equivalents: e.g. 'show' → 'demonstrate', "
+                    "'use' → 'utilise', 'important' → 'significant'.".format(awl_ratio * 100)
+                )
+            })
