@@ -2168,7 +2168,7 @@ def score_spelling(text):
 
     misspelled = spell.unknown(words)
     total      = len(words)
-   error_rate = len(misspelled) / total
+    error_rate = len(misspelled) / total
 
     score = _normalize(1 - error_rate, 0.7, 1.0)
     sample_errors = list(misspelled)[:5]
@@ -2198,3 +2198,13 @@ def score_transitions(text):
     feedback = f"Transition phrases found: {len(found)} across {num_sentences} sentences. "
     if ratio < 0.1:
         feedback += "Very few linking words. Use transitions like 'however', 'therefore', 'furthermore'."
+    elif ratio < 0.25:
+        feedback += "Some transitions present. Adding more would improve logical flow."
+    else:
+        feedback += "Good use of transition phrases to guide the reader."
+
+    return round(score, 1), feedback, found
+
+def score_passive_voice(text):
+    
+    passive_pattern = re.compile(
