@@ -2368,3 +2368,14 @@ def generate_suggestions(text, r_score, v_score, s_score, sp_score, ml_score,
                 "icon": "📚", "title": "Reduce word repetition",
                 "detail": f"Overused words: {', '.join(top_rep)}. Use synonyms for variety."
             })
+             if len(words) < 100:
+            suggestions.append({
+                "category": "Vocabulary", "priority": "medium",
+                "icon": "✍️", "title": "Expand your essay",
+                "detail": f"Only {len(words)} words — aim for 150–250+ for a well-developed argument."
+            })
+
+    if s_score < 6.5 or not has_thesis or not has_conclusion:
+        avg_len = len(words) / max(len(sentences), 1)
+        if avg_len < 8:
+            suggestions.append({
