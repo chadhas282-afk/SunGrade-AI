@@ -2368,7 +2368,7 @@ def generate_suggestions(text, r_score, v_score, s_score, sp_score, ml_score,
                 "icon": "📚", "title": "Reduce word repetition",
                 "detail": f"Overused words: {', '.join(top_rep)}. Use synonyms for variety."
             })
-             if len(words) < 100:
+            if len(words) < 100:
             suggestions.append({
                 "category": "Vocabulary", "priority": "medium",
                 "icon": "✍️", "title": "Expand your essay",
@@ -2379,3 +2379,13 @@ def generate_suggestions(text, r_score, v_score, s_score, sp_score, ml_score,
         avg_len = len(words) / max(len(sentences), 1)
         if avg_len < 8:
             suggestions.append({
+                "category": "Structure", "priority": "medium",
+                "icon": "📐", "title": "Develop your sentences",
+                "detail": f"Average sentence is only {avg_len:.0f} words. Expand each idea with evidence, examples, or context."
+            })
+        elif avg_len > 30:
+            suggestions.append({
+                "category": "Structure", "priority": "medium",
+                "icon": "✂️", "title": "Break up long sentences",
+                "detail": f"Average sentence length is {avg_len:.0f} words — too dense. Split complex sentences for clarity."
+            })
