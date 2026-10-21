@@ -2178,3 +2178,13 @@ def score_spelling(text):
     )
     if error_rate < 0.05:
         feedback += "Excellent spelling accuracy."
+        elif error_rate < 0.15:
+        feedback += f"Minor issues. Check: {', '.join(sample_errors)}."
+    else:
+        feedback += f"Many errors detected. Review: {', '.join(sample_errors)}."
+
+    return round(score, 1), feedback, misspelled
+
+def score_transitions(text):
+    
+    lower = text.lower()
