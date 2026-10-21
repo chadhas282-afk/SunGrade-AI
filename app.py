@@ -2218,3 +2218,13 @@ def score_passive_voice(text):
     passive_ratio   = passive_count / num_sentences
 
     score = _normalize(1 - min(passive_ratio / 0.6, 1.0), 0.0, 1.0)
+    feedback = (
+        f"Passive constructions detected: {passive_count} "
+        f"({passive_ratio * 100:.0f}% of sentences). "
+    )
+    if passive_ratio < 0.15:
+        feedback += "Excellent active voice usage — writing feels direct and engaging."
+    elif passive_ratio < 0.35:
+        feedback += "Moderate passive voice. Try converting some sentences to active voice."
+    else:
+        feedback += "Heavy passive voice usage. Rewrite key sentences to use active voice."
