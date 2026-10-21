@@ -2268,3 +2268,13 @@ def compute_overall(readability, vocabulary, structure, spelling,
     return round(max(1.0, min(10.0, weighted)), 1)
 
 def annotate_text(text, misspelled_set=None, transition_words_found=None):
+        
+    annotations = []
+    lower_text  = text.lower()
+
+    all_words   = re.findall(r'\b[a-zA-Z]+\b', lower_text)
+    word_freq   = Counter(w for w in all_words if w not in _STOP_WORDS and len(w) > 3)
+
+    used_ranges = []
+
+    def _overlaps(start, end):
