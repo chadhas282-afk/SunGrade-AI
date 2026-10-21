@@ -2308,3 +2308,12 @@ def annotate_text(text, misspelled_set=None, transition_words_found=None):
 
         if misspelled_set and word_lower in misspelled_set:
             suggestion = spell.correction(word_lower)
+            ann = {"start": s, "end": e, "word": word, "tag": "spelling"}
+            if suggestion and suggestion != word_lower:
+                ann["suggestion"] = suggestion
+            annotations.append(ann)
+            _claim(s, e)
+
+        elif word_lower in _AWL_WORDS and len(word_lower) > 4:
+            annotations.append({"start": s, "end": e, "word": word, "tag": "academic"})
+            _claim(s, e)
