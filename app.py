@@ -2448,3 +2448,13 @@ def generate_suggestions(text, r_score, v_score, s_score, sp_score, ml_score,
             "icon": "🎯", "title": "Support your claims with evidence",
             "detail": "Use: 'because', 'for example', 'research shows', or 'this demonstrates' to back up arguments."
         })
+
+    if ml_score < 6.0:
+        suggestions.append({
+            "category": "Coherence", "priority": "medium",
+            "icon": "🧠", "title": "Strengthen logical flow",
+            "detail": "Use: 'As a result', 'In contrast', 'Building on this', 'To conclude' to link ideas."
+        })
+
+    universal = [
+        {"category": "General", "priority": "low", "icon": "💡",
