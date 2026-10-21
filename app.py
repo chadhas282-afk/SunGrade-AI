@@ -2389,3 +2389,12 @@ def generate_suggestions(text, r_score, v_score, s_score, sp_score, ml_score,
                 "icon": "✂️", "title": "Break up long sentences",
                 "detail": f"Average sentence length is {avg_len:.0f} words — too dense. Split complex sentences for clarity."
             })
+            if len(sentences) < 4:
+            suggestions.append({
+                "category": "Structure", "priority": "high",
+                "icon": "🏗️", "title": "Add more paragraphs",
+                "detail": "A strong essay needs an introduction, at least two body paragraphs, and a conclusion."
+            })
+        if not has_thesis:
+            suggestions.append({
+                "category": "Structure", "priority": "high",
