@@ -2358,3 +2358,13 @@ def generate_suggestions(text, r_score, v_score, s_score, sp_score, ml_score,
                     "'use' → 'utilise', 'important' → 'significant'.".format(awl_ratio * 100)
                 )
             })
+            total, unique = len(words), len(set(words))
+        if total > 0 and unique / total < 0.45:
+            stop = _STOP_WORDS
+            freq = Counter(w for w in words if w not in stop)
+            top_rep = [f'"{w}" ({c}×)' for w, c in freq.most_common(5)]
+            suggestions.append({
+                "category": "Vocabulary", "priority": "high" if v_score < 4 else "medium",
+                "icon": "📚", "title": "Reduce word repetition",
+                "detail": f"Overused words: {', '.join(top_rep)}. Use synonyms for variety."
+            })
