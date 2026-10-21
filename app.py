@@ -2248,3 +2248,13 @@ def score_argument(text):
     if density < 0.5:
         feedback += "Essay lacks supporting evidence. Use 'because', 'for example', 'research shows'."
     elif density < 2.0:
+        feedback += "Some evidence markers present. Consider adding more specific support."
+    else:
+        feedback += "Strong use of evidence and reasoning markers — well-argued essay."
+
+    return round(score, 1), feedback
+
+def compute_overall(readability, vocabulary, structure, spelling,
+                    transitions, passive_voice, argument):
+    weighted = (
+        readability   * 0.16 +
