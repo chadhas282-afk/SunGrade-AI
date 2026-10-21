@@ -2188,3 +2188,13 @@ def score_spelling(text):
 def score_transitions(text):
     
     lower = text.lower()
+    sentences = [s for s in _sentences(text) if len(s.strip()) > 3]
+    num_sentences = max(len(sentences), 1)
+
+    found = [phrase for phrase in _TRANSITION_WORDS if phrase in lower]
+    ratio = len(found) / num_sentences
+    score = _normalize(ratio, 0.0, 0.4)
+
+    feedback = f"Transition phrases found: {len(found)} across {num_sentences} sentences. "
+    if ratio < 0.1:
+        feedback += "Very few linking words. Use transitions like 'however', 'therefore', 'furthermore'."
