@@ -2428,3 +2428,13 @@ def generate_suggestions(text, r_score, v_score, s_score, sp_score, ml_score,
 
     if tr_score < 6.5:
         missing = [w for w in ['however', 'therefore', 'furthermore', 'consequently', 'for example']
+                    if w not in transition_words_found][:3]
+        suggestions.append({
+            "category": "Transitions", "priority": "medium" if tr_score < 4.0 else "low",
+            "icon": "🔗", "title": "Add transition phrases",
+            "detail": f"Connect ideas with linking words. Try adding: {', '.join(missing)}."
+        })
+
+    if pv_score < 5.5:
+        suggestions.append({
+            "category": "Style", "priority": "low",
