@@ -2288,3 +2288,12 @@ def annotate_text(text, misspelled_set=None, transition_words_found=None):
         s, e = m.start(), m.end()
         if not _overlaps(s, e):
             annotations.append({"start": s, "end": e, "word": m.group(), "tag": "passive"})
+            _claim(s, e)
+
+    sorted_transitions = sorted(_TRANSITION_WORDS, key=len, reverse=True)
+    for phrase in sorted_transitions:
+        for m in re.finditer(re.escape(phrase), lower_text):
+            s, e = m.start(), m.end()
+            if not _overlaps(s, e):
+                annotations.append({"start": s, "end": e, "word": text[s:e], "tag": "transition"})
+                _claim(s, e)
