@@ -2458,3 +2458,13 @@ def generate_suggestions(text, r_score, v_score, s_score, sp_score, ml_score,
 
     universal = [
         {"category": "General", "priority": "low", "icon": "💡",
+          "title": "Read your essay aloud",
+         "detail": "Reading aloud catches awkward phrasing and missing words."},
+        {"category": "General", "priority": "low", "icon": "🔄",
+         "title": "Revise and review",
+         "detail": "Leave 30 minutes between writing and proofreading for fresh perspective."},
+    ]
+    suggestions.extend(universal[:2] if len(suggestions) < 3 else universal[:1])
+
+    priority_order = {"high": 0, "medium": 1, "low": 2}
+    suggestions.sort(key=lambda s: priority_order.get(s["priority"], 3))
