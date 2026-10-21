@@ -2418,3 +2418,13 @@ def generate_suggestions(text, r_score, v_score, s_score, sp_score, ml_score,
                     "detail": f"Grade {grade:.0f} level — aim for Grade 10–12. Prefer active voice and concise sentences."
                 })
             elif grade < 5:
+                suggestions.append({
+                    "category": "Readability", "priority": "low",
+                    "icon": "🎓", "title": "Use more academic language",
+                    "detail": "Introduce more sophisticated transitions and complex sentence structures."
+                })
+        except Exception:
+            pass
+
+    if tr_score < 6.5:
+        missing = [w for w in ['however', 'therefore', 'furthermore', 'consequently', 'for example']
