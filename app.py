@@ -2168,3 +2168,13 @@ def score_spelling(text):
 
     misspelled = spell.unknown(words)
     total      = len(words)
+   error_rate = len(misspelled) / total
+
+    score = _normalize(1 - error_rate, 0.7, 1.0)
+    sample_errors = list(misspelled)[:5]
+    feedback = (
+        f"Spelling errors: {len(misspelled)}/{total} words "
+        f"({error_rate * 100:.1f}% error rate). "
+    )
+    if error_rate < 0.05:
+        feedback += "Excellent spelling accuracy."
