@@ -2238,3 +2238,13 @@ def score_argument(text):
     num_words = max(len(words), 1)
 
     found = []
+    for marker in _ARGUMENT_MARKERS:
+        found.extend([marker] * lower.count(marker))
+
+    density = (len(found) / num_words) * 100
+    score   = _normalize(density, 0.0, 4.0)
+
+    feedback = f"Evidence/argument markers: {len(found)} ({density:.1f} per 100 words). "
+    if density < 0.5:
+        feedback += "Essay lacks supporting evidence. Use 'because', 'for example', 'research shows'."
+    elif density < 2.0:
