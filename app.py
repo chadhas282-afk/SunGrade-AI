@@ -2328,3 +2328,13 @@ def annotate_text(text, misspelled_set=None, transition_words_found=None):
 def generate_suggestions(text, r_score, v_score, s_score, sp_score, ml_score,
                           tr_score, pv_score, arg_score,
                           transition_words_found, awl_ratio,
+                          has_thesis, has_conclusion, misspelled_set):
+    suggestions = []
+    words     = _words(text)
+    sentences = [s for s in _sentences(text) if len(s.strip()) > 3]
+
+    if sp_score < 7.0 and misspelled_set:
+        corrections = {}
+        for w in list(misspelled_set)[:8]:
+            c = spell.correction(w)
+            if c and c != w:
