@@ -2317,3 +2317,14 @@ def annotate_text(text, misspelled_set=None, transition_words_found=None):
         elif word_lower in _AWL_WORDS and len(word_lower) > 4:
             annotations.append({"start": s, "end": e, "word": word, "tag": "academic"})
             _claim(s, e)
+
+        elif word_lower not in _STOP_WORDS and word_freq.get(word_lower, 0) > 3:
+            annotations.append({"start": s, "end": e, "word": word, "tag": "overused"})
+            _claim(s, e)
+
+    annotations.sort(key=lambda a: a['start'])
+    return annotations
+
+def generate_suggestions(text, r_score, v_score, s_score, sp_score, ml_score,
+                          tr_score, pv_score, arg_score,
+                          transition_words_found, awl_ratio,
