@@ -2738,3 +2738,13 @@ def add_security_headers(response):
         "script-src 'self' 'unsafe-inline'; "
         "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; "
         "font-src https://fonts.gstatic.com; "
+        "img-src 'self' data:;"
+    )
+    return response
+
+@app.route('/')
+def index():
+    return render_template_string(HTML_TEMPLATE)
+
+@app.route('/api/analyze', methods=['POST'])
+def analyze_essay_route():
