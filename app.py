@@ -2758,3 +2758,13 @@ def analyze_essay_route():
     allowed_extensions = {'.png', '.jpg', '.jpeg'}
     ext = os.path.splitext(file.filename)[1].lower()
     if ext not in allowed_extensions:
+        return jsonify({"error": "Invalid file type. Allowed: PNG, JPG"}), 400
+
+    try:
+        file_bytes = file.read()
+
+        extracted_text = extract_text_from_buffer(file_bytes)
+        if not extracted_text or len(extracted_text.strip()) < 10:
+            return jsonify({"error": "No readable text found in the image. Please upload a clearer photo."}), 400
+
+        ml_score = run_ml(extracted_text)
