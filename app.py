@@ -2617,3 +2617,14 @@ def _preprocess(img):
         img = cv2.resize(img, (int(w * scale), int(h * scale)), interpolation=cv2.INTER_CUBIC)
 
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+
+    denoised = cv2.fastNlMeansDenoising(gray, h=10, templateWindowSize=7, searchWindowSize=21)
+
+    clahe = cv2.createCLAHE(clipLimit=2.5, tileGridSize=(8, 8))
+    enhanced = clahe.apply(denoised)
+
+    return cv2.cvtColor(enhanced, cv2.COLOR_GRAY2BGR)
+
+def extract_text_from_buffer(file_bytes):
+    
+    try:
