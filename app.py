@@ -2537,3 +2537,13 @@ def analyze_essay(text, ml_score=5.0):
     arg_score, arg_feedback                    = score_argument(text)
 
     ml_clamped = round(max(1.0, min(10.0, float(ml_score))), 1)
+
+    overall = compute_overall(
+        r_score, v_score, s_score, sp_score,
+        tr_score, pv_score, arg_score
+    )
+
+    dims = {
+        "readability":  {"score": r_score,    "label": "Readability",  "feedback": r_feedback,   "icon": "📖"},
+        "vocabulary":   {"score": v_score,    "label": "Vocabulary",   "feedback": v_feedback,   "icon": "🔤",
+                         "detail": {"awl_count": awl_count, "awl_pct": round(awl_ratio * 100, 1)}},
