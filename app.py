@@ -2527,4 +2527,13 @@ def analyze_paragraphs(text):
     return results
 
 def analyze_essay(text, ml_score=5.0):
-    
+
+    r_score,  r_feedback                       = score_readability(text)
+    v_score,  v_feedback, awl_count, awl_ratio = score_vocabulary(text)
+    s_score,  s_feedback, has_thesis, has_conclusion = score_structure(text)
+    sp_score, sp_feedback, misspelled_set      = score_spelling(text)
+    tr_score, tr_feedback, transition_found    = score_transitions(text)
+    pv_score, pv_feedback                      = score_passive_voice(text)
+    arg_score, arg_feedback                    = score_argument(text)
+
+    ml_clamped = round(max(1.0, min(10.0, float(ml_score))), 1)
