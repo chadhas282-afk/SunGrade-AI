@@ -2698,3 +2698,12 @@ def extract_text_from_buffer(file_bytes):
         print(f"Extracted {len(lines_data)} text regions, {len(extracted_text)} characters.")
 
         return extracted_text
+    
+    except Exception as e:
+        print(f"EasyOCR Error: {e}")
+        raise e
+
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
+
+app = Flask(__name__)
+app.config['MAX_CONTENT_LENGTH'] = 10 * 1024 * 1024              
