@@ -2608,3 +2608,12 @@ ssl._create_default_https_context = ssl._create_unverified_context
 reader = easyocr.Reader(['en'], gpu=False)
 
 def _preprocess(img):
+        
+    h, w = img.shape[:2]
+
+    min_dim = 1200
+    if max(h, w) < min_dim:
+        scale = min_dim / max(h, w)
+        img = cv2.resize(img, (int(w * scale), int(h * scale)), interpolation=cv2.INTER_CUBIC)
+
+    gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
