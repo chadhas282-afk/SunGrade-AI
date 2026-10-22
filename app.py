@@ -2598,3 +2598,13 @@ def analyze_essay(text, ml_score=5.0):
         "overall_score": overall,
         "dimensions":    dims,
         "suggestions":   suggestions,
+        "annotations":   annotations,
+        "stats":         stats,
+        "paragraphs":    paragraphs,
+    }
+
+ssl._create_default_https_context = ssl._create_unverified_context
+
+reader = easyocr.Reader(['en'], gpu=False)
+
+def _preprocess(img):
