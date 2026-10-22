@@ -2707,3 +2707,13 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
 app = Flask(__name__)
 app.config['MAX_CONTENT_LENGTH'] = 10 * 1024 * 1024              
+
+MODEL_PATH = 'essay_scorer_model.keras'
+_model_cache = None
+
+def get_model():
+    global _model_cache
+    if _model_cache is None and os.path.exists(MODEL_PATH):
+        print("Loading ML model into memory cache...")
+        _model_cache = tf.keras.models.load_model(MODEL_PATH)
+    return _model_cache
