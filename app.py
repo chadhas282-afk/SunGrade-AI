@@ -2477,4 +2477,14 @@ def analyze_paragraphs(text):
         raw_paras = [text.strip()]
 
     results = []
-    for i, para in enumerate(raw_paras[:10]):                         
+    for i, para in enumerate(raw_paras[:10]):              
+        words     = _words(para)
+        sentences = [s for s in _sentences(para) if len(s.strip()) > 3]
+        n_words   = len(words)
+        n_sents   = max(len(sentences), 1)
+        avg_len   = n_words / n_sents
+
+        try:
+            r_s, _ = score_readability(para) if n_words > 10 else (5.0, '')
+        except Exception:
+            r_s = 5.0           
