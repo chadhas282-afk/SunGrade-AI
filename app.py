@@ -2488,3 +2488,13 @@ def analyze_paragraphs(text):
             r_s, _ = score_readability(para) if n_words > 10 else (5.0, '')
         except Exception:
             r_s = 5.0           
+
+        lower = para.lower()
+        tr_found = [ph for ph in _TRANSITION_WORDS if ph in lower]
+        tr_ratio = len(tr_found) / n_sents
+        tr_s = min(10.0, 1 + tr_ratio / 0.4 * 9)
+
+        passive_re = re.compile(r'\b(is|are|was|were|be|been|being)\s+\w+ed\b', re.IGNORECASE)
+        pv_count = len(passive_re.findall(para))
+        pv_ratio = pv_count / n_sents
+        pv_s = max(1.0, 10.0 - pv_ratio * 15)
