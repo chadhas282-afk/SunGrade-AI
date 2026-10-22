@@ -2558,3 +2558,13 @@ def analyze_essay(text, ml_score=5.0):
         "coherence":    {"score": ml_clamped, "label": "Coherence",
                          "feedback": "Assessed by neural network analysis of writing style.",
                          "icon": "🧠"},
+    }
+
+    annotations = annotate_text(
+        text,
+        misspelled_set=misspelled_set,
+        transition_words_found=transition_found
+    )
+
+    suggestions = generate_suggestions(
+        text,
