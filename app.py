@@ -2628,3 +2628,13 @@ def _preprocess(img):
 def extract_text_from_buffer(file_bytes):
     
     try:
+
+        np_arr = np.frombuffer(file_bytes, np.uint8)
+        img = cv2.imdecode(np_arr, cv2.IMREAD_COLOR)
+
+        if img is None:
+            raise ValueError("Could not decode the provided image bytes.")
+
+        preprocessed = _preprocess(img)
+
+        print("Running EasyOCR with enhanced preprocessing...")
