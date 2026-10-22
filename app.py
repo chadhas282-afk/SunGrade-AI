@@ -2677,4 +2677,14 @@ def extract_text_from_buffer(file_bytes):
         
         for bbox, text, conf in lines_data:
             top_y = min(pt[1] for pt in bbox)
-            
+
+            if prev_y is None:
+                extracted_text += text
+            else:
+                y_diff = top_y - prev_y
+
+                if y_diff > 40:
+                    extracted_text += "\n\n" + text
+
+                elif y_diff > 20:
+                    extracted_text += "\n" + text
