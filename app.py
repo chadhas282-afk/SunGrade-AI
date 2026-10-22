@@ -2638,3 +2638,13 @@ def extract_text_from_buffer(file_bytes):
         preprocessed = _preprocess(img)
 
         print("Running EasyOCR with enhanced preprocessing...")
+
+        results = reader.readtext(
+            preprocessed,
+            detail=1,
+            paragraph=False,                                                   
+            text_threshold=0.5,                                                  
+            low_text=0.35,                                                          
+            link_threshold=0.35,                                            
+            width_ths=0.8,                                                
+            height_ths=0.5,                                         
