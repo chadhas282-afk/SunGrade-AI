@@ -2578,3 +2578,13 @@ def analyze_essay(text, ml_score=5.0):
     sentences = [s for s in _sentences(text) if len(s.strip()) > 3]
     try:
         grade = textstat.flesch_kincaid_grade(text)
+    except Exception:
+        grade = 0.0
+    reading_time = max(1, round(len(words) / 238))                     
+
+    stats = {
+        "word_count":       len(words),
+        "sentence_count":   len(sentences),
+        "paragraph_count":  len([p for p in text.strip().split('\n\n') if p.strip()]),
+        "reading_time_min": reading_time,
+        "grade_level":      round(grade, 1),
