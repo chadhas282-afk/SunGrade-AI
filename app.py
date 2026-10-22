@@ -2508,3 +2508,13 @@ def analyze_paragraphs(text):
 
         if i == 0:
             role = "Introduction"
+            elif i == len(raw_paras) - 1:
+            role = "Conclusion"
+        else:
+            role = f"Body ¶{i}"
+
+        results.append({
+            "index":      i + 1,
+            "role":       role,
+            "preview":    para[:70].replace('\n', ' ') + ('…' if len(para) > 70 else ''),
+            "words":      n_words,
