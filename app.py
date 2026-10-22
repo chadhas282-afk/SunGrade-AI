@@ -2588,3 +2588,13 @@ def analyze_essay(text, ml_score=5.0):
         "paragraph_count":  len([p for p in text.strip().split('\n\n') if p.strip()]),
         "reading_time_min": reading_time,
         "grade_level":      round(grade, 1),
+        "awl_pct":          round(awl_ratio * 100, 1),
+        "spelling_errors":  len(misspelled_set),
+    }
+
+    paragraphs = analyze_paragraphs(text)
+
+    return {
+        "overall_score": overall,
+        "dimensions":    dims,
+        "suggestions":   suggestions,
