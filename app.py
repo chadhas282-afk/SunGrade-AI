@@ -2657,4 +2657,15 @@ def extract_text_from_buffer(file_bytes):
 
         def sort_key(r):
             bbox = r[0]
-                                     
+
+            top_y = min(pt[1] for pt in bbox)
+            left_x = min(pt[0] for pt in bbox)
+
+            row_band = int(top_y / 30)
+            return (row_band, left_x)
+
+        results_sorted = sorted(results, key=sort_key)
+
+        MIN_CONFIDENCE = 0.3
+        lines_data = [(bbox, text, conf) for (bbox, text, conf) in results_sorted if conf >= MIN_CONFIDENCE]
+        
