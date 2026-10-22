@@ -2498,3 +2498,13 @@ def analyze_paragraphs(text):
         pv_count = len(passive_re.findall(para))
         pv_ratio = pv_count / n_sents
         pv_s = max(1.0, 10.0 - pv_ratio * 15)
+
+        content = [w for w in words if w not in _STOP_WORDS and len(w) > 3]
+        awl_n = sum(1 for w in content if w in _AWL_WORDS)
+        awl_r = awl_n / max(len(content), 1)
+
+        para_score = round(r_s * 0.4 + tr_s * 0.3 + pv_s * 0.3, 1)
+        para_score = max(1.0, min(10.0, para_score))
+
+        if i == 0:
+            role = "Introduction"
