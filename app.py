@@ -2647,4 +2647,14 @@ def extract_text_from_buffer(file_bytes):
             low_text=0.35,                                                          
             link_threshold=0.35,                                            
             width_ths=0.8,                                                
-            height_ths=0.5,                                         
+            height_ths=0.5,    
+            min_size=10,                                                  
+            slope_ths=0.2,                                             
+        )
+
+        if not results:
+            return ""
+
+        def sort_key(r):
+            bbox = r[0]
+                                     
