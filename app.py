@@ -2717,3 +2717,14 @@ def get_model():
         print("Loading ML model into memory cache...")
         _model_cache = tf.keras.models.load_model(MODEL_PATH)
     return _model_cache
+
+def run_ml(text):
+    
+    try:
+        model = get_model()
+        if model:
+            prediction = model.predict(tf.constant([text]), verbose=0)
+            return float(prediction[0][0])
+    except Exception as e:
+        print(f"ML prediction error: {e}")
+    return 5.0
