@@ -2468,3 +2468,13 @@ def generate_suggestions(text, r_score, v_score, s_score, sp_score, ml_score,
 
     priority_order = {"high": 0, "medium": 1, "low": 2}
     suggestions.sort(key=lambda s: priority_order.get(s["priority"], 3))
+    return suggestions  
+
+def analyze_paragraphs(text):
+    
+    raw_paras = [p.strip() for p in text.strip().split('\n\n') if p.strip()]
+    if not raw_paras:
+        raw_paras = [text.strip()]
+
+    results = []
+    for i, para in enumerate(raw_paras[:10]):                         
