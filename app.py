@@ -2568,3 +2568,13 @@ def analyze_essay(text, ml_score=5.0):
 
     suggestions = generate_suggestions(
         text,
+        r_score, v_score, s_score, sp_score, ml_clamped,
+        tr_score, pv_score, arg_score,
+        transition_found, awl_ratio,
+        has_thesis, has_conclusion, misspelled_set
+    )
+
+    words     = _words(text)
+    sentences = [s for s in _sentences(text) if len(s.strip()) > 3]
+    try:
+        grade = textstat.flesch_kincaid_grade(text)
