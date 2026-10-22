@@ -2748,3 +2748,13 @@ def index():
 
 @app.route('/api/analyze', methods=['POST'])
 def analyze_essay_route():
+    if 'file' not in request.files:
+        return jsonify({"error": "No file part in the request"}), 400
+
+    file = request.files['file']
+    if file.filename == '':
+        return jsonify({"error": "No file selected"}), 400
+
+    allowed_extensions = {'.png', '.jpg', '.jpeg'}
+    ext = os.path.splitext(file.filename)[1].lower()
+    if ext not in allowed_extensions:
