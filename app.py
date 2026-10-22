@@ -2668,4 +2668,13 @@ def extract_text_from_buffer(file_bytes):
 
         MIN_CONFIDENCE = 0.3
         lines_data = [(bbox, text, conf) for (bbox, text, conf) in results_sorted if conf >= MIN_CONFIDENCE]
+
+        if not lines_data:
+            return ""
+
+        extracted_text = ""
+        prev_y = None
         
+        for bbox, text, conf in lines_data:
+            top_y = min(pt[1] for pt in bbox)
+            
