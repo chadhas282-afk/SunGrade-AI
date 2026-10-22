@@ -2518,3 +2518,13 @@ def analyze_paragraphs(text):
             "role":       role,
             "preview":    para[:70].replace('\n', ' ') + ('…' if len(para) > 70 else ''),
             "words":      n_words,
+            "sentences":  len(sentences),
+            "avg_len":    round(avg_len, 1),
+            "transitions":len(tr_found),
+            "awl_pct":    round(awl_r * 100, 1),
+            "score":      para_score,
+        })
+    return results
+
+def analyze_essay(text, ml_score=5.0):
+    
