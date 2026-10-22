@@ -2688,3 +2688,13 @@ def extract_text_from_buffer(file_bytes):
 
                 elif y_diff > 20:
                     extracted_text += "\n" + text
+
+                else:
+                    extracted_text += " " + text
+            
+            prev_y = top_y
+
+        extracted_text = extracted_text.strip()
+        print(f"Extracted {len(lines_data)} text regions, {len(extracted_text)} characters.")
+
+        return extracted_text
