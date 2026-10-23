@@ -2768,3 +2768,8 @@ def analyze_essay_route():
             return jsonify({"error": "No readable text found in the image. Please upload a clearer photo."}), 400
 
         ml_score = run_ml(extracted_text)
+        
+        result = analyze_essay(extracted_text, ml_score=ml_score)
+        result["extracted_text"] = extracted_text
+        result["status"] = "success"
+        result["mode"] = "ocr"
