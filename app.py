@@ -2605,7 +2605,16 @@ def analyze_essay(text, ml_score=5.0):
 
 ssl._create_default_https_context = ssl._create_unverified_context
 
-reader = easyocr.Reader(['en'], gpu=False)
+# reader = easyocr.Reader(['en'], gpu=False)
+_ocr_reader = None
+
+def get_ocr_reader():
+    global _ocr_reader
+    if _ocr_reader is None:
+        print("Lazy-loading EasyOCR reader into memory...")
+        import easyocr
+        _ocr_reader = easyocr.Reader(['en'], gpu=False)
+    return _ocr_reader
 
 def _preprocess(img):
     
@@ -2807,5 +2816,5 @@ def analyze_text_route():
         return jsonify({"error": "An error occurred during analysis. Please try again."}), 500
 
 if __name__ == '__main__':
-    app.run(host='127.0.0.1', port=5002, debug=False)
-
+    port = int(os.environ.get('PORT', 10000))
+    app.run(host='0.0.0.0', port=port, debug=False)
