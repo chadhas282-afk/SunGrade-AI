@@ -27,13 +27,13 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 :root {
-    --bg:        #07101e
+    --bg:        #07101e;
     --surface:   rgba(13, 22, 45, 0.80);
     --surface-2: rgba(18, 30, 60, 0.70);
     --border:    rgba(255,255,255,0.07);
     --border-2:  rgba(255,255,255,0.12);
     --accent:    #4f8ef7;
-     --accent-2:  #8b5cf6;
+    --accent-2:  #8b5cf6;
     --accent-3:  #34d399;
     --green:     #22c55e;
     --yellow:    #eab308;
@@ -73,7 +73,7 @@ body {
 
 @keyframes drift {
     from { transform: translate(0, 0) scale(1); }
-     to   { transform: translate(50px, 35px) scale(1.05); }
+    to   { transform: translate(50px, 35px) scale(1.05); }
 }
 
 .app-wrapper {
@@ -118,17 +118,17 @@ body {
     font-size: clamp(2rem, 5.5vw, 3rem);
     font-weight: 800;
     background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 50%, #34d399 100%);
-     -webkit-background-clip: text;
+    -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     line-height: 1.15;
     margin-bottom: 0.85rem;
-    }
+}
 
 .app-subtitle {
     color: var(--text-2);
     font-size: 1rem;
-     max-width: 520px;
+    max-width: 520px;
     margin: 0 auto;
     line-height: 1.55;
 }
@@ -143,12 +143,12 @@ body {
     display: flex;
     flex-direction: column;
     gap: 0;
-     box-shadow: var(--shadow);
+    box-shadow: var(--shadow);
     overflow: hidden;
 }
 
 .tab-bar {
-display: flex;
+    display: flex;
     border-bottom: 1px solid var(--border);
     background: rgba(0,0,0,0.2);
 }
@@ -173,7 +173,7 @@ display: flex;
 }
 .tab-btn:hover { color: var(--text-2); }
 .tab-btn.active {
-color: var(--accent);
+    color: var(--accent);
     background: rgba(79,142,247,0.06);
 }
 .tab-btn.active::after {
@@ -193,7 +193,7 @@ color: var(--accent);
 
 .dropzone {
     border: 2px dashed rgba(79,142,247,0.35);
-     border-radius: var(--radius-sm);
+    border-radius: var(--radius-sm);
     padding: 3rem 2rem;
     text-align: center;
     cursor: pointer;
@@ -228,7 +228,7 @@ color: var(--accent);
 
 .text-input-wrapper { display: flex; flex-direction: column; gap: 0.6rem; }
 .essay-textarea {
- width: 100%;
+    width: 100%;
     min-height: 200px;
     background: rgba(0,0,0,0.25);
     border: 1.5px solid rgba(255,255,255,0.08);
@@ -243,12 +243,12 @@ color: var(--accent);
     outline: none;
 }
 .essay-textarea:focus {
-border-color: rgba(79,142,247,0.5);
+    border-color: rgba(79,142,247,0.5);
     box-shadow: 0 0 0 3px rgba(79,142,247,0.08);
 }
 .essay-textarea::placeholder { color: var(--text-3); }
 .textarea-footer {
-display: flex;
+    display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 0.25rem;
@@ -263,7 +263,7 @@ display: flex;
 
 .btn-primary {
     flex: 1;
-     padding: 1rem 1.5rem;
+    padding: 1rem 1.5rem;
     background: linear-gradient(135deg, var(--accent), var(--accent-2));
     border: none;
     border-radius: var(--radius-sm);
@@ -334,11 +334,11 @@ display: flex;
     gap: 0;
 }
 .step {
-display: flex;
+    display: flex;
     flex-direction: column;
     align-items: center;
     gap: 0.45rem;
-    }
+}
 .step-dot {
     width: 10px; height: 10px;
     border-radius: 50%;
@@ -353,7 +353,7 @@ display: flex;
 .step.done .step-dot {
     background: var(--green);
     box-shadow: 0 0 8px rgba(34,197,94,0.5);
-    }
+}
 @keyframes pulse-dot {
     0%, 100% { transform: scale(1); }
     50% { transform: scale(1.4); }
@@ -388,12 +388,12 @@ display: flex;
     animation: fadeUp 0.5s ease;
 }
 @keyframes fadeUp {
-from { opacity: 0; transform: translateY(22px); }
+    from { opacity: 0; transform: translateY(22px); }
     to   { opacity: 1; transform: translateY(0); }
 }
 
 .overview-row {
-display: grid;
+    display: grid;
     grid-template-columns: 260px 1fr;
     gap: 1.25rem;
     align-items: stretch;
@@ -413,7 +413,7 @@ display: grid;
     align-items: center;
     justify-content: center;
     gap: 0.75rem;
-    }
+}
 .overall-label {
     font-size: 0.78rem;
     font-weight: 700;
@@ -433,12 +433,12 @@ display: grid;
     stroke: url(#ringGradient);
     stroke-width: 10;
     stroke-linecap: round;
-     transition: stroke-dashoffset 1.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    transition: stroke-dashoffset 1.4s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 .ring-score-label {
     position: absolute;
     inset: 0;
-     display: flex;
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -468,12 +468,12 @@ display: grid;
     border: 1px solid var(--border);
     border-radius: var(--radius);
     padding: 1.5rem;
-     box-shadow: var(--shadow);
+    box-shadow: var(--shadow);
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 0.75rem;
-    }
+}
 .radar-title {
     font-size: 0.78rem;
     font-weight: 700;
@@ -483,7 +483,7 @@ display: grid;
     align-self: flex-start;
 }
 .radar-wrapper {
-width: 100%;
+    width: 100%;
     max-width: 300px;
     aspect-ratio: 1;
 }
@@ -493,7 +493,7 @@ width: 100%;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
     gap: 1rem;
-    }
+}
 
 .dim-card {
     background: var(--surface);
@@ -503,12 +503,12 @@ width: 100%;
     border-radius: var(--radius-sm);
     padding: 1.35rem;
     box-shadow: var(--shadow);
-    ransition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
     animation: fadeUp 0.5s ease backwards;
     cursor: default;
 }
 .dim-card:hover {
-transform: translateY(-3px);
+    transform: translateY(-3px);
     box-shadow: 0 14px 45px rgba(0,0,0,0.5);
     border-color: var(--border-2);
 }
@@ -528,7 +528,7 @@ transform: translateY(-3px);
     height: 5px;
     background: rgba(255,255,255,0.06);
     border-radius: 3px;
-     overflow: hidden;
+    overflow: hidden;
     margin-bottom: 0.5rem;
 }
 .dim-bar {
@@ -538,7 +538,7 @@ transform: translateY(-3px);
     transition: width 1.1s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 .dim-feedback {
-font-size: 0.76rem;
+    font-size: 0.76rem;
     color: var(--text-2);
     line-height: 1.5;
     margin-top: 0.4rem;
@@ -563,7 +563,7 @@ font-size: 0.76rem;
 .extracted-card {
     background: var(--surface);
     backdrop-filter: blur(20px);
-     border: 1px solid var(--border);
+    border: 1px solid var(--border);
     border-radius: var(--radius);
     padding: 1.65rem;
     box-shadow: var(--shadow);
@@ -573,7 +573,7 @@ font-size: 0.76rem;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 0.85rem;
-    }
+}
 .card-heading {
     font-size: 0.8rem;
     font-weight: 700;
@@ -613,12 +613,12 @@ font-size: 0.76rem;
     margin-top: 0.65rem;
 }
 .suggestion-item {
-display: flex;
+    display: flex;
     gap: 1rem;
     align-items: flex-start;
     background: var(--surface-2);
     border: 1px solid var(--border);
-     border-radius: var(--radius-sm);
+    border-radius: var(--radius-sm);
     padding: 1rem 1.2rem;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     animation: fadeUp 0.4s ease backwards;
@@ -648,17 +648,17 @@ display: flex;
     letter-spacing: 0.07em;
     padding: 0.18rem 0.55rem;
     border-radius: 100px;
-    }
+}
 .badge-high   { background: rgba(239,68,68,0.15);  color: #f87171; border: 1px solid rgba(239,68,68,0.28); }
 .badge-medium { background: rgba(234,179,8,0.12);  color: #facc15; border: 1px solid rgba(234,179,8,0.28); }
 .badge-low    { background: rgba(59,130,246,0.12); color: #60a5fa; border: 1px solid rgba(59,130,246,0.28); }
 .suggestion-cat {
-font-size: 0.65rem;
+    font-size: 0.65rem;
     color: var(--text-3);
     font-weight: 500;
 }
 .suggestion-detail {
-font-size: 0.82rem;
+    font-size: 0.82rem;
     color: var(--text-2);
     line-height: 1.55;
 }
@@ -688,7 +688,7 @@ font-size: 0.82rem;
     padding: 1rem 1.5rem;
     margin-bottom: 1.5rem;
     box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    }
+}
 .stat-item {
     display: flex;
     flex-direction: column;
@@ -728,7 +728,7 @@ font-size: 0.82rem;
     border-collapse: collapse;
     font-size: 0.9rem;
     text-align: left;
-    }
+}
 .para-table th {
     background: rgba(255, 255, 255, 0.05);
     padding: 0.75rem;
@@ -743,7 +743,7 @@ font-size: 0.82rem;
 }
 .para-table tr:last-child td {
     border-bottom: none;
-    }
+}
 .para-table .score-badge {
     display: inline-block;
     padding: 0.25rem 0.5rem;
@@ -783,22 +783,22 @@ font-size: 0.82rem;
     border-radius: 20px;
     border: 1px solid var(--border);
     transition: 0.3s;
-    }
+}
 .toggle-slider:before {
     content: "";
     position: absolute;
     height: 14px;
-     width: 14px;
+    width: 14px;
     left: 2px;
     bottom: 2px;
     background-color: var(--text-muted);
     border-radius: 50%;
-     transition: 0.3s;
+    transition: 0.3s;
 }
 .toggle-switch input:checked + .toggle-slider {
     background-color: var(--primary);
     border-color: var(--primary);
-    }
+}
 .toggle-switch input:checked + .toggle-slider:before {
     transform: translateX(16px);
     background-color: #fff;
@@ -813,7 +813,7 @@ font-size: 0.82rem;
 }
 
 .history-item {
-display: flex;
+    display: flex;
     align-items: center;
     gap: 1rem;
     background: var(--surface-2);
@@ -858,7 +858,7 @@ display: flex;
 }
 
 @media (max-width: 480px) {
-.dimensions-grid { grid-template-columns: 1fr; }
+    .dimensions-grid { grid-template-columns: 1fr; }
     .progress-steps { gap: 0; flex-direction: column; align-items: flex-start; padding-left: 1rem; }
     .step { margin-bottom: 0.5rem; }
     .step-label { font-size: 0.75rem; }
@@ -888,7 +888,7 @@ display: flex;
 .ann:hover { opacity: 0.85; }
 
 .ann-spelling {
-background: rgba(239, 68, 68, 0.18);
+    background: rgba(239, 68, 68, 0.18);
     border-bottom: 2px dotted #ef4444;
     color: #fca5a5;
 }
@@ -928,7 +928,7 @@ background: rgba(239, 68, 68, 0.18);
     border: 1px solid var(--border);
 }
 .ann-legend-item {
-display: flex;
+    display: flex;
     align-items: center;
     gap: 0.4rem;
     font-size: 0.75rem;
@@ -948,7 +948,7 @@ display: flex;
 .ann-swatch.ann-overused   { background: rgba(249,115,22,0.4); border-bottom: 2px dotted #f97316; }
 
 .ann[data-tip]:hover::after {
-content: attr(data-tip);
+    content: attr(data-tip);
     position: absolute;
     bottom: calc(100% + 6px);
     left: 50%;
@@ -958,7 +958,7 @@ content: attr(data-tip);
     font-size: 0.72rem;
     padding: 4px 8px;
     border-radius: 6px;
-     white-space: nowrap;
+    white-space: nowrap;
     pointer-events: none;
     border: 1px solid rgba(255,255,255,0.1);
     z-index: 100;
@@ -968,7 +968,7 @@ content: attr(data-tip);
 .dim-card {
     cursor: pointer;
     user-select: none;
-    }
+}
 .dim-card:focus-visible { outline: 2px solid var(--accent); }
 
 .dim-detail {
@@ -1039,7 +1039,7 @@ content: attr(data-tip);
             <div class="tab-bar" role="tablist" aria-label="Input method">
                 <button class="tab-btn active" id="tab-upload" role="tab" aria-selected="true" aria-controls="panel-upload">
                     <span class="tab-icon">📷</span> Upload Photo
-                    </button>
+                </button>
                 <button class="tab-btn" id="tab-text" role="tab" aria-selected="false" aria-controls="panel-text">
                     <span class="tab-icon">✍️</span> Paste Text
                 </button>
@@ -1048,7 +1048,7 @@ content: attr(data-tip);
             <div id="panel-upload" class="tab-panel" role="tabpanel" aria-labelledby="tab-upload">
                 <div id="dropzone" class="dropzone" role="button" tabindex="0" aria-label="Upload essay image">
                     <div class="dz-icon">📄</div>
-                     <p class="dz-title">Drop your essay photo here</p>
+                    <p class="dz-title">Drop your essay photo here</p>
                     <p class="dz-subtitle">or click to browse — JPG, PNG supported</p>
                     <input type="file" id="fileInput" accept=".jpg,.jpeg,.png" hidden aria-label="File input">
                 </div>
@@ -1058,7 +1058,7 @@ content: attr(data-tip);
                 </div>
             </div>
 
-             <div id="panel-text" class="tab-panel hidden" role="tabpanel" aria-labelledby="tab-text">
+            <div id="panel-text" class="tab-panel hidden" role="tabpanel" aria-labelledby="tab-text">
                 <div class="text-input-wrapper">
                     <textarea
                         id="essayTextarea"
@@ -1118,7 +1118,7 @@ content: attr(data-tip);
                         <svg class="score-ring" viewBox="0 0 120 120" aria-hidden="true">
                             <defs>
                                 <linearGradient id="ringGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%"   stop-color="#60a5fa"/>
+                                    <stop offset="0%"   stop-color="#60a5fa"/>
                                     <stop offset="50%"  stop-color="#a78bfa"/>
                                     <stop offset="100%" stop-color="#34d399"/>
                                 </linearGradient>
@@ -1128,7 +1128,7 @@ content: attr(data-tip);
                                 stroke-dasharray="314" stroke-dashoffset="314"/>
                         </svg>
                         <div class="ring-score-label">
-                         <span id="overallScoreNum" class="ring-score">--</span>
+                            <span id="overallScoreNum" class="ring-score">--</span>
                             <span class="ring-max">/ 10</span>
                         </div>
                     </div>
@@ -1138,7 +1138,7 @@ content: attr(data-tip);
                 <div class="radar-card">
                     <div class="radar-title">Dimension Radar</div>
                     <div class="radar-wrapper">
-                    <svg id="radarChart" class="radar-svg" viewBox="0 0 300 300" aria-label="Radar chart of dimension scores"></svg>
+                        <svg id="radarChart" class="radar-svg" viewBox="0 0 300 300" aria-label="Radar chart of dimension scores"></svg>
                     </div>
                 </div>
             </div>
@@ -1178,7 +1178,7 @@ content: attr(data-tip);
                         <tbody id="paragraphsTableBody">
                             
                         </tbody>
-                         </table>
+                    </table>
                 </div>
             </div>
 
@@ -1218,7 +1218,7 @@ content: attr(data-tip);
             </div>
 
             <div class="history-card" id="historyCard">
-            <h2 class="card-heading">🕐 Recent Analyses</h2>
+                <h2 class="card-heading">🕐 Recent Analyses</h2>
                 <div id="historyList" class="history-list"></div>
             </div>
         </section>
@@ -1318,7 +1318,7 @@ function resetUpload() {
     dropzone.classList.remove('hidden');
     updateAnalyzeBtn();
     setStatus('');
-    }
+}
 
 essayTextarea.addEventListener('input', () => {
     const wordCount = countWords(essayTextarea.value);
@@ -1338,7 +1338,7 @@ function countWords(text) {
 
 function updateAnalyzeBtn() {
     if (activeTab === 'upload') {
-    btnAnalyze.disabled = !selectedFile;
+        btnAnalyze.disabled = !selectedFile;
     } else {
         btnAnalyze.disabled = countWords(essayTextarea.value) < 5;
     }
@@ -1348,7 +1348,7 @@ const STEPS = ['step-ocr', 'step-nlp', 'step-ml', 'step-done'];
 
 function resetSteps() {
     STEPS.forEach(id => {
-    const el = document.getElementById(id);
+        const el = document.getElementById(id);
         el.classList.remove('active', 'done');
     });
 }
@@ -1418,7 +1418,7 @@ async function analyzeImage() {
         setStatus('Network error. Please try again.', 'error');
         progressSteps.classList.add('hidden');
     } finally {
-     if (btnRemove) btnRemove.disabled = false;
+        if (btnRemove) btnRemove.disabled = false;
     }
 }
 
@@ -1448,7 +1448,7 @@ async function analyzeText() {
             await delay(250);
             renderResults(data);
             setStatus('Analysis complete!', 'success');
-            } else {
+        } else {
             setStatus(data.error || 'An error occurred.', 'error');
             progressSteps.classList.add('hidden');
         }
@@ -1528,7 +1528,7 @@ function renderResults(data) {
                 card.setAttribute('aria-expanded', expanded);
             });
             card.addEventListener('keydown', e => {
-            if (e.key === 'Enter' || e.key === ' ') {
+                if (e.key === 'Enter' || e.key === ' ') {
                     e.preventDefault();
                     card.click();
                 }
@@ -1538,7 +1538,7 @@ function renderResults(data) {
         setTimeout(() => {
             const bar = document.getElementById(`bar-${key}`);
             if (bar) bar.style.width = `${score * 10}%`;
-            }, 100 + idx * 60);
+        }, 100 + idx * 60);
     });
 
     renderRadar(dims);
@@ -1588,7 +1588,7 @@ function renderRadar(dims) {
 
     const gridLevels = [0.2, 0.4, 0.6, 0.8, 1.0];
     gridLevels.forEach(level => {
-    const pts = keys.map((_, i) => polar(i * angleStep, maxR * level));
+        const pts = keys.map((_, i) => polar(i * angleStep, maxR * level));
         const poly = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
         poly.setAttribute('points', pts.map(p => p.join(',')).join(' '));
         poly.setAttribute('fill', 'none');
@@ -1598,7 +1598,7 @@ function renderRadar(dims) {
     });
 
     keys.forEach((_, i) => {
-    const [x, y] = polar(i * angleStep, maxR);
+        const [x, y] = polar(i * angleStep, maxR);
         const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
         line.setAttribute('x1', cx); line.setAttribute('y1', cy);
         line.setAttribute('x2', x);  line.setAttribute('y2', y);
@@ -1668,7 +1668,7 @@ function renderParagraphs(paragraphs) {
         if (p.score < 5.0) colorClass = 'score-low';
         else if (p.score < 7.5) colorClass = 'score-mid';
 
-         tr.innerHTML = `
+        tr.innerHTML = `
             <td><strong>${p.index}</strong></td>
             <td><span style="color: var(--text-muted); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em;">${p.role}</span></td>
             <td>${p.words}</td>
@@ -1678,7 +1678,7 @@ function renderParagraphs(paragraphs) {
         `;
         tbody.appendChild(tr);
     });
-    }
+}
 
 function renderAnnotatedText(text, annotations) {
     const container = document.getElementById('annotatedText');
@@ -1688,7 +1688,7 @@ function renderAnnotatedText(text, annotations) {
 
     const sorted = [...annotations]
         .filter(a => typeof a.start === 'number' && typeof a.end === 'number'
-        && a.start >= 0 && a.end > a.start && a.start < text.length)
+                  && a.start >= 0 && a.end > a.start && a.start < text.length)
         .sort((a, b) => a.start - b.start);
 
     const tips = {
@@ -1728,7 +1728,7 @@ function renderAnnotatedText(text, annotations) {
 
     if (!container.hasChildNodes()) {
         container.textContent = text;
-         }
+    }
 }
 
 function renderSuggestions(suggestions) {
@@ -1808,7 +1808,7 @@ function renderHistory() {
     historyList.innerHTML = '';
 
     if (history.length === 0) {
-    const empty = document.createElement('div');
+        const empty = document.createElement('div');
         empty.className = 'history-empty';
         empty.textContent = 'No previous analyses yet.';
         historyList.appendChild(empty);
@@ -1818,7 +1818,7 @@ function renderHistory() {
     history.forEach(entry => {
         const item = document.createElement('div');
         item.className = 'history-item';
-         const { label, color } = getGrade(entry.overall);
+        const { label, color } = getGrade(entry.overall);
         const timeStr = new Date(entry.timestamp).toLocaleString();
 
         item.innerHTML = `
@@ -1828,7 +1828,7 @@ function renderHistory() {
             <div class="history-meta">
                 <div class="history-time">${timeStr} · ${entry.mode === 'text' ? '✍️ Text' : '📷 Image'} · ${label}</div>
                 <div class="history-preview">${escapeHtml(entry.preview)}…</div>
-                </div>
+            </div>
         `;
         historyList.appendChild(item);
     });
@@ -1838,7 +1838,7 @@ btnCopyText.addEventListener('click', async () => {
     const text = document.getElementById('extractedText').textContent;
     if (!text) return;
     try {
-    await navigator.clipboard.writeText(text);
+        await navigator.clipboard.writeText(text);
         btnCopyText.textContent = 'Copied!';
         setTimeout(() => { btnCopyText.textContent = 'Copy'; }, 2000);
     } catch {
@@ -1858,7 +1858,7 @@ if (toggleAnn) {
             annBody.style.display = 'block';
             legend.style.display = 'flex';
             extBody.style.display = 'none';
-            } else {
+        } else {
             annBody.style.display = 'none';
             legend.style.display = 'none';
             extBody.style.display = 'block';
@@ -1988,7 +1988,7 @@ _TRANSITION_WORDS = {
     'in conclusion', 'to summarise', 'to summarize', 'in summary',
     'ultimately', 'overall',
     'for example', 'for instance', 'such as', 'namely',
-    }
+}
 
 _ARGUMENT_MARKERS = {
     'because', 'since', 'therefore', 'thus', 'hence', 'consequently',
@@ -2037,7 +2037,7 @@ def _normalize(value, min_val, max_val):
     return round(max(1.0, min(10.0, 1 + normalized * 9)), 1)
 
 def score_readability(text):
-
+    
     ease = textstat.flesch_reading_ease(text)
     grade = textstat.flesch_kincaid_grade(text)
 
@@ -2148,7 +2148,7 @@ def score_structure(text):
     if has_thesis:
         parts.append("✓ Thesis detected")
     if has_conclusion:
-         parts.append("✓ Conclusion detected")
+        parts.append("✓ Conclusion detected")
     if parts:
         feedback += " | ".join(parts) + ". "
     if avg_sent_len < 8:
@@ -2178,7 +2178,7 @@ def score_spelling(text):
     )
     if error_rate < 0.05:
         feedback += "Excellent spelling accuracy."
-        elif error_rate < 0.15:
+    elif error_rate < 0.15:
         feedback += f"Minor issues. Check: {', '.join(sample_errors)}."
     else:
         feedback += f"Many errors detected. Review: {', '.join(sample_errors)}."
@@ -2208,7 +2208,7 @@ def score_transitions(text):
 def score_passive_voice(text):
     
     passive_pattern = re.compile(
-         r'\b(is|are|was|were|be|been|being)\s+\w+ed\b', re.IGNORECASE
+        r'\b(is|are|was|were|be|been|being)\s+\w+ed\b', re.IGNORECASE
     )
     sentences     = [s for s in _sentences(text) if len(s.strip()) > 3]
     num_sentences = max(len(sentences), 1)
@@ -2268,7 +2268,7 @@ def compute_overall(readability, vocabulary, structure, spelling,
     return round(max(1.0, min(10.0, weighted)), 1)
 
 def annotate_text(text, misspelled_set=None, transition_words_found=None):
-        
+    
     annotations = []
     lower_text  = text.lower()
 
@@ -2278,7 +2278,7 @@ def annotate_text(text, misspelled_set=None, transition_words_found=None):
     used_ranges = []
 
     def _overlaps(start, end):
-         return any(s < end and e > start for s, e in used_ranges)
+        return any(s < end and e > start for s, e in used_ranges)
 
     def _claim(start, end):
         used_ranges.append((start, end))
@@ -2358,7 +2358,7 @@ def generate_suggestions(text, r_score, v_score, s_score, sp_score, ml_score,
                     "'use' → 'utilise', 'important' → 'significant'.".format(awl_ratio * 100)
                 )
             })
-            total, unique = len(words), len(set(words))
+        total, unique = len(words), len(set(words))
         if total > 0 and unique / total < 0.45:
             stop = _STOP_WORDS
             freq = Counter(w for w in words if w not in stop)
@@ -2368,7 +2368,7 @@ def generate_suggestions(text, r_score, v_score, s_score, sp_score, ml_score,
                 "icon": "📚", "title": "Reduce word repetition",
                 "detail": f"Overused words: {', '.join(top_rep)}. Use synonyms for variety."
             })
-            if len(words) < 100:
+        if len(words) < 100:
             suggestions.append({
                 "category": "Vocabulary", "priority": "medium",
                 "icon": "✍️", "title": "Expand your essay",
@@ -2389,7 +2389,7 @@ def generate_suggestions(text, r_score, v_score, s_score, sp_score, ml_score,
                 "icon": "✂️", "title": "Break up long sentences",
                 "detail": f"Average sentence length is {avg_len:.0f} words — too dense. Split complex sentences for clarity."
             })
-            if len(sentences) < 4:
+        if len(sentences) < 4:
             suggestions.append({
                 "category": "Structure", "priority": "high",
                 "icon": "🏗️", "title": "Add more paragraphs",
@@ -2428,7 +2428,7 @@ def generate_suggestions(text, r_score, v_score, s_score, sp_score, ml_score,
 
     if tr_score < 6.5:
         missing = [w for w in ['however', 'therefore', 'furthermore', 'consequently', 'for example']
-                    if w not in transition_words_found][:3]
+                   if w not in transition_words_found][:3]
         suggestions.append({
             "category": "Transitions", "priority": "medium" if tr_score < 4.0 else "low",
             "icon": "🔗", "title": "Add transition phrases",
@@ -2458,7 +2458,7 @@ def generate_suggestions(text, r_score, v_score, s_score, sp_score, ml_score,
 
     universal = [
         {"category": "General", "priority": "low", "icon": "💡",
-          "title": "Read your essay aloud",
+         "title": "Read your essay aloud",
          "detail": "Reading aloud catches awkward phrasing and missing words."},
         {"category": "General", "priority": "low", "icon": "🔄",
          "title": "Revise and review",
@@ -2477,7 +2477,7 @@ def analyze_paragraphs(text):
         raw_paras = [text.strip()]
 
     results = []
-    for i, para in enumerate(raw_paras[:10]):              
+    for i, para in enumerate(raw_paras[:10]):                         
         words     = _words(para)
         sentences = [s for s in _sentences(para) if len(s.strip()) > 3]
         n_words   = len(words)
@@ -2487,7 +2487,7 @@ def analyze_paragraphs(text):
         try:
             r_s, _ = score_readability(para) if n_words > 10 else (5.0, '')
         except Exception:
-            r_s = 5.0           
+            r_s = 5.0
 
         lower = para.lower()
         tr_found = [ph for ph in _TRANSITION_WORDS if ph in lower]
@@ -2508,7 +2508,7 @@ def analyze_paragraphs(text):
 
         if i == 0:
             role = "Introduction"
-            elif i == len(raw_paras) - 1:
+        elif i == len(raw_paras) - 1:
             role = "Conclusion"
         else:
             role = f"Body ¶{i}"
@@ -2527,7 +2527,7 @@ def analyze_paragraphs(text):
     return results
 
 def analyze_essay(text, ml_score=5.0):
-
+    
     r_score,  r_feedback                       = score_readability(text)
     v_score,  v_feedback, awl_count, awl_ratio = score_vocabulary(text)
     s_score,  s_feedback, has_thesis, has_conclusion = score_structure(text)
@@ -2547,7 +2547,7 @@ def analyze_essay(text, ml_score=5.0):
         "readability":  {"score": r_score,    "label": "Readability",  "feedback": r_feedback,   "icon": "📖"},
         "vocabulary":   {"score": v_score,    "label": "Vocabulary",   "feedback": v_feedback,   "icon": "🔤",
                          "detail": {"awl_count": awl_count, "awl_pct": round(awl_ratio * 100, 1)}},
-       "structure":    {"score": s_score,    "label": "Structure",    "feedback": s_feedback,   "icon": "📐",
+        "structure":    {"score": s_score,    "label": "Structure",    "feedback": s_feedback,   "icon": "📐",
                          "detail": {"has_thesis": has_thesis, "has_conclusion": has_conclusion}},
         "spelling":     {"score": sp_score,   "label": "Spelling",     "feedback": sp_feedback,  "icon": "✅",
                          "detail": {"errors": list(misspelled_set)[:10]}},
@@ -2608,7 +2608,7 @@ ssl._create_default_https_context = ssl._create_unverified_context
 reader = easyocr.Reader(['en'], gpu=False)
 
 def _preprocess(img):
-        
+    
     h, w = img.shape[:2]
 
     min_dim = 1200
@@ -2647,7 +2647,7 @@ def extract_text_from_buffer(file_bytes):
             low_text=0.35,                                                          
             link_threshold=0.35,                                            
             width_ths=0.8,                                                
-            height_ths=0.5,    
+            height_ths=0.5,                                             
             min_size=10,                                                  
             slope_ths=0.2,                                             
         )
@@ -2668,7 +2668,7 @@ def extract_text_from_buffer(file_bytes):
 
         MIN_CONFIDENCE = 0.3
         lines_data = [(bbox, text, conf) for (bbox, text, conf) in results_sorted if conf >= MIN_CONFIDENCE]
-
+        
         if not lines_data:
             return ""
 
@@ -2677,7 +2677,7 @@ def extract_text_from_buffer(file_bytes):
         
         for bbox, text, conf in lines_data:
             top_y = min(pt[1] for pt in bbox)
-
+            
             if prev_y is None:
                 extracted_text += text
             else:
@@ -2698,7 +2698,7 @@ def extract_text_from_buffer(file_bytes):
         print(f"Extracted {len(lines_data)} text regions, {len(extracted_text)} characters.")
 
         return extracted_text
-    
+
     except Exception as e:
         print(f"EasyOCR Error: {e}")
         raise e
@@ -2768,7 +2768,7 @@ def analyze_essay_route():
             return jsonify({"error": "No readable text found in the image. Please upload a clearer photo."}), 400
 
         ml_score = run_ml(extracted_text)
-        
+
         result = analyze_essay(extracted_text, ml_score=ml_score)
         result["extracted_text"] = extracted_text
         result["status"] = "success"
@@ -2803,3 +2803,9 @@ def analyze_text_route():
         return jsonify(result)
 
     except Exception as e:
+        print(f"Analysis error (text): {e}")
+        return jsonify({"error": "An error occurred during analysis. Please try again."}), 500
+
+if __name__ == '__main__':
+    app.run(host='127.0.0.1', port=5002, debug=False)
+
