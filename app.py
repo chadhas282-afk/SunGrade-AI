@@ -3,14 +3,13 @@ import json
 import re
 import math
 import ssl
+import importlib
 from collections import Counter
 from flask import Flask, request, jsonify, render_template_string
-import tensorflow as tf
 import textstat  
 from spellchecker import SpellChecker
-import easyocr 
-import cv2
 import numpy as np
+
 
 HTML_TEMPLATE = r"""<!DOCTYPE html>
 <html lang="en">
@@ -1224,6 +1223,7 @@ body {
         </section>
     </main>
 
+    <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
     <script>
 
 const tabUpload      = document.getElementById('tab-upload');
@@ -1386,23 +1386,71 @@ async function analyzeImage() {
     if (btnRemove) btnRemove.disabled = true;
 
     advanceStep(0);
-    setStatus('Running OCR — extracting text from image…');
-
-    const formData = new FormData();
-    formData.append('file', selectedFile);
+    setStatus('Preparing image for analysis…');
 
     try {
+        let extractedText = null;
 
-        await delay(600);
+        // 1. Try in-browser OCR with Tesseract.js (fast, zero server memory usage)
+        if (typeof Tesseract !== 'undefined') {
+            try {
+                setStatus('Reading essay image with in-browser OCR (0%)…');
+                const result = await Tesseract.recognize(selectedFile, 'eng', {
+                    logger: m => {
+                        if (m.status === 'recognizing text' && m.progress != null) {
+                            const pct = Math.round(m.progress * 100);
+                            setStatus(`Reading essay image with in-browser OCR (${pct}%)…`);
+                        }
+                    }
+                });
+                if (result && result.data && result.data.text && result.data.text.trim().length >= 10) {
+                    extractedText = result.data.text.trim();
+                }
+            } catch (ocrErr) {
+                console.warn('Browser OCR error, falling back to server:', ocrErr);
+            }
+        }
+
+        // 2. If browser OCR succeeded, analyze the extracted text via /api/analyze-text
+        if (extractedText) {
+            advanceStep(1);
+            setStatus('Running deep analysis across 8 dimensions…');
+            await delay(300);
+
+            advanceStep(2);
+            setStatus('Scoring coherence with neural model…');
+
+            const response = await fetch('/api/analyze-text', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ text: extractedText })
+            });
+            const data = await response.json();
+
+            advanceStep(3);
+            if (response.ok && data.status === 'success') {
+                await delay(300);
+                renderResults(data);
+                setStatus('Analysis complete!', 'success');
+            } else {
+                setStatus(data.error || 'An error occurred during analysis.', 'error');
+                progressSteps.classList.add('hidden');
+            }
+            return;
+        }
+
+        // 3. Fallback: upload file to server-side OCR endpoint
         advanceStep(1);
-        setStatus('Running NLP analysis across 8 dimensions…');
+        setStatus('Sending image to server for processing…');
+        const formData = new FormData();
+        formData.append('file', selectedFile);
 
         const response = await fetch('/api/analyze', { method: 'POST', body: formData });
         const data = await response.json();
 
         advanceStep(2);
         setStatus('Neural scoring complete…');
-        await delay(400);
+        await delay(300);
         advanceStep(3);
 
         if (response.ok && data.status === 'success') {
@@ -1415,7 +1463,7 @@ async function analyzeImage() {
         }
     } catch (err) {
         console.error(err);
-        setStatus('Network error. Please try again.', 'error');
+        setStatus('Analysis error. Please try again.', 'error');
         progressSteps.classList.add('hidden');
     } finally {
         if (btnRemove) btnRemove.disabled = false;
@@ -2611,131 +2659,193 @@ _ocr_reader = None
 def get_ocr_reader():
     global _ocr_reader
     if _ocr_reader is None:
-        print("Lazy-loading EasyOCR reader into memory...")
-        import easyocr
-        _ocr_reader = easyocr.Reader(['en'], gpu=False)
+        try:
+            print("Lazy-loading EasyOCR reader into memory...")
+            easyocr = importlib.import_module("easyocr")
+            _ocr_reader = easyocr.Reader(['en'], gpu=False)
+        except Exception as e:
+            print(f"EasyOCR unavailable: {e}")
+            _ocr_reader = None
     return _ocr_reader
 
 def _preprocess(img):
-    
+    cv2 = importlib.import_module("cv2")
     h, w = img.shape[:2]
 
-    min_dim = 1200
-    if max(h, w) < min_dim:
+    max_dim = 1400
+    min_dim = 900
+    if max(h, w) > max_dim:
+        scale = max_dim / max(h, w)
+        img = cv2.resize(img, (int(w * scale), int(h * scale)), interpolation=cv2.INTER_AREA)
+    elif max(h, w) < min_dim:
         scale = min_dim / max(h, w)
         img = cv2.resize(img, (int(w * scale), int(h * scale)), interpolation=cv2.INTER_CUBIC)
 
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-
     denoised = cv2.fastNlMeansDenoising(gray, h=10, templateWindowSize=7, searchWindowSize=21)
-
     clahe = cv2.createCLAHE(clipLimit=2.5, tileGridSize=(8, 8))
     enhanced = clahe.apply(denoised)
 
     return cv2.cvtColor(enhanced, cv2.COLOR_GRAY2BGR)
 
 def extract_text_from_buffer(file_bytes):
-    
     try:
+        cv2 = importlib.import_module("cv2")
+    except Exception:
+        raise RuntimeError("OpenCV is not installed in this environment.")
 
-        np_arr = np.frombuffer(file_bytes, np.uint8)
-        img = cv2.imdecode(np_arr, cv2.IMREAD_COLOR)
+    np_arr = np.frombuffer(file_bytes, np.uint8)
+    img = cv2.imdecode(np_arr, cv2.IMREAD_COLOR)
 
-        if img is None:
-            raise ValueError("Could not decode the provided image bytes.")
+    if img is None:
+        raise ValueError("Could not decode the provided image bytes.")
 
-        preprocessed = _preprocess(img)
+    preprocessed = _preprocess(img)
 
-        print("Running EasyOCR with enhanced preprocessing...")
+    reader = get_ocr_reader()
+    if reader is None:
+        raise RuntimeError("EasyOCR is not installed or available on this server.")
 
-        results = reader.readtext(
-            preprocessed,
-            detail=1,
-            paragraph=False,                                                   
-            text_threshold=0.5,                                                  
-            low_text=0.35,                                                          
-            link_threshold=0.35,                                            
-            width_ths=0.8,                                                
-            height_ths=0.5,                                             
-            min_size=10,                                                  
-            slope_ths=0.2,                                             
-        )
+    print("Running EasyOCR with enhanced preprocessing...")
 
-        if not results:
-            return ""
+    results = reader.readtext(
+        preprocessed,
+        detail=1,
+        paragraph=False,                                                   
+        text_threshold=0.5,                                                  
+        low_text=0.35,                                                          
+        link_threshold=0.35,                                            
+        width_ths=0.8,                                                
+        height_ths=0.5,                                             
+        min_size=10,                                                  
+        slope_ths=0.2,                                             
+    )
 
-        def sort_key(r):
-            bbox = r[0]
+    if not results:
+        return ""
 
-            top_y = min(pt[1] for pt in bbox)
-            left_x = min(pt[0] for pt in bbox)
+    def sort_key(r):
+        bbox = r[0]
+        top_y = min(pt[1] for pt in bbox)
+        left_x = min(pt[0] for pt in bbox)
+        row_band = int(top_y / 30)
+        return (row_band, left_x)
 
-            row_band = int(top_y / 30)
-            return (row_band, left_x)
+    results_sorted = sorted(results, key=sort_key)
 
-        results_sorted = sorted(results, key=sort_key)
+    MIN_CONFIDENCE = 0.3
+    lines_data = [(bbox, text, conf) for (bbox, text, conf) in results_sorted if conf >= MIN_CONFIDENCE]
+    
+    if not lines_data:
+        return ""
 
-        MIN_CONFIDENCE = 0.3
-        lines_data = [(bbox, text, conf) for (bbox, text, conf) in results_sorted if conf >= MIN_CONFIDENCE]
+    extracted_text = ""
+    prev_y = None
+    
+    for bbox, text, conf in lines_data:
+        top_y = min(pt[1] for pt in bbox)
         
-        if not lines_data:
-            return ""
-
-        extracted_text = ""
-        prev_y = None
-        
-        for bbox, text, conf in lines_data:
-            top_y = min(pt[1] for pt in bbox)
-            
-            if prev_y is None:
-                extracted_text += text
+        if prev_y is None:
+            extracted_text += text
+        else:
+            y_diff = top_y - prev_y
+            if y_diff > 40:
+                extracted_text += "\n\n" + text
+            elif y_diff > 20:
+                extracted_text += "\n" + text
             else:
-                y_diff = top_y - prev_y
+                extracted_text += " " + text
+        
+        prev_y = top_y
 
-                if y_diff > 40:
-                    extracted_text += "\n\n" + text
-
-                elif y_diff > 20:
-                    extracted_text += "\n" + text
-
-                else:
-                    extracted_text += " " + text
-            
-            prev_y = top_y
-
-        extracted_text = extracted_text.strip()
-        print(f"Extracted {len(lines_data)} text regions, {len(extracted_text)} characters.")
-
-        return extracted_text
-
-    except Exception as e:
-        print(f"EasyOCR Error: {e}")
-        raise e
-
-os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
+    extracted_text = extracted_text.strip()
+    print(f"Extracted {len(lines_data)} text regions, {len(extracted_text)} characters.")
+    return extracted_text
 
 app = Flask(__name__)
 app.config['MAX_CONTENT_LENGTH'] = 10 * 1024 * 1024              
 
-MODEL_PATH = 'essay_scorer_model.keras'
-_model_cache = None
+_np_model = None
 
-def get_model():
-    global _model_cache
-    if _model_cache is None and os.path.exists(MODEL_PATH):
-        print("Loading ML model into memory cache...")
-        _model_cache = tf.keras.models.load_model(MODEL_PATH)
-    return _model_cache
+def _load_np_model():
+    global _np_model
+    if _np_model is not None:
+        return _np_model
+
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    weights_path = os.path.join(base_dir, 'model_weights.npz')
+    vocab_path = os.path.join(base_dir, 'model_vocab.json')
+
+    if os.path.exists(weights_path) and os.path.exists(vocab_path):
+        try:
+            with open(vocab_path, 'r', encoding='utf-8') as f:
+                vocab_list = json.load(f)
+            vocab_map = {word: i for i, word in enumerate(vocab_list)}
+
+            data = np.load(weights_path)
+            _np_model = {
+                'vocab_map': vocab_map,
+                'embedding_w': data['embedding_w'],
+                'fwd_w': data['fwd_w'], 'fwd_u': data['fwd_u'], 'fwd_b': data['fwd_b'],
+                'bwd_w': data['bwd_w'], 'bwd_u': data['bwd_u'], 'bwd_b': data['bwd_b'],
+                'dense_w': data['dense_w'], 'dense_b': data['dense_b'],
+                'dense1_w': data['dense1_w'], 'dense1_b': data['dense1_b'],
+            }
+            return _np_model
+        except Exception as e:
+            print(f"NumPy model load error: {e}")
+    return None
+
+def _sigmoid(x):
+    return 1.0 / (1.0 + np.exp(-np.clip(x, -20.0, 20.0)))
+
+def _lstm_cell(x_t, h_prev, c_prev, w, u, b):
+    z = np.dot(x_t, w) + np.dot(h_prev, u) + b
+    units = len(h_prev)
+    i = _sigmoid(z[:units])
+    f = _sigmoid(z[units:2*units])
+    c_cand = np.tanh(z[2*units:3*units])
+    o = _sigmoid(z[3*units:])
+    c = f * c_prev + i * c_cand
+    h = o * np.tanh(c)
+    return h, c
 
 def run_ml(text):
-    
+    # 1. Ultra-fast, zero-dependency NumPy inference
     try:
-        model = get_model()
-        if model:
-            prediction = model.predict(tf.constant([text]), verbose=0)
-            return float(prediction[0][0])
+        model = _load_np_model()
+        if model is not None:
+            clean = text.lower()
+            clean = re.sub(r'[' + re.escape(r'!"#$%&\'()*+,-./:;<=>?@[\]^_`{|}~') + r']', '', clean)
+            tokens = clean.split()
+
+            vocab_map = model['vocab_map']
+            indices = [vocab_map.get(t, 1) for t in tokens[:150]]
+            while len(indices) < 150:
+                indices.append(0)
+
+            embeds = model['embedding_w'][indices]
+            h_fwd = np.zeros(64, dtype=np.float32)
+            c_fwd = np.zeros(64, dtype=np.float32)
+            for t in range(150):
+                if indices[t] == 0:
+                    continue
+                h_fwd, c_fwd = _lstm_cell(embeds[t], h_fwd, c_fwd, model['fwd_w'], model['fwd_u'], model['fwd_b'])
+
+            h_bwd = np.zeros(64, dtype=np.float32)
+            c_bwd = np.zeros(64, dtype=np.float32)
+            for t in reversed(range(150)):
+                if indices[t] == 0:
+                    continue
+                h_bwd, c_bwd = _lstm_cell(embeds[t], h_bwd, c_bwd, model['bwd_w'], model['bwd_u'], model['bwd_b'])
+
+            h_bi = np.concatenate([h_fwd, h_bwd])
+            d1 = np.maximum(0.0, np.dot(h_bi, model['dense_w']) + model['dense_b'])
+            out = np.dot(d1, model['dense1_w']) + model['dense1_b']
+            return float(out[0])
     except Exception as e:
-        print(f"ML prediction error: {e}")
+        print(f"Neural inference error: {e}")
+
     return 5.0
 
 @app.after_request
@@ -2744,10 +2854,12 @@ def add_security_headers(response):
     response.headers['X-Frame-Options'] = 'DENY'
     response.headers['Content-Security-Policy'] = (
         "default-src 'self'; "
-        "script-src 'self' 'unsafe-inline'; "
+        "script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; "
+        "worker-src 'self' blob:; "
+        "connect-src 'self' https://cdn.jsdelivr.net https://raw.githubusercontent.com blob: data:; "
         "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; "
         "font-src https://fonts.gstatic.com; "
-        "img-src 'self' data:;"
+        "img-src 'self' data: blob:;"
     )
     return response
 
@@ -2787,7 +2899,9 @@ def analyze_essay_route():
 
     except Exception as e:
         print(f"Analysis error (image): {e}")
-        return jsonify({"error": "An error occurred during analysis. Please try again."}), 500
+        return jsonify({
+            "error": "Image OCR could not be processed on the server. Please use the web interface where OCR is processed in your browser, or paste the text directly."
+        }), 500
 
 @app.route('/api/analyze-text', methods=['POST'])
 def analyze_text_route():

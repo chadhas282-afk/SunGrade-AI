@@ -1,10 +1,6 @@
-tensorflow
-Pillow
-numpy
-Flask
-Werkzeug
-easyocr
-textstat
-pyspellchecker
-gunicorn
-opencv-python-headless
+Flask>=3.0.0
+Werkzeug>=3.0.0
+numpy>=1.24.0
+textstat>=0.7.3
+pyspellchecker>=0.8.0
+gunicorn>=21.2.0
