@@ -2792,3 +2792,9 @@ def analyze_text_route():
             return jsonify({"error": "Text is too short. Please enter at least a few sentences."}), 400
         if len(text) > 50000:
             return jsonify({"error": "Text is too long (max 50,000 characters)."}), 400
+
+        ml_score = run_ml(text)
+
+        result = analyze_essay(text, ml_score=ml_score)
+        result["extracted_text"] = text
+        result["status"] = "success"
