@@ -2798,3 +2798,8 @@ def analyze_text_route():
         result = analyze_essay(text, ml_score=ml_score)
         result["extracted_text"] = text
         result["status"] = "success"
+        result["mode"] = "text"
+
+        return jsonify(result)
+
+    except Exception as e:
