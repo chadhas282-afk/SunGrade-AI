@@ -2864,6 +2864,8 @@ def add_security_headers(response):
     return response
 
 @app.route('/')
+@app.route('/api/index')
+@app.route('/api/index.py')
 def index():
     return render_template_string(HTML_TEMPLATE)
 
