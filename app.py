@@ -2778,3 +2778,13 @@ def analyze_essay_route():
 
     except Exception as e:
         print(f"Analysis error (image): {e}")
+        return jsonify({"error": "An error occurred during analysis. Please try again."}), 500
+
+@app.route('/api/analyze-text', methods=['POST'])
+def analyze_text_route():
+    try:
+        body = request.get_json(force=True)
+        if not body or 'text' not in body:
+            return jsonify({"error": "Missing 'text' field in JSON body"}), 400
+
+        text = body['text'].strip()
