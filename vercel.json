@@ -3,7 +3,15 @@
   "builds": [
     {
       "src": "api/index.py",
-      "use": "@vercel/python"
+      "use": "@vercel/python",
+      "config": {
+        "includeFiles": [
+          "model_weights.npz",
+          "model_vocab.json",
+          "api/model_weights.npz",
+          "api/model_vocab.json"
+        ]
+      }
     }
   ],
   "routes": [
