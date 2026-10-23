@@ -2773,3 +2773,8 @@ def analyze_essay_route():
         result["extracted_text"] = extracted_text
         result["status"] = "success"
         result["mode"] = "ocr"
+
+        return jsonify(result)
+
+    except Exception as e:
+        print(f"Analysis error (image): {e}")
