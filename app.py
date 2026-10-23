@@ -2788,3 +2788,7 @@ def analyze_text_route():
             return jsonify({"error": "Missing 'text' field in JSON body"}), 400
 
         text = body['text'].strip()
+        if len(text) < 10:
+            return jsonify({"error": "Text is too short. Please enter at least a few sentences."}), 400
+        if len(text) > 50000:
+            return jsonify({"error": "Text is too long (max 50,000 characters)."}), 400
